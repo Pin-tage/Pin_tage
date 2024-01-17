@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Scroll Bar 기능은 살리되, 없애기*/
+body{
+    -ms-overflow-style: none;
+}
+    
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*상단 내비게이션 바 시작*/
+nav {
+    /*스타일*/
+    padding: 25px;
+    color: #FF47CB;
+    font-family: 'Cherry Bomb';
+    font-size: 22px;
+    /*배치*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*고정*/
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
+}
+
+nav logo img {
+    max-width: 60%;
+    height: auto;
+    margin-left: 75px;
+}
+
+.top-nav {
+    text-decoration: none;
+    color: #FF47CB;
+}
+
+nav menu ul {
+    list-style: none;
+    display: flex;
+    font-size: 25px;
+}
+
+nav menu ul li {
+    margin: 0 40px 0 40px;
+}
+
+.login-Btn {
+    padding: 10px 20px 10px 20px;
+    margin-right: 75px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: #F8EFF5;
+    color: #FF47CB;
+    font-family: 'Cherry Bomb';
+    font-size: 18px;
+}
+
+/*main 시작*/
+main{
+    padding: 80px;
+}
+
+/*title*/
+.title {
+    text-align: center;
+    margin: 80px;
+}
+
+.filter{
+    display: flex;
+}

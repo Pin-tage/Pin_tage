@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+    <!-- 헤더바 -->
+    <header>
+        <nav class="nav container">
+            <logo><img src="./assets/logo2.png"></logo>  <!--로고-->
+
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">MAIN</a></li>
+                <li class="nav-item"><a href="search.html" class="nav-link">SEARCH</a></li>
+                <li class="nav-item"><a href="map.html" class="nav-link">MAP</a></li>
+                <li class="nav-item"><a href="mypage.html" class="nav-link">MYPAGE</a></li>
+            </ul>
+
+            <div class="nav-toggle" id="nav_toggle">
+                <i class="bi bi-list"></i>
+            </div> 
+
+            <button type="submit" class="login-Btn-right ">LOGIN</button>
+        </nav>
+    </header>
+    
+    <h1>로그인</h1>
+    <h6>회원 로그인 후 핀티지의 모든 기능을 이용해 보세요.</h6>
+
+    <!-- 로그인 입력 칸 -->
+    <form method="post" action=""> <!-- << 옆 빈칸에 PHP링크 넣으면 됨!-->
+        아이디 : <input type="text" name="userID" placeholder="아이디"><br>  
+        비밀번호 : <input type="text" name="USERPA" placeholder="비밀번호"><br>  
+        <button type="submit" class="login-Btn-center">로그인</button>
+    </form>
+
+
+</body>
+</html>

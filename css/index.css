@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Scroll Bar 기능은 살리되, 없애기*/
+body{
+    -ms-overflow-style: none;
+}
+    
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*상단 내비게이션 바 시작*/
+nav {
+    /*스타일*/
+    padding: 25px;
+    background-color: #FF47CB;
+    color: white;
+    font-family: 'Cherry Bomb';
+    font-size: 22px;
+    /*배치*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*고정*/
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
+}
+
+nav logo img {
+    max-width: 60%;
+    height: auto;
+    margin-left: 75px;
+}
+
+.top-nav {
+    color: white;
+    text-decoration-line: none;
+}
+
+nav menu ul {
+    list-style: none;
+    display: flex;
+    font-size: 25px;
+}
+
+nav menu ul li {
+    margin: 0 40px 0 40px;
+}
+
+.login-Btn {
+    padding: 10px 20px 10px 20px;
+    margin-right: 75px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: #FF47CB;
+    color: white;
+    font-family: 'Cherry Bomb';
+    font-size: 18px;
+}
+
+/*main area 시작*/
+
+/*main1*/
+main {
+    position: relative;
+}
+
+.main1 {
+    background-color: #FF47CB;
+    color: white;
+    padding: 100px 0px 100px 100px;
+    display: flex;
+    position: relative;
+}
+
+.main1 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main1 h1{
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-family: 'Sniglet';
+    font-size: 120px;
+}
+
+/*main2*/
+.main2 h1 {
+    text-align: center;
+    margin: 300px;
+}
+
+/*main3*/
+.main3 {
+    padding: 80px;
+    background-color: #FF47CB;
+    color: white;
+}
+
+.auto-slide {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.img-box {
+    margin: 70px 0px 30px 0px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: nowrap;
+    animation: slideAnimation 15s linear infinite;
+}
+
+.img-box > div {
+    margin: 0px -1px 0px 0px;
+}
+
+.img-box div {
+    flex: 0 0 auto;
+}
+
+@keyframes slideAnimation {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+.img-box img {
+    max-width: 80%;
+    height: auto;
+}
+
+/*main4*/
+.main4 {
+    padding: 80px;
+}
+
+.main4 h1{
+    text-align: center;
+    margin: 40px;
+}

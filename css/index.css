@@ -138,7 +138,7 @@ main {
     }
 
     100% {
-        transform: translate(-50%, 0);
+        transform: translate(-190%, 0); 
     }
 }
 

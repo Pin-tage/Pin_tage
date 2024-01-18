@@ -191,3 +191,30 @@ main {
     border-radius: 10px;
     padding: 30px;
 }
+
+/*footer 시작*/
+footer {
+    padding: 80px;
+    border: solid 1px #c6c6c6;
+}
+
+.footer-nav {
+    color: #FF47CB;
+    text-decoration: none;
+    font-family: 'Cherry Bomb';
+    font-size: 25px;
+}
+
+.footer-nav ul {
+    display: flex;
+    list-style: none;
+    /*olor: #FF47CB;*/
+}
+
+.footer-nav li {
+    margin-right: 80px;
+}
+
+.footer-text {
+    margin: 50px 0 100px 0;
+}

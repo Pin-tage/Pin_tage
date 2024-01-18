@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브랜드 등록</title>
+</head>
+<body>
+    <h1>브랜드 정보 입력</h1>
+
+    <form action="brand_insert.php" method="post" enctype="multipart/form-data">
+        <label for="brand_name">브랜드 이름:</label>
+        <input type="text" name="brand_name" required>
+        <br>
+
+        <label for="brand_guide">브랜드 소개:</label>
+        <textarea name="brand_guide" rows="4" required></textarea>
+        <br>
+
+        <label for="brand_img">브랜드 이미지:</label>
+        <input type="file" name="brand_img" accept="image/*" required>
+        <br>
+
+        <label for="brand_tag">해시태그:</label>
+        <input type="text" name="brand_tag" required>
+        <br>
+
+        <input type="submit" value="등록">
+    </form>
+</body>
+</html>

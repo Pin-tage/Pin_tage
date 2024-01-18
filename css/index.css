@@ -152,7 +152,42 @@ main {
     padding: 80px;
 }
 
-.main4 h1{
+.main4-title{
     text-align: center;
     margin: 40px;
+}
+
+.main4-box{
+    margin: 0 100px 0 100px;
+}
+
+.main4-box1 {
+    display: flex;
+    justify-content: center;
+}
+
+.main4-box2 { 
+    display: flex;
+    justify-content: center;
+}
+
+.box1-1,
+.box2-2
+ {
+    width: 60%;
+    height: 300px;
+    background-color: #F5F5F5;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.box1-2,
+.box2-1 {
+    width: 800px;
+    height: 300px;
+    background-color: #F5F5F5;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 30px;
 }

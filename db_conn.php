@@ -6,9 +6,9 @@
 
     $dbhost = 'localhost';
     $dbid = 'root';
-    $dbpw = '0000';
+    $dbpw = '';
     $db = 'pintage';
-    $dbport = '3306';
+    $dbport = '3307';
 
     $conn = mysqli_connect($dbhost, $dbid, $dbpw, $db, $dbport);
 

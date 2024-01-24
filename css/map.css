@@ -82,3 +82,7 @@ main{
 .filter{
     display: flex;
 }
+/* 지도 이미지 */
+div{
+    text-align: center;
+}

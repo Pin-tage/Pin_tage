@@ -1,7 +1,30 @@
+/* Variables CSS (변수처럼 미리 값 줘놓고 가져다가 쓰기)*/
+:root {
+    /* color */
+    --fr-color: #FF47CB;
+    --se-color: #c6c6c6;
+    --th-color: #7c7c7c;
+    --fo-color: #F8EFF5;;
+
+    /* font */
+    --body-font: 'Cherry Bomb';     /*구글폰트 사용*/
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.8rem;
+    --smaller-font-size: 0.6rem;
+    --font-thin: 200;
+    --font-regular: 400;
+    --font-bold: 700;
+}
+
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 /*Scroll Bar 기능은 살리되, 없애기*/
@@ -17,7 +40,7 @@ body{
 nav {
     /*스타일*/
     padding: 25px;
-    color: #FF47CB;
+    color: var(--fr-color);
     font-family: 'Cherry Bomb';
     font-size: 22px;
     /*배치*/
@@ -40,7 +63,7 @@ nav logo img {
 
 .top-nav {
     text-decoration: none;
-    color: #FF47CB;
+    color: var(--fr-color);
 }
 
 nav menu ul {
@@ -58,10 +81,11 @@ nav menu ul li {
     margin-right: 75px;
     border-radius: 10px;
     border: 3px solid white;
-    background-color: #F8EFF5;
-    color: #FF47CB;
+    background-color: var(--fo-color);
+    color: var(--fr-color);
     font-family: 'Cherry Bomb';
     font-size: 18px;
+    cursor: pointer;
 }
 
 /*main 시작*/
@@ -76,20 +100,20 @@ main{
 
 .signup-form {
     margin: 0 300px 0 300px;
-    border-top: 2px dashed #7c7c7c;
+    border-top: 2px dashed var(--fh-color)
 }
 
 .signup-form input {
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid #c6c6c6;
+    border: 1px solid var(--se-color);
 }
 
 .input-name,
 .input-id,
 .input-email,
 .input-checkpassword {
-    border-bottom: 2px dashed #c6c6c6;
+    border-bottom: 2px dashed var(--se-color);
     padding: 30px 0 30px 0;
 }
 

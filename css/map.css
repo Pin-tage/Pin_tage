@@ -1,0 +1,94 @@
+/* Variables CSS (변수처럼 미리 값 줘놓고 가져다가 쓰기)*/
+:root {
+    /* color */
+    --first-color: #FF47CB;
+    --second-color: #F8EFF5;
+    --body-color: #fff;
+
+    /* font */
+    --body-font: 'Cherry Bomb';     /*구글폰트 사용*/
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.8rem;
+    --smaller-font-size: 0.6rem;
+    --font-thin: 200;
+    --font-regular: 400;
+    --font-bold: 700;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+nav {
+    padding: 25px;
+    background-color: #fff;
+    color: var(--first-color);
+    font-family: var(--body-font);
+    font-size: 22px;
+    /*배치*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*고정*/
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
+}
+nav logo img{
+    max-width: 60%;
+    height: auto;
+}
+.nav.container {
+    display: flex;  /* 기본값: 수평정렬 */
+    justify-content: space-between;
+    align-items: center;    /* 교차축 가운데 맞춤 */
+    padding: 0 16px;    /* 위아래:0, 왼오른: 16px */
+    color: var(--first-color);
+}
+.nav.container a {
+    color: var(--first-color);
+    text-decoration: none; /*밑줄없앰*/
+}
+.nav-list {
+    display: flex;  /* 수평 배치 */
+    column-gap: 80px;
+    /* font-weight: ; */
+    font-family: 'Cherry Bomb';
+    list-style-type: none; /*앞에 점 없앰*/
+}
+.nav-toggle {
+    font-size: var(--h2-font-size);
+    visibility: hidden;
+}
+.login-Btn-right {
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--second-color);    /*버튼 배경색 변경*/
+    color: var(--first-color);               /*버튼 글씨색 변경*/
+    font-family: var(--body-font); 
+    font-size: 18px;
+    text-align: center;                /*버튼 속 글씨 가운데 정렬*/
+}
+
+.container{
+    width:1000;
+    margin: auto;
+    
+}
+
+.map-NotSeleted{
+    width: 700;
+    height: 700;
+    object-fit: cover;
+    /* max-width: 700;
+    max-height: 700; */
+}
+
+

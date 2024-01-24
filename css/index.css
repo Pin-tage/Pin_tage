@@ -194,27 +194,24 @@ main {
 
 /*footer 시작*/
 footer {
-    padding: 80px;
+    padding: 30px 80px 30px 80px;
     border: solid 1px #c6c6c6;
 }
 
-.footer-nav {
-    color: #FF47CB;
-    text-decoration: none;
-    font-family: 'Cherry Bomb';
-    font-size: 25px;
+.developer,
+.designer {
+    margin: 20px 0 20px 0;
 }
 
-.footer-nav ul {
-    display: flex;
+.developer ul,
+.developer p, 
+.designer p:nth-child(1) {
     list-style: none;
-    /*olor: #FF47CB;*/
+    color: #7c7c7c;
 }
 
-.footer-nav li {
-    margin-right: 80px;
-}
-
-.footer-text {
-    margin: 50px 0 100px 0;
+.developer ul li,
+.designer p:nth-child(2){
+    margin: 5px 0 0 0;
+    color: #c6c6c6;
 }

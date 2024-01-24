@@ -84,7 +84,7 @@ main{
     border-top: 2px dashed #7c7c7c;
 }
 
-.signup-form input,
+.signup-form input:not(#image),
 .signup-form select,
 .signup-form textarea {
     padding: 10px;
@@ -97,6 +97,7 @@ main{
 .input-guide,
 .input-time,
 .input-location,
+.input-image,
 .input-tag,
 .input-price {
     border-bottom: 2px dashed #c6c6c6;

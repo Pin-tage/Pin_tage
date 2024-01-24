@@ -20,6 +20,7 @@ nav {
     color: #FF47CB;
     font-family: 'Cherry Bomb';
     font-size: 22px;
+    background-color: white;
     /*배치*/
     display: flex;
     flex-wrap: wrap;

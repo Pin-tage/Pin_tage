@@ -78,6 +78,7 @@ nav menu ul li {
     color: #FF47CB;
     font-family: 'Cherry Bomb';
     font-size: 18px;
+    text-decoration: none; /*밑줄없앰*/
 }
 
 /*main 시작*/

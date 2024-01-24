@@ -63,6 +63,7 @@ nav menu ul li {
     color: white;
     font-family: 'Cherry Bomb';
     font-size: 18px;
+    text-decoration: none; /*밑줄없앰*/
 }
 
 /*main area 시작*/

@@ -65,6 +65,7 @@ nav menu ul li {
     color: #FF47CB;
     font-family: 'Cherry Bomb';
     font-size: 18px;
+    text-decoration: none; /*밑줄없앰*/
     /* cursor: pointer; */
 }
 
@@ -83,6 +84,6 @@ main{
     display: flex;
 }
 /* 지도 이미지 */
-div{
-    text-align: center;
+.map-img{
+    text-align: center; /* 지도 이미지 중앙 정렬 */
 }

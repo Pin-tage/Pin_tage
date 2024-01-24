@@ -63,7 +63,6 @@ nav menu ul li {
     color: #FF47CB;
     font-family: 'Cherry Bomb';
     font-size: 18px;
-    text-decoration: none; /*밑줄없앰*/
 }
 
 /*main 시작*/
@@ -71,36 +70,75 @@ main{
     padding: 80px;
 }
 
-/*title*/
 .title {
     text-align: center;
-    margin: 80px;
+    padding: 80px;
 }
 
-.filter{
+.title p {
+    margin-top: 20px;
+}
+
+.signup-form {
+    margin: 0 300px 0 300px;
+    border-top: 2px dashed #7c7c7c;
+}
+
+.signup-form input:not(#image),
+.signup-form select,
+.signup-form textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #c6c6c6;
+}
+
+#tag-location,
+#tag-style,
+#tag-brand,
+#tag-category {
+    margin-top: 10px;
+    width: 100%;
+}
+
+select option[value=""][disabled] {
+	display: none;
+}
+
+.input-name,
+.input-id,
+.input-guide,
+.input-time,
+.input-location,
+.input-image,
+.input-tag,
+.input-price {
+    border-bottom: 2px dashed #c6c6c6;
+    padding: 30px 0 30px 0;
+}
+
+.button {
     display: flex;
+    justify-content: center;
 }
 
-/*footer*/
-footer {
-    padding: 30px 80px 30px 80px;
-    border: solid 1px #c6c6c6;
+.img-button img {
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
 }
 
-.developer,
-.designer {
-    margin: 20px 0 20px 0;
+#image {
+    visibility: hidden;
 }
 
-.developer ul,
-.developer p, 
-.designer p:nth-child(1) {
-    list-style: none;
-    color: #7c7c7c;
+.button-container {
+    margin: 50px;
+    text-align: center;
 }
 
-.developer ul li,
-.designer p:nth-child(2){
-    margin: 5px 0 0 0;
-    color: #c6c6c6;
+.button-container button {
+    width: 20%;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
 }

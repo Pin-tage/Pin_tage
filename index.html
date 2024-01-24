@@ -12,16 +12,25 @@
 <body>
     <!--상단 nav-->
     <nav>
-        <logo><img src="./assets/logo.png"></logo>
+        <logo>
+            <a href="./index.html">
+                <img src="./assets/logo.png">
+            </a>   
+        </logo>
         <menu>
             <ul>
                 <li><a href="./index.html" class="top-nav">MAIN</a></li>
                 <li><a href="./search.html" class="top-nav">SEARCH</a></li>
                 <li><a href="./map.html" class="top-nav">PIN!MAP</a></li>
-                <li>MYPAGE</li>
+                <li><a href="./mypage.html" class="top-nav">MYPAGE</a></li>
             </ul>
         </menu>
-        <input type="button" value="LOGIN" class="login-Btn">
+        <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
+        <button type="submit" class="login-Btn">
+            <a href="login.html">
+                LOGIN
+            </a>
+        </button>
     </nav>
 
     <!--메인 area-->
@@ -107,19 +116,49 @@
     </main>
 
     <footer>
-        <div class="footer-nav">
-            <ul>
-                <li><a href="./index.html" class="footer-nav">MAIN</a></li>
-                <li><a href="./search.html" class="footer-nav">SEARCH</a></li>
-                <li><a href="./map.html" class="footer-nav">PIN!MAP</a></li>
-                <li>MYPAGE</li>
-            </ul>
-        </div>  
-        <div class="footer-text">
-            <h1 style="color: #7c7c7c;">TEAM カピバラ</h1>
-            <p style="color: #c6c6c6;">김지우  |  김현지  |  김희영  |  노현지</p>
+        <div class="contributor">
+            <div class="jiwoo">
+                <ul>
+                    <li>김지우</li>
+                    <li>Backend Developer</li>
+                    <li>VScode / Github</li>
+                    <li><a href="https://github.com/jiwoo1087">😺깃허브</a></li>
+                    <li>s2205@e-mirim.hs.kr</li>
+                </ul>
+            </div>
+            <div class="khyunji">
+                <ul>
+                    <li>김현지</li>
+                    <li>FullStack Developer</li>
+                    <li>VScode / FileZila / Github</li>
+                    <li><a href="https://github.com/de-quei">😺깃허브</a></li>
+                    <li>s2208@e-mirim.hs.kr</li>
+                </ul>
+            </div>
+            <div class="heeyoung">
+                <ul>
+                    <li>김희영</li>
+                    <li>Frontend Developer</li>
+                    <li>VScode / Github</li>
+                    <li><a href="https://github.com/gmldrnfl">😺깃허브</a></li>
+                    <li>w2225@e-mirim.hs.kr</li>
+                </ul>
+            </div>
+            <div class="nhyunji">
+                <ul>
+                    <li>노현지</li>
+                    <li>Designer</li>
+                    <li>Figma</li>
+                    <li><a href="https://www.instagram.com/shgusw1/">🩷인스타그램</a></li>
+                    <li>d2204@e-mirim.hs.kr</li>
+                </ul>
+            </div>
         </div>
-        <img src="./assets/logo2.png">
+       
+        <div class="footer-nav">
+            <img src="./assets/logo2.png" style="width: 150px; margin-top: 20px;">
+            <h4>TEAM カピバラ</h4>
+        </div>
     </footer>
     
 </body>

@@ -63,6 +63,7 @@ nav menu ul li {
     color: white;
     font-family: 'Cherry Bomb';
     font-size: 18px;
+    text-decoration: none; /*밑줄없앰*/
 }
 
 /*main area 시작*/
@@ -194,27 +195,49 @@ main {
 
 /*footer 시작*/
 footer {
-    padding: 80px;
+    padding: 30px 150px 30px 150px;
     border: solid 1px #c6c6c6;
 }
 
 .footer-nav {
-    color: #FF47CB;
-    text-decoration: none;
-    font-family: 'Cherry Bomb';
-    font-size: 25px;
-}
-
-.footer-nav ul {
     display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-family: 'Cherry Bomb';
+    color: #c6c6c6;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.contributor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.jiwoo ul,
+.khyunji ul,
+.heeyoung ul,
+.nhyunji ul {
     list-style: none;
-    /*olor: #FF47CB;*/
 }
 
-.footer-nav li {
-    margin-right: 80px;
+.jiwoo li:nth-child(1),
+.khyunji li:nth-child(1),
+.heeyoung li:nth-child(1),
+.nhyunji li:nth-child(1) {
+    color: #7c7c7c;
+    font-weight: bold;
 }
 
-.footer-text {
-    margin: 50px 0 100px 0;
+.jiwoo li,
+.khyunji li,
+.heeyoung li,
+.nhyunji li {
+    color: #c6c6c6;
+    margin-top: 5px;
+}
+
+.contributor a {
+    text-decoration: none; 
+    color: #c6c6c6;
 }

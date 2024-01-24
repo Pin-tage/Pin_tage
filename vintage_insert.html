@@ -58,6 +58,13 @@
                     <br>
                 </div>
 
+                <div class="input-image">
+                    <label for="image">매장 사진</label>
+                    <input type="file" id="image" name="image" accept="image/*" multiple>
+                    <br>
+                    <div id="preview-container"></div>
+                </div>
+
                 <div class="input-tag">
                     <label for="tag">태그</label><br>
                     <select id="tag-location" name="tag-location" required>
@@ -104,5 +111,7 @@
         </div>
         
     </main>
+
+    <script src="./js/v_insert.js"></script>
 </body>
 </html>

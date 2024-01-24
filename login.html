@@ -21,29 +21,38 @@
 <body>
 
     <!-- 헤더바 -->
-    <header>
-        <nav class="nav container">
-            <logo><img src="./assets/logo2.png"></logo>  <!--로고-->
+    <nav>
+        <logo>
+            <a href="./index.html">
+                <img src="./assets/logo2.png">
+            </a>   
+        </logo>
 
-            <ul class="nav-list">
-                <li class="nav-item"><a href="index.html" class="nav-link">MAIN</a></li>
-                <li class="nav-item"><a href="search.html" class="nav-link">SEARCH</a></li>
-                <li class="nav-item"><a href="map.html" class="nav-link">MAP</a></li>
-                <li class="nav-item"><a href="mypage.html" class="nav-link">MYPAGE</a></li>
+        <menu>
+            <ul>
+                <li><a href="./index.html" class="top-nav">MAIN</a></li>
+                <li><a href="./search.html" class="top-nav">SEARCH</a></li>
+                <li><a href="./map.html" class="top-nav">PIN!MAP</a></li>
+                <li>MYPAGE</li>
             </ul>
+        </menu>
+        <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
+        <button type="submit" class="login-Btn-right ">
+            <a href="login.html">
+                LOGIN
+            </a>
+        </button>
+    </nav>
 
-            <div class="nav-toggle" id="nav_toggle">
-                <i class="bi bi-list"></i>
-            </div> 
-
-            <button type="submit" class="login-Btn-right ">
-                <a onClick="window.location.reload()" style="cursor: pointer;">LOGIN</a>    
-            </button>   <!-- 누르면 로그인 창 새로고침 -->
-        </nav>
-    </header>
-    
-    <h1>로그인</h1>
-    <h6>회원 로그인 후 핀티지의 모든 기능을 이용해 보세요.</h6>
+    <main>
+        <div class="title">
+            <h1>로그인</h1>
+            <p style="margin: 10px;">로그인 기능에 대한 설명을 적어주세요.</p>
+        </div>
+        <div class="brandshop-box">
+            
+        </div>
+    </main>
 
     <!-- 로그인 입력 칸 -->
     <main>
@@ -57,7 +66,22 @@
     </main>
 
     <footer>
-
+        <div class="footer-nav">
+            <h4 style="color: #7c7c7c;">TEAM カピバラ</h1>
+        </div>  
+        <div class="developer">
+            <p>Develop Contribution</p>
+            <ul>
+                <li>김지우  |  Server</li>
+                <li>김현지  |  Full Stack</li>
+                <li>김희영  |  Front</li>
+            </ul>
+        </div>
+        <div class="designer">
+            <p>Design Contribution</p>
+            <p>노현지</p>
+        </div>
+        <img src="./assets/logo2.png" style="width: 150px; margin-top: 20px;">
     </footer>
 
 </body>

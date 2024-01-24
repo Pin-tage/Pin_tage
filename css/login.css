@@ -7,15 +7,6 @@
 
     /* font */
     --body-font: 'Cherry Bomb';     /*구글폰트 사용*/
-    --h1-font-size: 2rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.8rem;
-    --smaller-font-size: 0.6rem;
-    --font-thin: 200;
-    --font-regular: 400;
-    --font-bold: 700;
 }
 
 * {
@@ -23,63 +14,85 @@
     margin: 0;
     box-sizing: border-box;
 }
-nav {
-    padding: 25px;
-    background-color: #fff;
-    color: var(--first-color);
-    font-family: var(--body-font);
-    font-size: 22px;
 
+/*Scroll Bar 기능은 살리되, 없애기*/
+body{
+    -ms-overflow-style: none;
+}
+    
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*상단 내비게이션 바 시작*/
+nav {
+    /*스타일*/
+    padding: 25px;
+    color: #FF47CB;
+    font-family: 'Cherry Bomb';
+    font-size: 22px;
+    background-color: white;
+    /*배치*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-nav logo img{
-    max-width: 60%;
-    height: auto;
-}
-.nav.container {
-    display: flex;  /* 기본값: 수평정렬 */
-    justify-content: space-between;
-    align-items: center;    /* 교차축 가운데 맞춤 */
-    padding: 0 16px;    /* 위아래:0, 왼오른: 16px */
-    color: var(--first-color);
-}
-.nav.container a {
-    color: var(--first-color);
-    text-decoration: none; /*밑줄없앰*/
-}
-.nav-list {
-    display: flex;  /* 수평 배치 */
-    column-gap: 80px;
-    /* font-weight: ; */
-    font-family: 'Cherry Bomb';
-    list-style-type: none; /*앞에 점 없앰*/
-}
-.nav-toggle {
-    font-size: var(--h2-font-size);
-    visibility: hidden;
-}
-.login-Btn-right {
-    padding: 10px 15px 10px 15px;
-    border-radius: 10px;
-    border: none;
-    background-color: var(--second-color);    /*버튼 배경색 변경*/
-    color: var(--first-color);               /*버튼 글씨색 변경*/
-    font-family: var(--body-font); 
-    font-size: 18px;
-    text-align: center;                /*버튼 속 글씨 가운데 정렬*/
+    /*고정*/
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
 }
 
-/* 로그인 입력 부분 CSS */
-.h1, h6{
-    font-family: 'Sandoll GogoRound';   /*산돌구름 폰트 적용*/
-    font-weight: 400;                   
-    text-align: center;                 /*h1태그 내에 텍스트를 가운데로 정렬*/
-    margin: 60px auto;                  /*밖 마진을 조절하여 위치변경*/
-    /* margin-right: auto; */
-    width: 24rem;
+nav logo img {
+    max-width: 60%;
+    height: auto;
+    margin-left: 75px;
+}
+
+.top-nav {
+    text-decoration: none;
+    color: #FF47CB;
+    display: flex;  /* 수평 배치 */
+    list-style-type: none; /*앞에 점 없앰*/
+    font-family: 'Cherry Bomb';
+}
+
+nav menu ul {
+    list-style: none;
+    display: flex;
+    font-size: 25px;
+    
+}
+
+nav menu ul li {
+    margin: 0 40px 0 40px;
+}
+
+.login-Btn {
+    padding: 10px 20px 10px 20px;
+    margin-right: 75px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: #F8EFF5;
+    color: #FF47CB;
+    font-family: 'Cherry Bomb';
+    font-size: 18px;
+}
+
+/*main 시작*/
+main{
+    padding: 80px;
+}
+
+/*title*/
+.title {
+    text-align: center;
+    margin: 80px;
+}
+
+.filter{
+    display: flex;
 }
 form {  
     margin: 60px auto;

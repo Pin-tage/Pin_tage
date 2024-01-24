@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    document.querySelector('.img-button').addEventListener('click', function () {
+        document.getElementById('image').click();
+    });
+
     function previewImages(input) {
         var previewContainer = document.getElementById('preview-container');
         // 이전 미리보기 초기화하지 않고 기존 미리보기에 추가하기 위해 변경
@@ -16,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var canvas = document.createElement('canvas');
                     var ctx = canvas.getContext('2d');
 
-                    // 이미지 크기를 300x300으로 제한
+                    // 이미지 크기를 250*250으로 제한
                     var width = 250;
                     var height = 250;
 

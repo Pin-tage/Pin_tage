@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.png"> <!--favicon-->
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Bomb" rel="stylesheet"> <!--상단 내비 폰트-->
+    <link rel="stylesheet" href="./css/v_insert.css">
+    <title>Pin!tage</title>
+</head>
+<body>
+    <!--상단 nav-->
+    <nav>
+        <logo><img src="./assets/logo2.png"></logo>
+        <menu>
+            <ul>
+                <li><a href="./index.html" class="top-nav">MAIN</a></li>
+                <li><a href="./search.html" class="top-nav">SEARCH</a></li>
+                <li><a href="./map.html" class="top-nav">PIN!MAP</a></li>
+                <li>MYPAGE</li>
+            </ul>
+        </menu>
+        <input type="button" value="LOGIN" class="login-Btn">
+    </nav>
+    
+    <main>
+        <div class="title">
+            <h1>매장 등록</h1>
+            <p>매장 등록 기능에 대한 설명을 적어주세요미.</p>
+        </div>
+
+        <div class="signup-form">
+            <form method="post" action="">
+
+                <div class="input-name">
+                    <label for="name">상호명</label>
+                    <input type="text" id="name" name="name" required placeholder="상호명을 입력하세요.">
+                    <br>
+                </div>
+                
+                <div class="input-guide">
+                    <label for="guide">매장 소개</label>
+                    <textarea name="guide" id="guide" cols="30" rows="10" 
+                    style="resize: none;"placeholder="설명을 입력해 주세요. (최대 2000자)"></textarea>
+                    <br>
+                </div>
+                
+                <div class="input-time">
+                    <label for="time">영업 시간</label>
+                    <input type="time" name="time" id="time"> ~
+                    <input type="time" name="time" id="time">
+                    <br>
+                </div>
+
+                <div class="input-location">
+                    <label for="time">매장 위치</label>
+                    <!--지도가 들어갈 부분-->
+                    <br>
+                </div>
+
+                <div class="input-tag">
+                    <label for="tag">태그</label><br>
+                    <select id="tag-location" name="tag-location" required>
+                        <!--더 늘릴 예정-->
+                        <option value="교토">교토</option>
+                        <option value="나고야">나고야</option>
+                        <option value="오사카">오사카</option>
+                    </select>
+                    <br>
+                    <select id="tag-style" name="tag-style" required>
+                        <!--더 늘릴 예정-->
+                        <option value="모리걸">모리걸</option>
+                        <option value="스트릿">스트릿</option>
+                        <option value="캐주얼">캐주얼</option>
+                    </select>
+                    <br>
+                    <select id="tag-brand" name="tag-brand" required>
+                        <!--더 늘릴 예정-->
+                        <option value="빈티지샵">빈티지샵</option>
+                        <option value="빔즈">빔즈</option>
+                        <option value="요시다 포터">요시다 포터</option>
+                    </select>
+                    <br>
+                    <select id="tag-category" name="tag-category" required>
+                        <!--더 늘릴 예정-->
+                        <option value="상의">상의</option>
+                        <option value="신발">신발</option>
+                        <option value="하의">하의</option>
+                    </select>
+                    <br>
+                </div>
+
+                <div class="input-price">
+                    <label for="price">가격대</label>
+                    <input type="number" id="number" name="number" placeholder="0 ￥"> ~
+                    <input type="number" id="number" name="number" placeholder="1,000,000 ￥">
+                    <br>
+                </div>
+                
+                <div class="button-container">
+                    <button type="submit" class="submit-btn">등록하기</button>
+                </div>
+            </form>
+        </div>
+        
+    </main>
+</body>
+</html>

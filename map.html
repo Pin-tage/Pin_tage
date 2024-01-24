@@ -11,46 +11,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
     <!-- 산돌구름 폰트 -->
-    <script type="module" src="https://8fl3k30sy0.execute-api.ap-northeast-2.amazonaws.com/v1/api/fontstream/djs/?sid=gAAAAABlp1XuVsLJKx6xCTa2uykeSoukCKYYdLfVnUnxfDrwe2hBCRrXpoBsBiHJzE7KLtZL7oiC57govoEIPFTG1CY78rRwE0-79fgoy5Wqh4URv6BDSWF7rIZcZWBZbej0TMEtp_LXep_V_qdynxaV-6CUI0XEc3Dm1CJYrD_JmEvhZ5AegHmLBsfTWyM0vZyvzgOVEVOL7yTQUBYTCZDdl3bU8VarklApqxGR37hwmkYv2BLiA1UWHrew3if108qHKbcYRFPb" charset="utf-8"></script>
+    <script type="module" src="https://8fl3k30sy0.execute-api.ap-northeast-2.amazonaws.com/v1/api/fontstream/djs/?sid=gAAAAABlsHgJBHM1QHBIdMVd5ZQPii4NpDMf_Qs3jmFS5yt3_xJpQkJWj6G4pOi1XU3WVZc8ZhL3cnzME82ZgdxRheBEr_edqd3mvpja2g5UTyMvZ318m8QKGy0DEWyKHFL-owjPot0HXKViPw61I1yvg8SFrLRXb6LRnB1r-ASpwdwYSk-pKFR-AjjyUsNHhQgwKXdTXRNZSYBwdzD0lf0j2hJLR33glHxsMjxgxz0UXtK6u34ulMFFJsj03iwd21meQBSKY7Ax" charset="utf-8"></script>
 
     <!-- 구글폰트 -->
     <link href="https://fonts.googleapis.com/css?family=Cherry+Bomb" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Sniglet:wght@800&display=swap" rel="stylesheet">
 
+    <!--favicon-->
+    <link rel="icon" href="./favicon.png"> 
+
 </head>
 <body>
 
-    <!-- 헤더바 -->
-    <header>
-        <nav class="nav container">
-            <logo><onClick onClick="window.location.reload()" style="cursor: pointer;">
-                <img src="./assets/logo2.png"><a href="index.html"></a></onClick></logo>  <!--로고-->
-
-            <ul class="nav-list">
-                <li class="nav-item"><a href="index.html" class="nav-link">MAIN</a></li>
-                <li class="nav-item"><a href="search.html" class="nav-link">SEARCH</a></li>
-                <li class="nav-item"><a href="map.html" class="nav-link">MAP</a></li>
-                <li class="nav-item"><a href="mypage.html" class="nav-link">MYPAGE</a></li>
+    <!--상단 nav-->
+    <input>
+        <logo>
+            <a href="./index.html">
+                <img src="./assets/logo2.png">
+            </a>   
+        </logo>
+        <menu>
+            <ul>
+                <li><a href="./index.html" class="top-nav">MAIN</a></li>
+                <li><a href="./search.html" class="top-nav">SEARCH</a></li>
+                <li><a href="./map.html" class="top-nav">PIN!MAP</a></li>
+                <li><a href="./mypage.html" class="top-nav">MYPAGE</a></li>
             </ul>
+        </menu>
+        <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
+        <button type="submit" class="login-Btn">
+            <a href="login.html">
+                LOGIN
+            </a>
+        </button>
+    </nav>
 
-            <div class="nav-toggle" id="nav_toggle">
-                <i class="bi bi-list"></i>
-            </div> 
-
-            <button type="submit" class="login-Btn-right ">
-                <a href="login.html">
-                    LOGIN
-                </a>
-            </button>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h1>지도</h1>
-        <h6>지도기능의 대한 설명을 적어주세요.</h6>
-
-        <hr>
-    </div>
+    <main>
+        <div class="title">
+            <h1>지도</h1>
+            <p style="margin: 10px;">지도 기능에 대한 설명을 적어주세요.</p>
+        </div>
+        <div class="brandshop-box">
+            
+        </div>
+    </main>
 
     <!-- 지도 이미지 -->
     <div>

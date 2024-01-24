@@ -97,7 +97,15 @@ form {
     /* line-height: 210%; */
     margin: 5px;
     background-color: rgb(233, 233, 233);
+    transition: background-color 0.3s ease; /* 배경 색상 변경을 위한 트랜지션 효과 */
 }
+/* 입력란 클릭 시 배경 색상 변경 */
+.input:focus {
+    background-color: #FF47CB; /* 연분홍색으로 변경 */
+    color: #fff; /* 텍스트 색상 변경 */
+    border-color: #FF47CB; /* 테두리 색상 변경 */
+}
+
 .login-Btn-center{  /*로그인 버튼 CSS*/
     /* 버튼 디자인 */
     padding: 28px 23px 28px 23px;           /*버튼 사이즈 조절*/

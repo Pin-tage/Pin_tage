@@ -4,25 +4,15 @@
     --first-color: #FF47CB;
     --second-color: #F8EFF5;
     --body-color: #fff;
-
-    /* font */
-    --body-font: 'Cherry Bomb';     /*구글폰트 사용*/
-    --h1-font-size: 2rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.8rem;
-    --smaller-font-size: 0.6rem;
-    --font-thin: 200;
-    --font-regular: 400;
-    --font-bold: 700;
 }
 
+/* 전체적용 */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 nav {
     padding: 25px;
     background-color: #fff;
@@ -83,12 +73,10 @@ nav logo img{
     
 }
 
-.map-NotSeleted{
-    width: 700;
-    height: 700;
-    object-fit: cover;
-    /* max-width: 700;
-    max-height: 700; */
-}
+.img-box img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+} 
 
 

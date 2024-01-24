@@ -87,3 +87,27 @@ main{
 .map-img{
     text-align: center; /* 지도 이미지 중앙 정렬 */
 }
+
+/*footer*/
+footer {
+    padding: 30px 80px 30px 80px;
+    border: solid 1px #c6c6c6;
+}
+
+.developer,
+.designer {
+    margin: 20px 0 20px 0;
+}
+
+.developer ul,
+.developer p, 
+.designer p:nth-child(1) {
+    list-style: none;
+    color: #7c7c7c;
+}
+
+.developer ul li,
+.designer p:nth-child(2){
+    margin: 5px 0 0 0;
+    color: #c6c6c6;
+}

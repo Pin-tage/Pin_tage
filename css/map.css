@@ -88,30 +88,12 @@ main{
     text-align: center; /* 지도 이미지 중앙 정렬 */
 }
 
-.hashtag-container {
-    display: inline-block;
-    position: relative;
-    padding: 10px; /* 내부 여백을 설정하여 원의 크기를 결정합니다. */
-    border-radius: 50%;
-    background-color: #FF47CB; /* 배경 색상 조절 */
-    color: #fff; /* 글자색 조절 */
-  }
-  
+/* 해시태그 */
 
-.hashtag-container::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px; /* 타원형 동그라미의 가로 크기 조절 */
-  height: 40px; /* 타원형 동그라미의 세로 크기 조절 */
-  background-color: #FF47CB; /* 배경 색상 조절 */
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+/* 결과 */
+#result{
+    text-align: center;
 }
-
 
 /* 결과 페이지 탐색 */
 .Page-navigation{
@@ -119,7 +101,6 @@ main{
 }
 .pagination{
     justify-content: center;    /*가로 1자로 정렬*/
-
 }
 
 

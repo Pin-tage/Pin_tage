@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="./css/login.css">
+    <title>MAP</title>
+    <link rel="stylesheet" href="./css/map.css">
 
     <!-- 부트스트랩 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
     <!-- 산돌구름 폰트 -->
-    <script type="module" src="https://8fl3k30sy0.execute-api.ap-northeast-2.amazonaws.com/v1/api/fontstream/djs/?sid=gAAAAABlp1XuVsLJKx6xCTa2uykeSoukCKYYdLfVnUnxfDrwe2hBCRrXpoBsBiHJzE7KLtZL7oiC57govoEIPFTG1CY78rRwE0-79fgoy5Wqh4URv6BDSWF7rIZcZWBZbej0TMEtp_LXep_V_qdynxaV-6CUI0XEc3Dm1CJYrD_JmEvhZ5AegHmLBsfTWyM0vZyvzgOVEVOL7yTQUBYTCZDdl3bU8VarklApqxGR37hwmkYv2BLiA1UWHrew3if108qHKbcYRFPb" charset="utf-8"></script>
+    <script type="module" src="https://8fl3k30sy0.execute-api.ap-northeast-2.amazonaws.com/v1/api/fontstream/djs/?sid=gAAAAABlsHgJBHM1QHBIdMVd5ZQPii4NpDMf_Qs3jmFS5yt3_xJpQkJWj6G4pOi1XU3WVZc8ZhL3cnzME82ZgdxRheBEr_edqd3mvpja2g5UTyMvZ318m8QKGy0DEWyKHFL-owjPot0HXKViPw61I1yvg8SFrLRXb6LRnB1r-ASpwdwYSk-pKFR-AjjyUsNHhQgwKXdTXRNZSYBwdzD0lf0j2hJLR33glHxsMjxgxz0UXtK6u34ulMFFJsj03iwd21meQBSKY7Ax" charset="utf-8"></script>
 
     <!-- 구글폰트 -->
     <link href="https://fonts.googleapis.com/css?family=Cherry+Bomb" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Sniglet:wght@800&display=swap" rel="stylesheet">
 
+    <!--favicon-->
+    <link rel="icon" href="./favicon.png"> 
+
 </head>
 <body>
 
-    <!-- 헤더바 -->
+    <!--상단 nav-->
     <nav>
         <logo>
             <a href="./index.html">
                 <img src="./assets/logo2.png">
             </a>   
         </logo>
-
         <menu>
             <ul>
                 <li><a href="./index.html" class="top-nav">MAIN</a></li>
                 <li><a href="./search.html" class="top-nav">SEARCH</a></li>
                 <li><a href="./map.html" class="top-nav">PIN!MAP</a></li>
-                <li>MYPAGE</li>
+                <li><a href="./mypage.html" class="top-nav">MYPAGE</a></li>
             </ul>
         </menu>
         <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
-        <button type="submit" class="login-Btn-right ">
+        <button type="submit" class="login-Btn">
             <a href="login.html">
                 LOGIN
             </a>
@@ -46,25 +48,24 @@
 
     <main>
         <div class="title">
-            <h1>로그인</h1>
-            <p style="margin: 10px;">로그인 기능에 대한 설명을 적어주세요.</p>
+            <h1>지도</h1>
+            <p style="margin: 10px;">지도 기능에 대한 설명을 적어주세요.</p>
         </div>
         <div class="brandshop-box">
             
         </div>
     </main>
 
-    <!-- 로그인 입력 칸 -->
-    <main>
-        <form method="post" action=""> <!-- << 옆 빈칸에 PHP링크 넣으면 됨!-->
-            <div class="login-input">
-                <input type="text" name="userID" id="input" placeholder="아이디"><br>  
-                <input type="text" name="USERPA" id="input" placeholder="비밀번호"><br>  
-            </div>
-            <button type="submit" class="login-Btn-center">로그인</button>
-        </form>
-    </main>
+    <!-- 지도 이미지 -->
+    <div class="map-img">
+        <img src="./assets/map-NotSelected.png" class="map-background">
+    </div>
 
+    <!-- 결과  -->
+    
+
+
+    <!-- 푸터 -->
     <footer>
         <div class="footer-nav">
             <h4 style="color: #7c7c7c;">TEAM カピバラ</h1>
@@ -83,6 +84,6 @@
         </div>
         <img src="./assets/logo2.png" style="width: 150px; margin-top: 20px;">
     </footer>
-
+    
 </body>
 </html>

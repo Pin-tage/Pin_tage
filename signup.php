@@ -2,20 +2,29 @@
 
 include('db_conn.php');
 
-if(isset($_POST['user_name'])&&isset($_POST['emailPrefix'])&&isset($_POST['emailDomain'])&&isset($_POST['user_id'])&&isset($_POST['pass'])&&isset($_POST['confirmPassword']))    //isset: 변수가 null인지 아닌지 확인
+if(isset($_POST['user_name'])&&isset($_POST['emailPrefix'])&&isset($_POST['emailDomain'])&&isset($_POST['user_id'])&&isset($_POST['user_pw'])&&isset($_POST['confirmPassword']))    //isset: 변수가 null인지 아닌지 확인
 {
     //보안 mysqli_real_escape_string : 인젝션 공격을 막아줌
     $user_name = mysqli_real_escape_string($conn, $_POST['user_name']);
-    $email = $_POST['emailPrefix']."@".$_POST['emailDomain'];
+    $emailPrefix = $_POST['emailPrefix'];
+    $emailDomain = $_POST['emailDomain'];
+    $email = $emailPrefix . "@" . $emailDomain;
     $user_email = mysqli_real_escape_string($conn, $email);
     $user_id = mysqli_real_escape_string($conn, $_POST['user_id']);
-    $pass = mysqli_real_escape_string($conn, $_POST['pass']);
+    $pass = mysqli_real_escape_string($conn, $_POST['user_pw']);
     $confirmPassword = mysqli_real_escape_string($conn , $_POST['confirmPassword']);
    
     //가입 오류 체크
     $check_email = filter_var($user_email, FILTER_VALIDATE_EMAIL);
 
-    if($pass !== $confirmPassword) 
+    if($check_email === false)
+    {
+        echo "<script>
+        alert('이메일 형식이 올바르지 않습니다');
+        location.replace('signup_test.php');
+        </script>";
+    }
+    else if($pass !== $confirmPassword) 
     {
         echo "<script>
         alert('비밀번호가 일치하지 않습니다');
@@ -25,7 +34,7 @@ if(isset($_POST['user_name'])&&isset($_POST['emailPrefix'])&&isset($_POST['email
     else 
     {
         //비밀번호 암호화 
-        $user_pass = password_hash($pass, PASSWORD_DEFAULT);
+        $user_pw = password_hash($pass, PASSWORD_DEFAULT);
 
         //이메일, 아이디 중복 검사
         $sql_same_email = "SELECT * FROM users where user_email ='$user_email'";
@@ -41,7 +50,7 @@ if(isset($_POST['user_name'])&&isset($_POST['emailPrefix'])&&isset($_POST['email
         else 
         {
             //db로 정보를 넘김
-            $sql_save = "insert into users(user_name, user_email, user_id, user_pass) values('$user_name','$user_email','$user_id','$user_pass')";
+            $sql_save = "insert into users(user_name, user_email, user_id, user_pw) values('$user_name','$user_email','$user_id','$user_pw')";
             $result = mysqli_query($conn, $sql_save);
 
             if($result)
@@ -54,7 +63,7 @@ if(isset($_POST['user_name'])&&isset($_POST['emailPrefix'])&&isset($_POST['email
             {
                 $error_message = mysqli_error($conn);
                 echo "<script>
-                alert('가입에 실패하였습니다: $error_message');
+                alert('가입에 실패하였습니다');
                 location.replace('signup.html');
                 </script>";
             }
@@ -62,9 +71,9 @@ if(isset($_POST['user_name'])&&isset($_POST['emailPrefix'])&&isset($_POST['email
     }
 }
 else {
+    $error_message = mysqli_error($conn);
     echo "<script>
     alert('알 수 없는 오류가 발생하였습니다');
-    location.replace('signup.html');
     </script>";
 }
 

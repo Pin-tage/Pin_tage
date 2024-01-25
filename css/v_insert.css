@@ -92,6 +92,18 @@ main{
     border: 1px solid #c6c6c6;
 }
 
+#tag-location,
+#tag-style,
+#tag-brand,
+#tag-category {
+    margin-top: 10px;
+    width: 100%;
+}
+
+select option[value=""][disabled] {
+	display: none;
+}
+
 .input-name,
 .input-id,
 .input-guide,

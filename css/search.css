@@ -70,16 +70,16 @@ nav menu ul li {
 main{
     padding: 80px;
 }
-
 /*title*/
 .title {
     text-align: center;
     margin: 80px;
 }
-
 .filter{
     display: flex;
 }
+
+
 
 /*footer 시작*/
 footer {

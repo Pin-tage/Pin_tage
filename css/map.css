@@ -83,12 +83,36 @@ main{
 .filter{
     display: flex;
 }
+
 /* 지도 이미지 */
 .map-img{
     text-align: center; /* 지도 이미지 중앙 정렬 */
 }
 
+
 /* 해시태그 */
+.hashtag {
+    /* 스타일 */
+    display: inline-block;
+    padding: 5px 10px;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    /* 위치 */
+
+}
+.hashtag.active {
+    color: #fff; 
+    background-color: #FF47CB;
+    border-color: #FF47CB;
+}
+
+
+
+
 
 /* 결과 */
 #result{
@@ -97,12 +121,10 @@ main{
 
 /* 결과 페이지 탐색 */
 .Page-navigation{
-    text-align: center;
+    /* 센터, 푸터 위 고정 */
+    justify-content: center;
+    position: sticky;
 }
-.pagination{
-    justify-content: center;    /*가로 1자로 정렬*/
-}
-
 
 
 /*footer*/

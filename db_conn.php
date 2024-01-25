@@ -12,9 +12,9 @@
 
     $conn = mysqli_connect($dbhost, $dbid, $dbpw, $db, $dbport);
 
-    // if (!$conn) {
-    //     die("연결 실패: " . mysqli_connect_error());
-    // } else {
-    //     echo "연결 성공"."<br>";
-    // }
+    if (!$conn) {
+        die("연결 실패: " . mysqli_connect_error());
+    } else {
+        echo "연결 성공"."<br>";
+    }
 ?>

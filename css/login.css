@@ -133,6 +133,55 @@ form {
     /* margin-left: 80%; */
 }   
 
+/*footer 시작*/
+footer {
+    padding: 30px 150px 30px 150px;
+    border: solid 1px #c6c6c6;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-family: 'Cherry Bomb';
+    color: #c6c6c6;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.contributor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.jiwoo ul,
+.khyunji ul,
+.heeyoung ul,
+.nhyunji ul {
+    list-style: none;
+}
+
+.jiwoo li:nth-child(1),
+.khyunji li:nth-child(1),
+.heeyoung li:nth-child(1),
+.nhyunji li:nth-child(1) {
+    color: #7c7c7c;
+    font-weight: bold;
+}
+
+.jiwoo li,
+.khyunji li,
+.heeyoung li,
+.nhyunji li {
+    color: #c6c6c6;
+    margin-top: 5px;
+}
+
+.contributor a {
+    text-decoration: none; 
+    color: #c6c6c6;
+}
+
 
 
 

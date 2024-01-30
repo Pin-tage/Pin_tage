@@ -6,6 +6,7 @@
     <link rel="icon" href="./favicon.png"> <!--favicon-->
     <link href="https://fonts.googleapis.com/css?family=Cherry+Bomb" rel="stylesheet"> <!--상단 내비 폰트-->
     <link rel="stylesheet" href="./css/v_insert.css">
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZIGAYtiRTCkig_mGNXkoV4mnr6vzg3kk&libraries=places"></script>
     <title>Pin!tage</title>
 </head>
 <body>
@@ -53,10 +54,10 @@
                 </div>
 
                 <div class="input-location">
-                    <label for="time">매장 위치</label>
-                    <!--지도가 들어갈 부분-->
-                    <br>
-                </div>
+                    <label for="searchLocation">매장 위치</label>
+                    <input type="text" id="searchLocation" placeholder="검색하여 위치 선택">
+                    <div id="map"></div>
+                </div>                
 
                 <div class="input-image">
                     <label for="image">매장 사진</label>

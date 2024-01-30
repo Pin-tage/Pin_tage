@@ -1,56 +1,96 @@
 document.addEventListener('DOMContentLoaded', function () {
+    let map;
+    let marker;
 
-    document.querySelector('.img-button').addEventListener('click', function () {
-        document.getElementById('image').click();
-    });
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 37.5665, lng: 126.9780 },
+            zoom: 12
+        });
 
-    function previewImages(input) {
-        var previewContainer = document.getElementById('preview-container');
-        // 이전 미리보기 초기화하지 않고 기존 미리보기에 추가하기 위해 변경
+        const input = document.getElementById('searchLocation');
+        const searchBox = new google.maps.places.SearchBox(input);
 
-        var files = input.files;
-        for (var i = 0; i < files.length; i++) {
-            var reader = new FileReader();
-            var preview = document.createElement('img');
+        map.addListener('bounds_changed', function () {
+            searchBox.setBounds(map.getBounds());
+        });
 
-            reader.onload = function (e) {
-                var img = new Image();
-                img.src = e.target.result;
+        searchBox.addListener('places_changed', function () {
+            const places = searchBox.getPlaces();
 
-                img.onload = function () {
-                    var canvas = document.createElement('canvas');
-                    var ctx = canvas.getContext('2d');
+            if (places.length === 0) {
+                return;
+            }
 
-                    // 이미지 크기를 250*250으로 제한
-                    var width = 250;
-                    var height = 250;
+            // 이전 마커 지우기
+            if (marker) {
+                marker.setMap(null);
+            }
 
-                    // 실제 이미지 비율을 유지하면서 크기 조정
-                    if (img.width > img.height) {
-                        height = img.height * (width / img.width);
-                    } else {
-                        width = img.width * (height / img.height);
-                    }
+            // 선택한 장소에 새로운 마커 설정
+            marker = new google.maps.Marker({
+                map: map,
+                title: places[0].name,
+                position: places[0].geometry.location
+            });
 
-                    canvas.width = width;
-                    canvas.height = height;
+            // 주소 추출하여 데이터베이스에 저장할 수도 있습니다.
+            const selectedAddress = places[0].formatted_address;
+            console.log('선택한 주소:', selectedAddress);
+        });
 
-                    ctx.drawImage(img, 0, 0, width, height);
+        // 이미지 미리보기 관련 코드 추가
+        document.querySelector('.img-button').addEventListener('click', function () {
+            document.getElementById('image').click();
+        });
 
-                    preview.src = canvas.toDataURL('image/jpeg');
-                    // 각 이미지에 대한 미리보기를 리스트로 추가
-                    previewContainer.appendChild(preview.cloneNode(true));
+        function previewImages(input) {
+            var previewContainer = document.getElementById('preview-container');
+
+            var files = input.files;
+            for (var i = 0; i < files.length; i++) {
+                var reader = new FileReader();
+                var preview = document.createElement('img');
+
+                reader.onload = function (e) {
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var canvas = document.createElement('canvas');
+                        var ctx = canvas.getContext('2d');
+
+                        var width = 250;
+                        var height = 250;
+
+                        if (img.width > img.height) {
+                            height = img.height * (width / img.width);
+                        } else {
+                            width = img.width * (height / img.height);
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        preview.src = canvas.toDataURL('image/jpeg');
+                        previewContainer.appendChild(preview.cloneNode(true));
+                    };
                 };
-            };
 
-            if (files[i]) {
-                reader.readAsDataURL(files[i]);
+                if (files[i]) {
+                    reader.readAsDataURL(files[i]);
+                }
             }
         }
+
+        var fileInput = document.getElementById('image');
+        fileInput.addEventListener('change', function () {
+            previewImages(this);
+        });
     }
 
-    var fileInput = document.getElementById('image');
-    fileInput.addEventListener('change', function () {
-        previewImages(this);
-    });
+    // 페이지 로드 시 맵 초기화
+    google.maps.event.addDomListener(window, 'load', initMap);
 });

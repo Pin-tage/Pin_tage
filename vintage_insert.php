@@ -1,32 +1,53 @@
-<?php 
-    include('db_conn.php');
+<?php
+include('./db_conn.php');
 
-    if ($conn->connect_error) {
-        die("연결 실패: " . $conn->connect_error);
-    }
+// POST 데이터 가져오기
+$shop_name = $_POST['shop_name'] ?? '';
+$shop_guide = $_POST['shop_guide'] ?? '';
+$opening_time = $_POST['opening_time'] ?? '';
+$closing_time = $_POST['closing_time'] ?? '';
+$shop_location = $_POST['shop_location'] ?? ''; // 수정된 부분
+$tag_location = $_POST['tag_location'] ?? '';
+$tag_style = $_POST['tag_style'] ?? '';
+$tag_brand = $_POST['tag_brand'] ?? '';
+$tag_category = $_POST['tag_category'] ?? '';
+$price_min = $_POST['price_min'] ?? '';
+$price_max = $_POST['price_max'] ?? '';
 
-    // POST 요청에서 'textbox' 필드의 값을 가져옴
-    $shop_name = $_POST['shop_name'];
-    $shop_guide = $_POST['shop_guide'];
-    $opening_time = $_POST['opening_time'];
-    $closing_time = $_POST['closing_time'];
-    $shop_location = $_POST['shop_location'];
-    $tag_location = $_POST['tag_location'];
-    $tag_style = $_POST['tag_style'];
-    $tag_brand = $_POST['tag_brand'];
-    $tag_category = $_POST['tag_category'];
+// 이미지 파일 처리
+$shop_img_temp = $_FILES['image']['tmp_name'];
+$shop_img_name = $_FILES['image']['name'];
+$shop_img_path = "upload/" . $shop_img_name; // 저장될 경로 및 파일명
+
+// 파일 업로드
+if (move_uploaded_file($shop_img_temp, $shop_img_path)) {
+    // SQL 쿼리 작성
+    $sql = "INSERT INTO vintageshop (shop_name, shop_guide, opening_time, closing_time, shop_location, shop_img_path, tag_location, tag_style, tag_brand, tag_category, price_min, price_max) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
-    $sql = "INSERT INTO  vintageshop (shop_name, shop_guide, opening_time, closing_time, shop_location, tag_location, tag_style, tag_brand, tag_category) 
-    VALUES ('$shop_name', '$guide', '$time_start', '$time_end', '$Location', '$tag_location', '$tag_style', '$tag_brand', '$tag_category')";
+    // 쿼리 실행
+    $stmt = $conn->prepare($sql);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "데이터가 성공적으로 삽입되었습니다.";
+    // 쿼리 실행이 성공했는지 확인
+    if ($stmt) {
+        // bind_param 사용
+        $stmt->bind_param("ssssssssssii", $shop_name, $shop_guide, $opening_time, $closing_time, $shop_location, $shop_img_path, $tag_location, $tag_style, $tag_brand, $tag_category, $price_min, $price_max);
+        
+        // bind_param이 제대로 되었는지 확인
+        if ($stmt->execute()) {
+            echo "매장 정보가 성공적으로 등록되었습니다.";
+        } else {
+            // execute가 실패한 경우 오류 출력
+            echo "쿼리 실행 실패: " . $stmt->error;
+        }
     } else {
-        echo "데이터 삽입 오류: " . $conn->error;
+        // 쿼리 실행에 실패한 경우 오류 출력
+        echo "쿼리 준비 실패: " . $conn->error;
     }
+} else {
+    echo "파일 업로드 실패";
+}
 
-// 데이터베이스 연결 종료
+// 연결 종료
+$stmt->close();
 $conn->close();
-
-
 ?>

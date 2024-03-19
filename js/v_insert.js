@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             zoom: 12
         });
 
-        const input = document.getElementById('searchLocation');
+        const input = document.getElementById('shop_location');
         const searchBox = new google.maps.places.SearchBox(input);
 
         map.addListener('bounds_changed', function () {

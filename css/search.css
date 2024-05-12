@@ -79,6 +79,99 @@ main{
     display: flex;
 }
 
+/* 게시글 구현 css */
+.storeImg{
+    width: 450px;
+    height: auto; /* 가로세로 비율 유지 */
+}
+.post {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+  
+.post h2 {
+    margin-top: 0;
+}
+  
+.hashtags {
+    margin: 10px 0;
+}
+  
+.hashtags span {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+  
+.post p {
+    color: #333;
+ }
+
+ /* 게시글 별점 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+  
+.post {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+  
+.hashtags {
+    margin-bottom: 10px;
+}
+  
+.hashtags span {
+    margin-right: 10px;
+    color: #888;
+}
+  
+.rating {
+    font-size: 24px;
+}
+  
+.star {
+    color: #ccc;
+    cursor: pointer;
+}
+  
+.star.active, .star:hover {
+    color: #FF47CB;
+}
+
+.rating-star{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* 가격 */
+.yenImg{
+    width: 18px;
+    height: auto; /* 가로세로 비율 유지 */
+}
+.price {
+    font-size: 15px;
+    color: #888;
+    margin-top: 10px;
+}
 
 
 /*footer 시작*/
@@ -129,3 +222,4 @@ footer {
     text-decoration: none; 
     color: #c6c6c6;
 }
+

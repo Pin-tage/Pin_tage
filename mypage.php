@@ -1,3 +1,10 @@
+<?php 
+include('db_conn.php');
+session_start();
+
+// echo "<script>alert('User ID: " . $_SESSION['user_id'] . "');</script>" 세션 확인용
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +55,7 @@
 
     <main>
         <div class="title">
-            <h1>핀티지님</h1>
+            <h1><?php echo strtoupper($_SESSION['user_id']); ?>님</h1>
         </div>
     </main>
 

@@ -1,3 +1,6 @@
+<?php 
+session_start();
+include('db_conn.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,22 +29,21 @@
             </ul>
         </menu>
         <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
-        <?php if(isset($_SESSION['user_id']) && ($_SESSION['loggedin']) === true) : ?>
+        <?php if (isset($_SESSION['user_id']) && $_SESSION['loggedin'] === true ) { ?>
             <!-- 사용자가 로그인되어 있을 때는 로그아웃 버튼 표시 -->
-            <a href="index.html?logout=true">
+            <a href="login.php?logout=true">
                 <button type="button" class="logout-Btn">
-                     LOGOUT
+                    LOGOUT
                 </button>
             </a>
-        <?php else : ?>
+        <?php } else { ?>
             <!-- 사용자가 로그인되어 있지 않을 때는 로그인 버튼 표시 -->
             <a href="login.html">
                 <button type="button" class="login-Btn">
                     LOGIN
                 </button>
             </a>
-        <?php endif; ?>
-
+        <?php } ?>
 
     </nav>
 

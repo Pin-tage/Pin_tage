@@ -57,6 +57,7 @@ if(isset($_POST['user_name'])&&isset($_POST['emailPrefix'])&&isset($_POST['email
             {
                 echo "<script>
                 alert('가입이 성공적으로 완료되었습니다.');
+                location.replace('login.html');
                 </script>";
             }
             else 

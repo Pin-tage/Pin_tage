@@ -92,6 +92,12 @@ main{
     border: 1px solid #c6c6c6;
 }
 
+#map {
+    width: 775px;
+    height: 400px;
+    margin-top: 20px;
+}
+
 #tag-location,
 #tag-style,
 #tag-brand,

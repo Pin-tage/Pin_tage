@@ -66,6 +66,18 @@ nav menu ul li {
     text-decoration: none; /*밑줄없앰*/
 }
 
+.logout-Btn {
+    padding: 10px 20px 10px 20px;
+    margin-right: 75px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: #FF47CB;
+    color: white;
+    font-family: 'Cherry Bomb';
+    font-size: 18px;
+    text-decoration: none; /*밑줄없앰*/
+}
+
 /*main area 시작*/
 
 /*main1*/

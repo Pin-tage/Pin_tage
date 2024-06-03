@@ -1,0 +1,179 @@
+<?php 
+session_start();
+include('db_conn.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.png"> <!--favicon-->
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Bomb" rel="stylesheet"> <!--상단 내비 폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Sniglet:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Pin!tage</title>
+</head>
+<body>
+    <!--상단 nav-->
+    <nav>
+        <logo>
+            <a href="./index.html">
+                <img src="./assets/logo.png">
+            </a>   
+        </logo>
+        <menu>
+            <ul>
+                <li><a href="./index.html" class="top-nav">MAIN</a></li>
+                <li><a href="./search.html" class="top-nav">SEARCH</a></li>
+                <li><a href="./map.html" class="top-nav">PIN!MAP</a></li>
+                <li><a href="./mypage.html" class="top-nav">MYPAGE</a></li>
+            </ul>
+        </menu>
+        <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
+        <?php if (isset($_SESSION['user_id']) && $_SESSION['loggedin'] === true ) { ?>
+            <!-- 사용자가 로그인되어 있을 때는 로그아웃 버튼 표시 -->
+            <a href="login.php?logout=true">
+                <button type="button" class="logout-Btn">
+                    LOGOUT
+                </button>
+            </a>
+        <?php } else { ?>
+            <!-- 사용자가 로그인되어 있지 않을 때는 로그인 버튼 표시 -->
+            <a href="login.html">
+                <button type="button" class="login-Btn">
+                    LOGIN
+                </button>
+            </a>
+        <?php } ?>
+
+    </nav>
+
+    <!--메인 area-->
+    <main>
+        <!--main area 1-->
+        <div class="main1">
+            <h1>PIN<br>YOUR<br>VINTAGE!</h1>
+            <img src="./assets/main1-background.png">
+        </div>
+
+        <!--main area 2-->
+        <div class="main2">
+            <h1>캐치 프레이즈<br>설명 텍스트</h1>
+        </div>
+
+        <!--main area 3-->
+        <div class="main3">
+            <p>짧은 소개 문구 작성</p>
+            <h1>핀티지에서 만나보세요!</h1>
+            <!--자동 슬라이드-->
+            <div class="auto-slide">
+                <div class="img-box">
+                    <!--원본-->
+                    <div><img src="./assets/apc-icon.png"></div>
+                    <div><img src="./assets/asics-icon.png"></div>
+                    <div><img src="./assets/bape-icon.png"></div>
+                    <div><img src="./assets/beams-icon.png"></div>
+                    <div><img src="./assets/comde-icon.png"></div>
+                    <div><img src="./assets/gu-icon.png"></div>
+                    <div><img src="./assets/maison-icon.png"></div>
+                    <div><img src="./assets/onitsuka-icon.png"></div>
+                    <div><img src="./assets/porter-icon.png"></div>
+                    <div><img src="./assets/stussy-icon.png"></div>
+                    <div><img src="./assets/supreme-icon.png"></div>
+                    <div><img src="./assets/uniqlo-icon.png"></div>
+                    <div><img src="./assets/vivienne-icon.png"></div>
+                    <!--클론-->
+                    <div><img src="./assets/apc-icon.png"></div>
+                    <div><img src="./assets/asics-icon.png"></div>
+                    <div><img src="./assets/bape-icon.png"></div>
+                    <div><img src="./assets/beams-icon.png"></div>
+                    <div><img src="./assets/comde-icon.png"></div>
+                    <div><img src="./assets/gu-icon.png"></div>
+                    <div><img src="./assets/maison-icon.png"></div>
+                    <div><img src="./assets/onitsuka-icon.png"></div>
+                    <div><img src="./assets/porter-icon.png"></div>
+                    <div><img src="./assets/stussy-icon.png"></div>
+                    <div><img src="./assets/supreme-icon.png"></div>
+                    <div><img src="./assets/uniqlo-icon.png"></div>
+                    <div><img src="./assets/vivienne-icon.png"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--main area 4-->
+        <div class="main4">
+            <h1 class="main4-title">서비스 기능 소개</h1>
+            <div class="main4-box">
+
+                <div class="main4-box1">
+                    <div class="box1-1">
+                        <h1>기능</h1>
+                        <p>서비스 기능 설명</p>
+                    </div>
+                    <div class="box1-2">
+                        <h1>기능</h1>
+                        <p>서비스 기능 설명</p>
+                    </div>
+                </div>
+
+                <div class="main4-box2">
+                    <div class="box2-1">
+                        <h1>기능</h1>
+                        <p>서비스 기능 설명</p>
+                    </div>
+                    <div class="box2-2">
+                        <h1>기능</h1>
+                        <p>서비스 기능 설명</p>
+                    </div>
+                </div>
+
+            </div>
+    </main>
+
+    <footer>
+        <div class="contributor">
+            <div class="jiwoo">
+                <ul>
+                    <li>김지우</li>
+                    <li>📖 Backend Developer</li>
+                    <li>🛠️ VScode / Github</li>
+                    <li><a href="https://github.com/jiwoo1087">😺 깃허브</a></li>
+                    <li>📩 s2205@e-mirim.hs.kr</li>
+                </ul>
+            </div>
+            <div class="khyunji">
+                <ul>
+                    <li>김현지</li>
+                    <li>📖 FullStack Developer</li>
+                    <li>🛠️ VScode / FileZila / Github</li>
+                    <li><a href="https://github.com/de-quei">😺 깃허브</a></li>
+                    <li>📩 s2208@e-mirim.hs.kr</li>
+                </ul>
+            </div>
+            <div class="heeyoung">
+                <ul>
+                    <li>김희영</li>
+                    <li>📖 Frontend Developer</li>
+                    <li>🛠️ VScode / Github</li>
+                    <li><a href="https://github.com/gmldrnfl">😺 깃허브</a></li>
+                    <li>📩 w2225@e-mirim.hs.kr</li>
+                </ul>
+            </div>
+            <div class="nhyunji">
+                <ul>
+                    <li>노현지</li>
+                    <li>📖 Designer</li>
+                    <li>🛠️ Figma</li>
+                    <li><a href="https://www.instagram.com/shgusw1/">🩷인스타그램</a></li>
+                    <li>📩 d2204@e-mirim.hs.kr</li>
+                </ul>
+            </div>
+        </div>
+       
+        <div class="footer-nav">
+            <img src="./assets/logo2.png" style="width: 150px; margin-top: 20px;">
+            <h4>TEAM カピバラ</h4>
+        </div>
+    </footer>
+    
+</body>
+</html>

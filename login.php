@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 
 if(isset($_GET['logout'])){
     session_destroy();
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 
@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {        //이 메서드는 결과 집합의 행 수�
         $_SESSION['user_id'] = $user_id;
         $_SESSION['loggedin']= true;
         // 로그인 성공 메시지 출력 후 홈페이지로 리다이렉트
-        echo "<script>alert('로그인 성공'); location.replace('index.html');</script>";
+        echo "<script>alert('로그인 성공'); location.replace('index.php');</script>";
     } else {
         // 비밀번호가 일치하지 않는 경우 로그인 실패
         echo "<script>alert('아이디 또는 비밀번호가 올바르지 않습니다.'); window.history.back();</script>";

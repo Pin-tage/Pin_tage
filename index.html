@@ -27,20 +27,20 @@
         </menu>
         <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
         <?php if(isset($_SESSION['user_id']) && ($_SESSION['loggedin']) === true) : ?>
-    <!-- 사용자가 로그인되어 있을 때는 로그아웃 버튼 표시 -->
-    <a href="index.html?logout=true">
-        <button type="button" class="logout-Btn">
-            LOGOUT
-        </button>
-    </a>
-<?php else : ?>
-    <!-- 사용자가 로그인되어 있지 않을 때는 로그인 버튼 표시 -->
-    <a href="login.html">
-        <button type="button" class="login-Btn">
-            LOGIN
-        </button>
-    </a>
-<?php endif; ?>
+            <!-- 사용자가 로그인되어 있을 때는 로그아웃 버튼 표시 -->
+            <a href="index.html?logout=true">
+                <button type="button" class="logout-Btn">
+                     LOGOUT
+                </button>
+            </a>
+        <?php else : ?>
+            <!-- 사용자가 로그인되어 있지 않을 때는 로그인 버튼 표시 -->
+            <a href="login.html">
+                <button type="button" class="login-Btn">
+                    LOGIN
+                </button>
+            </a>
+        <?php endif; ?>
 
 
     </nav>

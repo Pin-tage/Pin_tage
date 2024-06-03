@@ -2,10 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
-     /* 산돌 */
-     font-family: Sandoll GothicNeoRound;
-     font-weight: 400;
 }
 
 /*Scroll Bar 기능은 살리되, 없애기*/
@@ -35,8 +31,6 @@ nav {
     width: 100%; 
     top: 0; 
     z-index: 1000;
-
-    list-style-type: none; /*앞에 점 없앰*/
 }
 
 nav logo img {
@@ -70,70 +64,115 @@ nav menu ul li {
     font-family: 'Cherry Bomb';
     font-size: 18px;
     text-decoration: none; /*밑줄없앰*/
-    /* cursor: pointer; */
 }
 
 /*main 시작*/
 main{
     padding: 80px;
 }
-
 /*title*/
 .title {
     text-align: center;
     margin: 80px;
-
-   
 }
 .filter{
     display: flex;
 }
 
-/* 지도 이미지 */
-.map-img{
-    text-align: center; /* 지도 이미지 중앙 정렬 */
-    margin-bottom: 20px;
+/* 게시글 구현 css */
+.storeImg{
+    width: 450px;
+    height: auto; /* 가로세로 비율 유지 */
 }
-
-
-/* 해시태그 */
-.hashtag-container{
-    /* 위치 정렬 */
-    position: absolute;
-    top: 1600px;
-    left: 150px;
-    margin-top: 70px;
-}
-.hashtag {
-    /* 스타일 */
-    display: inline-block;
-    padding: 5px 10px;
-    color: #000;
+.post {
     background-color: #fff;
-    border: 1px solid #000;
     border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-.hashtag.active {
-    /* 클릭시 스타일 */
-    color: #fff; 
-    background-color: #FF47CB;
-    border-color: #FF47CB;
-}
-
-/* 회색실선 */
-.grey-line {
-    border-top: 2px dashed #808080;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     width: 80%;
-    margin: 0 auto;
-    margin-top: 8%;
+    max-width: 500px;
+}
+  
+.post h2 {
+    margin-top: 0;
+}
+  
+.hashtags {
+    margin: 10px 0;
+}
+  
+.hashtags span {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+  
+.post p {
+    color: #333;
+ }
+
+ /* 게시글 별점 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+  
+.post {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+  
+.hashtags {
+    margin-bottom: 10px;
+}
+  
+.hashtags span {
+    margin-right: 10px;
+    color: #888;
+}
+  
+.rating {
+    font-size: 24px;
+}
+  
+.star {
+    color: #ccc;
+    cursor: pointer;
+}
+  
+.star.active, .star:hover {
+    color: #FF47CB;
 }
 
-/* 게시믈 css */
- .post {
+.rating-star{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #888;
+    margin-top: 10px;
+}
 
- }
+/* 가격 */
+.yenImg{
+    width: 18px;
+    height: auto; /* 가로세로 비율 유지 */
+}
+.price {
+    font-size: 15px;
+    color: #888;
+    margin-top: 10px;
+}
+  
 
 
 
@@ -185,3 +224,4 @@ footer {
     text-decoration: none; 
     color: #c6c6c6;
 }
+

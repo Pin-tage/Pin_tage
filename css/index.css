@@ -108,7 +108,7 @@ nav menu ul li {
 
 /* section-3 */
 .section-3 {
-    background: linear-gradient(to right, #FF47CB, #FF47CB 75%, white);
+    background: linear-gradient(to right, #FF47CB, #FF47CB 35%, white);
     padding: 20px; /* 필요에 따라 패딩 추가 */
 }
 

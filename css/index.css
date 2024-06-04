@@ -26,11 +26,6 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    /*고정*/
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    z-index: 1000;
 }
 
 nav logo img {
@@ -78,178 +73,35 @@ nav menu ul li {
     text-decoration: none; /*밑줄없앰*/
 }
 
-/*main area 시작*/
-
-/*main1*/
-main {
+/* section-2 */
+.section-2 {
     position: relative;
+    width: 100%;
 }
 
-.main1 {
-    background-color: #FF47CB;
-    color: white;
-    padding: 100px 0px 100px 100px;
-    display: flex;
-    position: relative;
-}
-
-.main1 img {
-    max-width: 100%;
-    height: auto;
-}
-
-.main1 h1{
+.container-2 {
     position: absolute;
-    top: 45%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Sniglet';
-    font-size: 120px;
-}
-
-/*main2*/
-.main2 h1 {
     text-align: center;
-    margin: 300px;
-}
-
-/*main3*/
-.main3 {
-    padding: 80px;
-    background-color: #FF47CB;
     color: white;
 }
 
-.auto-slide {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-}
-
-.img-box {
-    margin: 70px 0px 30px 0px;
-    display: flex;
-    width: 100%;
-    height: auto;
-    flex-wrap: nowrap;
-    animation: slideAnimation 15s linear infinite;
-}
-
-.img-box > div {
-    margin: 0px -1px 0px 0px;
-}
-
-.img-box div {
-    flex: 0 0 auto;
-}
-
-@keyframes slideAnimation {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(-190%, 0); 
-    }
-}
-
-.img-box img {
-    max-width: 80%;
-    height: auto;
-}
-
-/*main4*/
-.main4 {
-    padding: 80px;
-}
-
-.main4-title{
-    text-align: center;
-    margin: 40px;
-}
-
-.main4-box{
-    margin: 0 100px 0 100px;
-}
-
-.main4-box1 {
-    display: flex;
-    justify-content: center;
-}
-
-.main4-box2 { 
-    display: flex;
-    justify-content: center;
-}
-
-.box1-1,
-.box2-2
- {
-    width: 60%;
-    height: 300px;
-    background-color: #F5F5F5;
-    margin: 10px;
-    border-radius: 10px;
-    padding: 30px;
-}
-
-.box1-2,
-.box2-1 {
-    width: 800px;
-    height: 300px;
-    background-color: #F5F5F5;
-    margin: 10px;
-    border-radius: 10px;
-    padding: 30px;
-}
-
-/*footer 시작*/
-footer {
-    padding: 30px 150px 30px 150px;
-    border: solid 1px #c6c6c6;
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+.title-1 {
     font-family: 'Cherry Bomb';
-    color: #c6c6c6;
-    font-size: 30px;
-    margin-top: 50px;
+    font-size: 6.5em;
+    letter-spacing: 10px;
 }
 
-.contributor {
-    display: flex;
-    justify-content: space-between;
+.subtitle-1 {
+    margin-top: 40px;
+    font-size: 1.5em;
+    font-family: 'NanumSquareNeo';
 }
 
-.jiwoo ul,
-.khyunji ul,
-.heeyoung ul,
-.nhyunji ul {
-    list-style: none;
-}
-
-.jiwoo li:nth-child(1),
-.khyunji li:nth-child(1),
-.heeyoung li:nth-child(1),
-.nhyunji li:nth-child(1) {
-    color: #7c7c7c;
-    font-weight: bold;
-}
-
-.jiwoo li,
-.khyunji li,
-.heeyoung li,
-.nhyunji li {
-    color: #c6c6c6;
-    margin-top: 5px;
-}
-
-.contributor a {
-    text-decoration: none; 
-    color: #c6c6c6;
+.paragraph-1 {
+    margin-top: 25px;
+    font-family: 'NanumSquareNeo';
+    line-height: 28px;
 }

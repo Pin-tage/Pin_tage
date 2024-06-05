@@ -73,6 +73,11 @@ nav menu ul li {
     text-decoration: none; /*밑줄없앰*/
 }
 
+/* section-1 */
+.section-1 {
+    background: linear-gradient(to bottom, #FF47CB, #FF47CB 35%, white);
+}
+
 /* section-2 */
 .section-2 {
     position: relative;
@@ -108,7 +113,7 @@ nav menu ul li {
 
 /* section-3 */
 .section-3 {
-    background: linear-gradient(to right, #FF47CB, #FF47CB 75%, white);
+    background: linear-gradient(to right, #FF47CB, #FF47CB 35%, white);
     padding: 20px; /* 필요에 따라 패딩 추가 */
 }
 

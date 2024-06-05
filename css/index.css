@@ -73,6 +73,11 @@ nav menu ul li {
     text-decoration: none; /*밑줄없앰*/
 }
 
+/* section-1 */
+.section-1 {
+    background: linear-gradient(to bottom, #FF47CB, #FF47CB 35%, white);
+}
+
 /* section-2 */
 .section-2 {
     position: relative;

@@ -97,6 +97,17 @@ nav menu ul li {
     font-family: 'Cherry Bomb';
     font-size: 6.5em;
     letter-spacing: 10px;
+    position: relative;
+    animation: floatText 5s ease-in-out infinite; /* floatText 애니메이션 적용 */
+}
+
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* 텍스트를 위로 20px 이동 */
+    }
 }
 
 .subtitle-1 {

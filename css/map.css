@@ -13,62 +13,6 @@ body{
     display: none;
 }
 
-/*상단 내비게이션 바 시작*/
-nav {
-    /*스타일*/
-    padding: 25px;
-    color: #FF47CB;
-    font-family: 'Cherry Bomb';
-    font-size: 22px;
-    background-color: white;
-    /*배치*/
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    /*고정*/
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    z-index: 1000;
-
-    list-style-type: none; /*앞에 점 없앰*/
-}
-
-nav logo img {
-    max-width: 60%;
-    height: auto;
-    margin-left: 75px;
-}
-
-.top-nav {
-    text-decoration: none;
-    color: #FF47CB;
-}
-
-nav menu ul {
-    list-style: none;
-    display: flex;
-    font-size: 25px;
-}
-
-nav menu ul li {
-    margin: 0 40px 0 40px;
-}
-
-.login-Btn {
-    padding: 10px 20px 10px 20px;
-    margin-right: 75px;
-    border-radius: 10px;
-    border: 3px solid white;
-    background-color: #F8EFF5;
-    color: #FF47CB;
-    font-family: 'Cherry Bomb';
-    font-size: 18px;
-    text-decoration: none; /*밑줄없앰*/
-    /* cursor: pointer; */
-}
-
 /*main 시작*/
 main{
     padding: 80px;
@@ -78,58 +22,128 @@ main{
 .title {
     text-align: center;
     margin: 80px;
+    
+}
+h1 {
+    font-family: 'Cherry Bomb';
 }
 .filter{
     display: flex;
 }
 
 /* 지도 이미지 */
-.map-img{
-    text-align: center; /* 지도 이미지 중앙 정렬 */
-    margin-bottom: 20px;
+#hokkaido-img{
+    margin: 50px 328px 0 1230px;
 }
-
+#honshu-img{
+    margin: 51.51px 490px 0 635px;
+}
+#shikoku-img{
+    margin: -120px 1018px 0 698px;
+}
+#kyushu-img{
+    margin: -120px 1256.5px 120px 440px;
+}
 
 /* 해시태그 */
 .hashtag-container{
-    /* 위치 정렬 */
-    position: absolute;
-    top: 1600px;
-    left: 150px;
-    margin-top: 70px;
+    width: 1600px; 
+    margin: 40px auto 0 auto; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
 }
 .hashtag {
     /* 스타일 */
     display: inline-block;
     padding: 5px 10px;
-    color: #000;
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-.hashtag.active {
-    /* 클릭시 스타일 */
     color: #fff; 
     background-color: #FF47CB;
     border-color: #FF47CB;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 16px;
 }
+
 
 /* 회색실선 */
 .grey-line {
     border-top: 2px dashed #808080;
-    width: 80%;
+    width: 1600px;
     margin: 0 auto;
-    margin-top: 8%;
+
 }
 
-
-/* 결과 */
-#result{
-    text-align: center;
+/* 오프라인샵 */
+.offlineShop{
+    font-size: 28px; 
+    width: 1600px; 
+    margin: 20px auto 24px auto; 
+    display: flex; 
+}
+.shopCount{
+    color:#FF47CB; margin-left: 8px;
 }
 
+/* 결과  스타일*/
+.heart{
+    background-color: #fff; 
+    border-radius: 100%; 
+    width: 40px; height: 40px; 
+    position: absolute; 
+    margin: 30px 36px 458px 444px; 
+    text-align: center; 
+    align-items: center; 
+    display: flex; 
+    justify-content: center;
+}
+
+.albumContainer{
+    width: 1600px; 
+    display: flex; 
+    justify-content: center; 
+    display: flex; 
+    gap: 20px; 
+    margin: 0 auto;
+}
+.card{
+    width: 520px; 
+    height: 528px; 
+    background-color: #fff !important; 
+    border-radius: 24px !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: noen;
+}
+.cardImg{
+    width:488px; height:320px; 
+    background-color: aliceblue; 
+    border-radius: 16px; 
+    margin: 14px auto;
+}
+.cardHashtag{
+    display: inline-block; 
+    border-radius: 8px;
+     background-color: aliceblue; 
+    font-size: 16px; max-width: max-content; 
+    padding: 4px 8px; margin: 8px 6px 0 0px;
+}
+
+.cardHashtag_container{
+    width:488px; margin-left: 28px; 
+}
+.cardTitle{
+    font-size: 32px; margin: 14px 0 0 28px;
+}
+.price{
+    display: flex; margin-left: 28px; align-items: center; margin-top: 30px;
+}
+.price>p{
+    font-size: 20px; margin: -4px 0 0 4px;
+
+}
+.cardHashtag_container>.cardHashtag{
+    color: #4a4a4a;
+}
 
 /* 페이지 네비게이션 스타일 */
 .Page-navigation {
@@ -183,7 +197,8 @@ footer {
     font-family: 'Cherry Bomb';
     color: #c6c6c6;
     font-size: 30px;
-    margin-top: 50px;
+    width: 1590px;
+    margin: 50px auto 0 auto;
 }
 
 .contributor {
@@ -194,6 +209,8 @@ footer {
 .jiwoo ul,
 .khyunji ul,
 .heeyoung ul,
+.goeun ul,
+.hyobeen ul,
 .nhyunji ul {
     list-style: none;
 }
@@ -201,6 +218,8 @@ footer {
 .jiwoo li:nth-child(1),
 .khyunji li:nth-child(1),
 .heeyoung li:nth-child(1),
+.goeun li:nth-child(1),
+.hyobeen li:nth-child(1),
 .nhyunji li:nth-child(1) {
     color: #7c7c7c;
     font-weight: bold;
@@ -209,12 +228,43 @@ footer {
 .jiwoo li,
 .khyunji li,
 .heeyoung li,
+.goeun li,
+.hyobeen li,
 .nhyunji li {
     color: #c6c6c6;
     margin-top: 5px;
+    
 }
 
 .contributor a {
     text-decoration: none; 
     color: #c6c6c6;
 }
+
+
+
+
+/* 종이 말리는 효과 */
+.corner-paper-curl {
+    display: block;
+    position: absolute;
+    bottom: -13px;
+    right: -8px;
+    width: 80px;
+    height: 80px;
+    background: url(/assets/corner.png) no-repeat 50% 50% / contain;
+    transform: scale(0, 0);
+    transform-origin: 100% 100%;
+    animation: ani_papercurl .5s ease-out 1s 1 normal forwards;
+}
+
+.card:hover .corner-paper-curl {
+    animation: ani_papercurl_hover .4s ease-out 1 forwards;
+}
+
+@keyframes ani_papercurl_hover {
+    to {
+        transform: scale(1, 1);
+    }
+}
+

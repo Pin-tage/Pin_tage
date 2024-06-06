@@ -47,29 +47,49 @@
     </nav>
 
     <main>
-        <div class="title">
+        <section class="search">
             <h1>검색</h1>
-            <p style="margin: 10px;">필터를 설정해 나에게 딱 맞는 매장을 찾아보세요. </p>
-        </div>
+            <p>필터를 설정해 나에게 딱 맞는 매장을 찾아보세요.</p>
+            <div class="filters">
+                <span >검색 필터</span>
+                <span>위치</span>
+                <span>스타일</span>
+                <span>브랜드</span>
+                <span>종류</span>
+                <span>가격대</span>
+                <span class="result-count">검색 결과 7개</span>
+            </div>
+            <hr class="dashed-line">
+        </section>
+
+        <section class="results">
+
+            <h2>오프라인 샵 <span>(23)</span></h2>
+            
+            <div class="post">
+                <img src="./Mask group.png" class="storeImg">
+                <h3>2nd STREET</h3>
+                <div class="hashtags">
+                  <span>#오사카</span>
+                  <span>#도쿄</span>            
+                </div>  
+                <div class="rating">
+                    <span class="star" onclick="rate(1)">&#9733;</span>
+                    <span class="star" onclick="rate(2)">&#9733;</span>
+                    <span class="star" onclick="rate(3)">&#9733;</span>
+                    <span class="star" onclick="rate(4)">&#9733;</span>
+                    <span class="star" onclick="rate(5)">&#9733;</span>
+                    <span class="rating-star">3.0</span>
+                </div>
+                <div class="price">
+                    <img src="./akar-icons_coin.png" class="yenImg">
+                    <span>500 ~ 10000¥</span>
+                </div>
+            </div>
+
+        </section>
     </main>
 
-
-    <!-- 게시물  -->
-    <div class="post">
-        <div class="card-container">
-            <div class="card">
-                <div class="card-heart"></div>
-                <img src="Mask group.png" alt="2nd STREET">
-                <div class="card-title">2nd STREET</div>
-                <div class="hashtags">#오사카</div>
-                <div class="card-rating">Rating: ★ 3.0</div>
-                <div class="card-price">500 ~ 10,000 ¥</div>
-            </div>
-        </div>
-    </div>
-    
-
- 
     
     <!-- 푸터 -->
     <footer>

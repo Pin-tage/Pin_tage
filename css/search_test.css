@@ -1,3 +1,7 @@
+:root {
+    --chery-color: #FF47CB;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -17,7 +21,7 @@ body{
 nav {
     /*스타일*/
     padding: 25px;
-    color: #FF47CB;
+    color: var(--chery-color);
     font-family: 'Cherry Bomb';
     font-size: 22px;
     background-color: white;
@@ -28,8 +32,9 @@ nav {
     align-items: center;
     /*고정*/
     position: fixed; 
-    width: 100%; 
+    width: 100%;
     top: 0; 
+    left: 0;
     z-index: 1000;
 }
 
@@ -41,7 +46,7 @@ nav logo img {
 
 .top-nav {
     text-decoration: none;
-    color: #FF47CB;
+    color: var(--chery-color);
 }
 
 nav menu ul {
@@ -54,13 +59,17 @@ nav menu ul li {
     margin: 0 40px 0 40px;
 }
 
+.nav-element{
+    opacity: 0.5;
+}
+
 .login-Btn {
     padding: 10px 20px 10px 20px;
     margin-right: 75px;
     border-radius: 10px;
     border: 3px solid white;
     background-color: #F8EFF5;
-    color: #FF47CB;
+    color: var(--chery-color);
     font-family: 'Cherry Bomb';
     font-size: 18px;
     text-decoration: none; /*밑줄없앰*/
@@ -69,32 +78,85 @@ nav menu ul li {
 /*main 시작*/
 main{
     padding: 80px;
+    padding-top: 100px;
 }
+
 /*title*/
 .title {
     text-align: center;
     margin: 80px;
 }
-.filter{
+.filters{
     display: flex;
+    justify-content: space-between;
+    border-bottom: dashed 3px gray;
 }
+
+.filters button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.filters button:hover {
+    color: white;
+    background-color: black;
+    transition: background-color 1s;
+}
+.result-count {
+    color: var(--chery-color);
+    font-weight: bold;
+}
+.brandshop-box{
+    margin-bottom: 10px;
+}
+
+.offline-shop {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.offline-shop > span {
+    color: var(--chery-color);
+}
+
+
 
 /* 게시글 구현 css */
 .storeImg{
-    width: 450px;
+    width: 100%;
     height: auto; /* 가로세로 비율 유지 */
 }
+
+.post-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
 .post {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 80%;
-    max-width: 500px;
+    box-sizing: border-box;
+    position: relative;
 }
+
   
 .post h2 {
     margin-top: 0;
+}
+
+
+.post .like-btn {
+    z-index: 10;
+    background-color: white;
+    padding: 10px;
+    border-radius: 100%;
+    position: absolute;
+    top: 6%;
+    right: 6%;
 }
   
 .hashtags {
@@ -103,11 +165,17 @@ main{
   
 .hashtags span {
     background-color: #f0f0f0;
-    color: #555;
+    color: #888;
     padding: 5px 10px;
     border-radius: 15px;
     margin-right: 5px;
     font-size: 0.9em;
+}
+
+.bookmark{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
   
 .post p {
@@ -115,12 +183,6 @@ main{
  }
 
  /* 게시글 별점 */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
-  
 .post {
     background-color: #fff;
     border-radius: 10px;
@@ -136,11 +198,7 @@ h1 {
 .hashtags {
     margin-bottom: 10px;
 }
-  
-.hashtags span {
-    margin-right: 10px;
-    color: #888;
-}
+
   
 .rating {
     font-size: 24px;

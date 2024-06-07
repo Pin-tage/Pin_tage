@@ -7,6 +7,7 @@
 /*Scroll Bar 기능은 살리되, 없애기*/
 body{
     -ms-overflow-style: none;
+    padding: 0;
 }
     
 ::-webkit-scrollbar {

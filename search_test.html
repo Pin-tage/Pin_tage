@@ -18,10 +18,10 @@
         </logo>
         <menu>
             <ul>
-                <li><a href="./index.html" class="top-nav">MAIN</a></li>
+                <li class="nav-element"><a href="./index.html" class="top-nav">MAIN</a></li>
                 <li><a href="./search_test.html" class="top-nav">SEARCH</a></li>
-                <li><a href="./map.html" class="top-nav">PIN!MAP</a></li>
-                <li>MYPAGE</li>
+                <li class="nav-element"><a href="./map.html" class="top-nav">PIN!MAP</a></li>
+                <li class="nav-element">MY</li>
             </ul>
         </menu>
         <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
@@ -35,37 +35,141 @@
     <!-- 상단 글 -->
     <main>
         <div class="title">
-            <h1>검색</h1>
+            <h1 class="">검색</h1>
             <p style="margin: 10px;">필터를 설정해 나에게 딱 맞는 매장을 찾아보세요.</p>
         </div>
         <div class="brandshop-box">
+
+            <section class="search">
+                <div class="filters">
+                    <div>
+                        <button>검색 필터</button>
+                        <button>위치</button>
+                        <button>스타일</button>
+                        <button>브랜드</button> 
+                        <button>종류</button>
+                        <button>가격대</button>
+                    </div>
+                    <p class="result">검색 결과 <span class="result-count">7개</span></p>
+                </div>
+            </section>
         </div>
-    </main>
+        <p class="offline-shop">오프라인샵 <span>(23)</span></p>
 
     <!-- 게시글 구현 -->
-    <div class="post">
-        <img src="./Mask group.png" class="storeImg">
-        <h3>2nd STREET</h3>
-        <div class="hashtags">
-          <span>#오사카</span>
-          <span>#도쿄</span>            
+    <div class="post-container">
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+                <span class="like-btn"><img src="./upload/bxs-heart.svg.svg"></span>
+            </img>
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+            <div class="rating">
+                <span class="star" onclick="rate(1)">&#9733;</span>
+                <span class="star" onclick="rate(2)">&#9733;</span>
+                <span class="star" onclick="rate(3)">&#9733;</span>
+                <span class="star" onclick="rate(4)">&#9733;</span>
+                <span class="star" onclick="rate(5)">&#9733;</span>
+                <span class="rating-star">3.0</span>
+            </div>
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+            </div>
+
+            <img src="Vector 6.png" class="bookmark">
         </div>
-        <div class="rating">
-            <span class="star" onclick="rate(1)">&#9733;</span>
-            <span class="star" onclick="rate(2)">&#9733;</span>
-            <span class="star" onclick="rate(3)">&#9733;</span>
-            <span class="star" onclick="rate(4)">&#9733;</span>
-            <span class="star" onclick="rate(5)">&#9733;</span>
-            <span class="rating-star">3.0</span>
+
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+            <div class="rating">
+                <span class="star" onclick="rate(1)">&#9733;</span>
+                <span class="star" onclick="rate(2)">&#9733;</span>
+                <span class="star" onclick="rate(3)">&#9733;</span>
+                <span class="star" onclick="rate(4)">&#9733;</span>
+                <span class="star" onclick="rate(5)">&#9733;</span>
+                <span class="rating-star">3.0</span>
+            </div>
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+            </div>
         </div>
-        <div class="price">
-            <img src="./akar-icons_coin.png" class="yenImg">
-            <span>500 ~ 10000¥</span>
+
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+            <div class="rating">
+                <span class="star" onclick="rate(1)">&#9733;</span>
+                <span class="star" onclick="rate(2)">&#9733;</span>
+                <span class="star" onclick="rate(3)">&#9733;</span>
+                <span class="star" onclick="rate(4)">&#9733;</span>
+                <span class="star" onclick="rate(5)">&#9733;</span>
+                <span class="rating-star">3.0</span>
+            </div>
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+            </div>
         </div>
+
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+            <div class="rating">
+                <span class="star" onclick="rate(1)">&#9733;</span>
+                <span class="star" onclick="rate(2)">&#9733;</span>
+                <span class="star" onclick="rate(3)">&#9733;</span>
+                <span class="star" onclick="rate(4)">&#9733;</span>
+                <span class="star" onclick="rate(5)">&#9733;</span>
+                <span class="rating-star">3.0</span>
+            </div>
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+            </div>
+        </div>
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+            <div class="rating">
+                <span class="star" onclick="rate(1)">&#9733;</span>
+                <span class="star" onclick="rate(2)">&#9733;</span>
+                <span class="star" onclick="rate(3)">&#9733;</span>
+                <span class="star" onclick="rate(4)">&#9733;</span>
+                <span class="star" onclick="rate(5)">&#9733;</span>
+                <span class="rating-star">3.0</span>
+            </div>
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+            </div>
+        </div>
+        
+
+        
     </div>
-
-    
-
+    </main>
 
     <!-- 푸터 -->
     <footer>

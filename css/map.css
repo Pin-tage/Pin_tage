@@ -21,11 +21,12 @@ main{
 /*title*/
 .title {
     text-align: center;
-    margin: 80px;
+    margin: 80px auto 50px auto;
     
 }
 h1 {
     font-family: 'Cherry Bomb';
+    font-size: 36px;
 }
 .filter{
     display: flex;
@@ -33,16 +34,20 @@ h1 {
 
 /* 지도 이미지 */
 #hokkaido-img{
-    margin: 0 430px 0 1202.44px; 
+    margin: 0 484px 0 1170.53px;
+    width: 265.47; height: 211.05;
 }
 #honshu-img{
-    margin: 25.51px 573.02px 0 725.13px;
+    margin: 25.51px 616.03px 0 729.9px;
+    width: 574.07; height: 408.36;
 }
 #shikoku-img{
-    margin: -75px 695.66px 0 754px;
+    margin: -75px 729.25px 0 756.55px;
+    width: 434.19; height: 157.35;
 }  
 #kyushu-img{
-    margin: -155px 1207.36px 80px 553px;
+    margin: -155px 1201.63px 40px 571px;
+    width: 147.37; height: 162.18;
 } 
 
 /* 해시태그 */

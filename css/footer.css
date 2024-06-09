@@ -1,0 +1,58 @@
+/*footer 시작*/
+footer {
+    padding: 30px 150px;
+    border-top: solid 1px #c6c6c6;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-family: 'Cherry Bomb';
+    color: #c6c6c6;
+    font-size: 30px;
+    width: 1590px;
+    margin: 50px auto 0 auto;
+}
+
+.contributor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.jiwoo ul,
+.khyunji ul,
+.heeyoung ul,
+.goeun ul,
+.hyobeen ul,
+.nhyunji ul {
+    list-style: none;
+}
+
+.jiwoo li:nth-child(1),
+.khyunji li:nth-child(1),
+.heeyoung li:nth-child(1),
+.goeun li:nth-child(1),
+.hyobeen li:nth-child(1),
+.nhyunji li:nth-child(1) {
+    color: #7c7c7c;
+    font-weight: bold;
+}
+
+.jiwoo li,
+.khyunji li,
+.heeyoung li,
+.goeun li,
+.hyobeen li,
+.nhyunji li {
+    color: #c6c6c6;
+    margin-top: 5px;
+    
+}
+
+.contributor a {
+    text-decoration: none; 
+    color: #c6c6c6;
+}
+
+

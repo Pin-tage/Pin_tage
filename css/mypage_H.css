@@ -1,0 +1,65 @@
+/* 이미지, 닉네임 */
+main > img {
+    margin: 276px auto 0 auto;
+}
+main h2 {
+    font-size: 36px;
+    margin-top: 24px;
+    text-align: center;
+}
+
+/* 폴더컨테이너*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.folderContainer {
+    width: 1600px;
+    height: 1200px;
+}
+/* 폴더 */
+.tab{
+    width: 800px;
+    height: 72px;
+    border-radius: 24px 24px 0 0;
+    margin-top: 120px;
+    background-color: #FCFCFC;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+
+}
+.tabConnection{
+    width: 799px; 
+    height: 30px; position: absolute; 
+    background-color: #fcfcfc; 
+    margin-top: 179px;
+    z-index: 2;
+    margin-left: 0.2px;
+}
+.tab:nth-child(2){
+    margin-left: 800px;
+    width: 800px;
+    background-color: #EBEBEB;
+    color: #C6C6C6;
+}
+.folder {
+    width: 1600px;
+    height: 1128px;
+    margin-top: 192px;
+    background-color: #fcfcfc;
+    border-radius: 0 24px 24px 24px;
+    margin-bottom: 400px;
+    box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab>p{
+    color: #FF47CB;
+    text-align: center;
+}
+
+/* 푸터 */
+footer{
+    margin-top: 300px;
+}

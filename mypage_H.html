@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAP</title>
-    <link rel="stylesheet" href="./css/map.css">
+    <title>MYPAGE</title>
+    <link rel="stylesheet" href="./css/mypage_H.css">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/footer.css">
 
@@ -22,12 +22,6 @@
 
     <!--favicon-->
     <link rel="icon" href="./favicon.png"> 
-
-    <style>
-        .hashtag {
-            display: none;
-        }
-    </style>
 
 </head>
 <body>
@@ -54,94 +48,18 @@
             </a>
         </button>
     </nav>
+
    <!--메인-->
-    <main>
-        <div class="title">
-            <h1>지도</h1>
-            <p style="margin: 10px;">핀으로 설정한 매장을 간편하게 모아 보세요.</p>
-        </div> 
-        <div class="brandshop-box">
-            
-        </div>
-        
-            <!-- 지도 이미지 -->
-            <div class="map-img" style="margin-left: -100px;">
-                <img id="hokkaido-img" src="./assets/Hokkaido_off.png" alt="" >
-                <img id="honshu-img" src="./assets/Honshu_off.png" alt="">
-                <img id="shikoku-img" src="./assets/Shikoku_off.png" alt="">
-                <img id="kyushu-img" src="./assets/Kyushu_off.png" alt="">
-            </div>
-        
-            <!-- 해시태그 -->
-            <div class="hashtag-container">
-                <div>
-                    <span class="hashtag" id="hokkaido-hashtag">#훗카이도</span>
-                    <span class="hashtag" id="honshu-hashtag">#혼슈</span>
-                    <span class="hashtag" id="shikoku-hashtag">#시코쿠</span>
-                    <span class="hashtag" id="kyushu-hashtag">#규슈</span>
-                    
-                </div>
-                <div style="text-align: right;">
-                    <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">30개</span></span>
-                </div>
-                
-            </div>
-            
-            <!-- 회색 점선 -->
-            <br>
-            <div class="grey-line"></div> <br>
-
-            <!-- 오프라인샵 -->
-            <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
-        
-            <!-- 결과 -->
-            <div class="albumContainer">
-                <div class="card">
-                    <div class="heart">
-                        <i class="bi bi-heart-fill" style="color: red;"></i>
-                    </div>                    
-                    <div class="corner-paper-curl"></div>                   
-                    <div class="cardImg"><img src="" alt=""></div>
-                    <p class="cardTitle">2nd STREET</p>
-                    <div class="cardHashtag_container">
-                        <div class="cardHashtag">#오사카</div>
-                        <div class="cardHashtag">#도쿄</div>
-                        <div class="cardHashtag">#스트릿</div>
-                    </div>
-                    <div class="price"><img src="./akar-icons_coin.png" alt="" ><p>500 ~ 15,000¥</p></div>
-                </div>
-                <div class="card">
-                    <div class="heart">
-                        <i class="bi bi-heart-fill" style="color: red;"></i>
-                    </div>
-                    <div class="corner-paper-curl"></div>                   
-                    <div class="cardImg"><img src="" alt=""></div>
-                    <p class="cardTitle">WEGO</p>
-                    <div class="cardHashtag_container">
-                        <div class="cardHashtag">#신주쿠</div>
-                        <div class="cardHashtag">#도쿄</div>
-                        <div class="cardHashtag">#스트릿</div>
-                    </div>
-                    <div class="price"><img src="./akar-icons_coin.png" alt="" ><p>1,000 ~ 4,500¥</p></div>
-                </div>
-                <div class="card">
-                    <div class="heart">
-                        <i class="bi bi-heart-fill" style="color: red;"></i>
-                    </div> 
-                    <div class="corner-paper-curl"></div>
-                    <div class="cardImg"><img src="" alt=""></div>
-                    <p class="cardTitle">SOU • SOU 타비</p>
-                    <div class="cardHashtag_container">
-                        <div class="cardHashtag">#오사카</div>
-                        <div class="cardHashtag">#교토</div>
-                        <div class="cardHashtag">#스트릿</div>
-                    </div>
-                    <div class="price"><img src="./akar-icons_coin.png" alt=""><p>500 ~ 10,000¥</p></div>
-                </div>
-            </div>
-
-        </div>
-    </main>
+   <main>
+    <img src="/assets/circle.png" alt="">
+    <h2>SAUJA</h2>
+    <div class="folderContainer">
+        <div class="tabConnection"></div>
+        <div class="tab"><p>내가 등록한 매장</p></div>
+        <div class="tab"><p>내가 등록한 후기</p></div>
+        <div class="folder"></div>
+    </div>
+   </main>
 
     <!-- 푸터 -->
     <footer>
@@ -208,6 +126,31 @@
         </div>
     </footer>
 
-    <script src="./js/map.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll(".tab");
+    const tabConnection = document.querySelector(".tabConnection");
+    
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", function() {
+            tabs.forEach(tab => {
+                tab.style.backgroundColor = "#EBEBEB";
+            });
+
+            if (index < tabs.length - 1) {
+                tabs[index].style.backgroundColor = "#FCFCFC";
+                tabs[index + 1].style.backgroundColor = "#EBEBEB";
+                tabConnection.style.marginLeft = "801.5px";
+            } else {
+                tabs[index].style.backgroundColor = "#FCFCFC";
+                tabs[0].style.backgroundColor = "#EBEBEB";
+                tabConnection.style.marginLeft = "0";
+            }
+        });
+    });
+});
+
+    </script>
+
 </body>
 </html>

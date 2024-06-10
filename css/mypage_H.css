@@ -1,26 +1,18 @@
-/* 이미지, 닉네임 */
-main > img {
-    margin: 276px auto 0 auto;
-}
-main h2 {
-    font-size: 36px;
-    margin-top: 24px;
-    text-align: center;
-}
-
-/* 폴더컨테이너*/
+/* 폴더컨테이너 */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 276px;
 }
 
 .folderContainer {
     width: 1600px;
     height: 1200px;
 }
+
 /* 폴더 */
-.tab{
+.tab {
     width: 800px;
     height: 72px;
     border-radius: 24px 24px 0 0;
@@ -28,38 +20,168 @@ main {
     background-color: #FCFCFC;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
     position: absolute;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.tabConnection{
-    width: 799px; 
-    height: 30px; position: absolute; 
-    background-color: #fcfcfc; 
+
+.tabConnection {
+    width: 799px;
+    height: 30px;
+    position: absolute;
+    background-color: #FCFCFC;
     margin-top: 179px;
     z-index: 2;
     margin-left: 0.2px;
 }
-.tab:nth-child(2){
+
+.tab:nth-child(2) {
     margin-left: 800px;
     width: 800px;
     background-color: #EBEBEB;
-    color: #C6C6C6;
 }
-.folder {
+
+.folder, .folder2 {
     width: 1600px;
     height: 1128px;
     margin-top: 192px;
-    background-color: #fcfcfc;
-    border-radius: 0 24px 24px 24px;
+    background-color: #FCFCFC;
+    border-radius: 0 0 24px 24px;
     margin-bottom: 400px;
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tab>p{
+.tab > p {
     color: #FF47CB;
+    font-size: 24px;
     text-align: center;
+    margin: 0; /* Ensure there is no default margin */
 }
 
+.tab:nth-child(2) > p {
+    color: #C6C6C6;
+}
+
+/* 결과  스타일*/
+.albumContainer{
+    width: 1600px; 
+    display: flex; 
+    justify-content: center; 
+    position: absolute;
+    gap: 20px; 
+    margin: 0 auto;
+    margin-top: 26px;
+}
+#albumContainer2{
+    width: 1600px; 
+    display: flex; 
+    justify-content: center; 
+    position: absolute;
+    gap: 20px; 
+    margin: 0 auto;
+    margin-top: 578px !important;
+}
+.card{
+    width: 506px; 
+    height: 528px; 
+    background-color: #fff !important; 
+    border-radius: 24px !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: noen;
+}
+.cardImg{
+    width:474px; height:320px; 
+    background-color: aliceblue; 
+    border-radius: 16px; 
+    margin: 14px auto;
+}
+.cardHashtag, .reviewHashtag{
+    display: inline-block; 
+    border-radius: 8px;
+     background-color: aliceblue; 
+    font-size: 16px; max-width: max-content; 
+    padding: 4px 8px; margin: 8px 6px 0 0px;
+}
+
+.cardHashtag_container, .reviewHashtag_container{
+    width:488px; margin-left: 28px; 
+}
+.cardTitle, .reviewTitle{
+    font-size: 32px; margin: 14px 0 0 28px;
+}
+.price{
+    display: flex; margin-left: 28px; align-items: center; margin-top: 27px;
+}
+.price>p{
+    font-size: 20px; margin: -4px 0 0 4px;
+
+}
+.cardHashtag_container>.cardHashtag{
+    color: #4a4a4a;
+}
+
+
+
+
+/* 종이 말리는 효과 */
+.corner-paper-curl {
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    right: -9px;
+    width: 80px;
+    height: 80px;
+    background: url(/assets/Group\ 1108.png) no-repeat 50% 50% / contain;
+    transform: scale(0, 0);
+    transform-origin: 100% 100%;
+    animation: ani_papercurl .5s ease-out 1s 1 normal forwards;
+}
+
+.card:hover .corner-paper-curl {
+    animation: ani_papercurl_hover .4s ease-out 1 forwards;
+}
+
+@keyframes ani_papercurl_hover {
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+/* 리뷰 스타일 */
+.reviewContainer{
+    width: 1600px; height: 800px;
+    position: absolute;
+}
+.review{
+    width: 1552px; height: 240px; border-radius: 24px; background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    margin: 36.22px auto -5px auto;
+    padding-left: 15px;
+    
+}
+.reviewTitle{
+    padding-top: 25px;
+    font-size: 36px;
+}
+.reviewDate{
+}
+.reviewDate>p{
+    font-size: 22px;
+    color: #C6C6C6;
+    padding-left: 32px;
+    margin-top: 18px;
+    margin-bottom: 10px !important;
+    
+}
+.reviewText>p{
+    padding-left: 30px;
+    font-size: 24px;
+    color: #7C7C7C;
+}
+
+
+
 /* 푸터 */
-footer{
+footer {
     margin-top: 300px;
 }

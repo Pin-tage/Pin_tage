@@ -32,7 +32,7 @@
 </head>
 <body>
 
-    <? php
+    <?php
 
         include('db_conn.php');
 
@@ -41,7 +41,7 @@
             die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
         }
 
-        $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, price_min, price_max FROM vintageshop";
+        $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
         $result = $conn->query($sql); // 쿼리 실행
 
         if (!$result) {
@@ -112,8 +112,7 @@
             <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
         
             <!-- 결과 -->
-            <?php 
-            if(isset($result)) {
+            <?php
                 if($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) { ?>
                         <div class="card">
@@ -128,17 +127,13 @@
                                 <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
                                 <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
                             </div>
-                            <div class="price"><img src="./akar-icons_coin.png" alt=""><p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p></div>
+                            <div class="price"><img src="<?php echo $row["shop_img_path"]; ?>" alt=""><p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p></div>
                         </div> 
                     <?php }
                 } else {
                     // 결과가 없을 때 처리할 코드를 여기에 추가합니다.
                     echo "<p>결과가 없습니다.</p>";
                 }
-            } else {
-                // $result가 정의되지 않은 경우
-                echo "<p>쿼리 결과를 가져오지 못했습니다.</p>";
-            }
             ?>
             
                 <!-- <div class="card">

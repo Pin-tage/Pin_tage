@@ -32,6 +32,23 @@
 </head>
 <body>
 
+    <? php
+
+        include('db_conn.php');
+
+        // 데이터베이스 연결 오류 확인
+        if ($conn->connect_error) {
+            die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
+        }
+
+        $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, price_min, price_max FROM vintageshop";
+        $result = $conn->query($sql); // 쿼리 실행
+
+        if (!$result) {
+            die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
+        }
+    ?>
+
     <!--상단 nav-->
     <nav>
         <logo>
@@ -95,22 +112,36 @@
             <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
         
             <!-- 결과 -->
-            <div class="albumContainer">
-                <div class="card">
-                    <div class="heart">
-                        <i class="bi bi-heart-fill" style="color: red;"></i>
-                    </div>                    
-                    <div class="corner-paper-curl"></div>                   
-                    <div class="cardImg"><img src="" alt=""></div>
-                    <p class="cardTitle">2nd STREET</p>
-                    <div class="cardHashtag_container">
-                        <div class="cardHashtag">#오사카</div>
-                        <div class="cardHashtag">#도쿄</div>
-                        <div class="cardHashtag">#스트릿</div>
-                    </div>
-                    <div class="price"><img src="./akar-icons_coin.png" alt="" ><p>500 ~ 15,000¥</p></div>
-                </div>
-                <div class="card">
+            <?php 
+            if(isset($result)) {
+                if($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) { ?>
+                        <div class="card">
+                            <div class="heart">
+                                <i class="bi bi-heart-fill" style="color: red;"></i>
+                            </div>                    
+                            <div class="corner-paper-curl"></div>                   
+                            <div class="cardImg"><img src="" alt=""></div>
+                            <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
+                            <div class="cardHashtag_container">
+                                <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
+                                <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
+                                <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
+                            </div>
+                            <div class="price"><img src="./akar-icons_coin.png" alt=""><p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p></div>
+                        </div> 
+                    <?php }
+                } else {
+                    // 결과가 없을 때 처리할 코드를 여기에 추가합니다.
+                    echo "<p>결과가 없습니다.</p>";
+                }
+            } else {
+                // $result가 정의되지 않은 경우
+                echo "<p>쿼리 결과를 가져오지 못했습니다.</p>";
+            }
+            ?>
+            
+                <!-- <div class="card">
                     <div class="heart">
                         <i class="bi bi-heart-fill" style="color: red;"></i>
                     </div>
@@ -137,7 +168,7 @@
                         <div class="cardHashtag">#스트릿</div>
                     </div>
                     <div class="price"><img src="./akar-icons_coin.png" alt=""><p>500 ~ 10,000¥</p></div>
-                </div>
+                </div> -->
             </div>
 
         </div>

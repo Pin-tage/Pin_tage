@@ -4,10 +4,10 @@
     --fr-color: #FF47CB;
     --se-color: #c6c6c6;
     --th-color: #7c7c7c;
-    --fo-color: #F8EFF5;;
+    --fo-color: #F8EFF5;
 
     /* font */
-    --body-font: 'Cherry Bomb';     /*구글폰트 사용*/
+    --body-font: 'Cherry Bomb'; /*구글폰트 사용*/
     --h1-font-size: 2rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
@@ -19,7 +19,6 @@
     --font-bold: 700;
 }
 
-
 * {
     padding: 0;
     margin: 0;
@@ -28,10 +27,10 @@
 }
 
 /*Scroll Bar 기능은 살리되, 없애기*/
-body{
+body {
     -ms-overflow-style: none;
 }
-    
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -50,9 +49,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     /*고정*/
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
+    position: fixed;
+    width: 100%;
+    top: 0;
     z-index: 1000;
 }
 
@@ -90,42 +89,117 @@ nav menu ul li {
 }
 
 /*main 시작*/
-main{
+main {
     padding: 80px;
+    text-align: center; /* Centering the content */
 }
 
 .title h1 {
     text-align: center;
-    padding: 80px;
+    padding-top: 130px;
+    padding-bottom: 10px;
+}
+
+.header{
+    padding-bottom: 20px;
+    color: #7c7c7c;
 }
 
 .signup-form {
-    margin: 0 300px 0 300px;
-    border-top: 2px dashed var(--fh-color)
+    margin: 0 auto; /* Centering the form */
+    width: 50%; /* Adjusting the form width */
+    /* border-top: 2px dashed var(--fh-color); */
+    justify-content: center; /* Center aligning the buttons */
 }
 
 .signup-form input {
     padding: 10px;
     border-radius: 10px;
     border: 1px solid var(--se-color);
+    height: 50px;
+    width: 100%;
 }
 
 .input-name,
 .input-id,
 .input-email,
-.input-checkpassword {
+.input-checkpassword,
+.input-password {
     border-bottom: 2px dashed var(--se-color);
-    padding: 30px 0 30px 0;
+    padding: 20px 0;
+    display: flex;
+    align-items: center; /* Align items vertically center */
+}
+.input-name{
+    border-top: 2px dashed var(--se-color);
+}
+
+.input-password {
+    padding: 20px 0;
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+}
+
+.input-name label,
+.input-id label,
+.input-email label,
+.input-password label,
+.input-checkpassword label {
+    flex: 0 0 150px; /* Make label a fixed width */
+    text-align: left; /* Align text to the left */
+}
+
+.password-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px; /* Add space between password inputs */
+}
+
+.password-inputs input {
+    width: 100%; /* Ensure the input fields take full width */
+}
+
+.input-email,
+.input-id {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure full width for these containers */
+}
+
+.input-email input,
+.input-id input,
+.input-email select {
+    flex: 1; /* Each input field takes up equal width */
+    margin-right: 10px; /* Add some spacing between the input and select */
+    height: 50px;
+    border-radius: 10px;
+}
+
+.input-id button {
+    height: 50px;
+    width: 20%; /* Allow button to adjust based on content */
+    border-radius: 10px;
+    border: none;
 }
 
 .button-container {
-    margin: 50px;
+    margin: 50px auto; /* Centering the button container */
     text-align: center;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Add some space between buttons */
 }
 
 .button-container button {
-    width: 20%;
-    padding: 15px;
+    width: 150px; /* Adjust button width based on content */
+    padding: 15px 30px;
     border-radius: 10px;
     border-style: none;
+    font-size: 1.2rem; /* Making buttons larger */
+}
+
+.pink-btn {
+    background-color: var(--fr-color); /* Pink background */
+    color: white;
 }

@@ -27,22 +27,28 @@ body{
 
 /*main 시작*/
 main{
-    padding: 80px;
+    padding-bottom: 10px;
 }
 
 /*title*/
 .title {
     text-align: center;
-    margin: 80px;
+    margin-top: 250px;
+}
+.title p{
+    color: #7c7c7c;
 }
 
 .filter{
     display: flex;
 }
 form {  
-    margin: 60px auto;
+    margin: auto;
+    /* align-items: center; */
+    text-align: center;
     width: 30rem;
     display: flex;
+    /* margin-bottom: 120px; */
 }
 #input{  /*입력창 CSS*/
     width: 300px;           /*입력칸 가로 길이*/
@@ -64,9 +70,26 @@ form {
     border-color: #FF47CB; /* 테두리 색상 변경 */
 }
 
+.password-links {
+    font-size: 14px;
+    color: #7c7c7c;
+    margin-bottom: 160px;
+}
+
+.password-links .link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.password-links .link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .login-Btn-center{  /*로그인 버튼 CSS*/
     /* 버튼 디자인 */
-    padding: 28px 23px 28px 23px;           /*버튼 사이즈 조절*/
+    padding: 28px 23px 28px 23px;         
     border-radius: 8px;                    /*겉 라인 동그랗게*/
     color: var(--second-color);             /*버튼 글씨색*/
     background-color: var(--first-color);   /*버튼 배경색*/
@@ -75,6 +98,8 @@ form {
     text-align: center;                     /*버튼 속 글씨 가운데 정렬*/
     border: none;                           /*겉 라인 제거*/
     /* margin-left: 80%; */
+    height: 120px;
+    margin-left: 5px;
 }   
 
 /*footer 시작*/

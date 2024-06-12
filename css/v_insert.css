@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-/*Scroll Bar 기능은 살리되, 없애기*/
-body{
+/* Scroll Bar 기능은 살리되, 없애기 */
+body {
     -ms-overflow-style: none;
 }
     
@@ -13,20 +13,18 @@ body{
     display: none;
 }
 
-/*상단 내비게이션 바 시작*/
+
 nav {
-    /*스타일*/
+  
     padding: 25px;
     color: #FF47CB;
     font-family: 'Cherry Bomb';
     font-size: 22px;
     background-color: white;
-    /*배치*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    /*고정*/
     position: fixed; 
     width: 100%; 
     top: 0; 
@@ -51,11 +49,11 @@ nav menu ul {
 }
 
 nav menu ul li {
-    margin: 0 40px 0 40px;
+    margin: 0 40px;
 }
 
 .login-Btn {
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
     margin-right: 75px;
     border-radius: 10px;
     border: 3px solid white;
@@ -65,53 +63,66 @@ nav menu ul li {
     font-size: 18px;
 }
 
-/*main 시작*/
-main{
+
+main {
     padding: 80px;
+    text-align: center;
 }
 
 .title {
     text-align: center;
-    padding: 80px;
-}
-
-.title p {
-    margin-top: 20px;
+    padding-top: 80px;
+    padding-bottom: 50px;
 }
 
 .signup-form {
-    margin: 0 300px 0 300px;
+    margin: 0 300px;
     border-top: 2px dashed #7c7c7c;
 }
+
 
 .signup-form input:not(#image),
 .signup-form select,
 .signup-form textarea {
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid #c6c6c6;
+    border: 1.5px solid #c6c6c6;
+    height: 50px; 
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+}
+.signup-form input:not(#image):focus,
+.signup-form select:focus,
+.signup-form textarea:focus {
+    border-color: #FF47CB !important; 
+    outline: none !important; 
+}
+
+
+.signup-form textarea {
+    height: 150px; 
 }
 
 #map {
-    width: 775px;
+    width: auto;
     height: 400px;
     margin-top: 20px;
 }
 
-#tag-location,
-#tag-style,
-#tag-brand,
-#tag-category {
+#tag_location,
+#tag_style,
+#tag_brand,
+#tag_category {
     margin-top: 10px;
     width: 100%;
 }
 
 select option[value=""][disabled] {
-	display: none;
+    display: none;
 }
 
+
 .input-name,
-.input-id,
 .input-guide,
 .input-time,
 .input-location,
@@ -119,7 +130,36 @@ select option[value=""][disabled] {
 .input-tag,
 .input-price {
     border-bottom: 2px dashed #c6c6c6;
-    padding: 30px 0 30px 0;
+    padding: 30px 0;
+    width: 100%;
+}
+
+.input-name,
+.input-guide,
+.input-time,
+.input-price {
+    display: flex;
+    align-items: center;
+}
+
+.input-name label,
+.input-guide label,
+.input-time label,
+.input-price label {
+    width: 150px; 
+    text-align: left; 
+}
+
+.input-name input,
+.input-guide textarea,
+.input-time input,
+.input-price input {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+.input-price button {
+    margin-left: 10px; 
 }
 
 .button {
@@ -147,4 +187,32 @@ select option[value=""][disabled] {
     padding: 15px;
     border-radius: 10px;
     border-style: none;
+}
+
+.button-container button {
+    width: 20%;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.price-btn{
+    width: 10%;
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.submit-btn,
+.price-btn {
+    background-color: #FF47CB;
+    color: #F8EFF5;
+}
+
+.input-image label,
+.input-tag label,
+.input-location label {
+    text-align: left;
+    display: block;
+    margin-bottom: 10px;
 }

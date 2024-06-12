@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +11,24 @@
 
 
     <!-- 부트스트랩 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <!-- 산돌구름 폰트 -->
-    <script type="module" src="https://8fl3k30sy0.execute-api.ap-northeast-2.amazonaws.com/v1/api/fontstream/djs/?sid=gAAAAABlsHgJBHM1QHBIdMVd5ZQPii4NpDMf_Qs3jmFS5yt3_xJpQkJWj6G4pOi1XU3WVZc8ZhL3cnzME82ZgdxRheBEr_edqd3mvpja2g5UTyMvZ318m8QKGy0DEWyKHFL-owjPot0HXKViPw61I1yvg8SFrLRXb6LRnB1r-ASpwdwYSk-pKFR-AjjyUsNHhQgwKXdTXRNZSYBwdzD0lf0j2hJLR33glHxsMjxgxz0UXtK6u34ulMFFJsj03iwd21meQBSKY7Ax" charset="utf-8"></script>
+    <script type="module"
+        src="https://8fl3k30sy0.execute-api.ap-northeast-2.amazonaws.com/v1/api/fontstream/djs/?sid=gAAAAABlsHgJBHM1QHBIdMVd5ZQPii4NpDMf_Qs3jmFS5yt3_xJpQkJWj6G4pOi1XU3WVZc8ZhL3cnzME82ZgdxRheBEr_edqd3mvpja2g5UTyMvZ318m8QKGy0DEWyKHFL-owjPot0HXKViPw61I1yvg8SFrLRXb6LRnB1r-ASpwdwYSk-pKFR-AjjyUsNHhQgwKXdTXRNZSYBwdzD0lf0j2hJLR33glHxsMjxgxz0UXtK6u34ulMFFJsj03iwd21meQBSKY7Ax"
+        charset="utf-8"></script>
 
     <!-- 구글폰트 -->
     <link href="https://fonts.googleapis.com/css?family=Cherry+Bomb" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Sniglet:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Sniglet:wght@800&display=swap"
+        rel="stylesheet">
 
     <!--favicon-->
-    <link rel="icon" href="./favicon.png"> 
+    <link rel="icon" href="./favicon.png">
 
     <style>
         .hashtag {
@@ -30,23 +37,24 @@
     </style>
 
 </head>
+
 <body>
 
     <?php
 
-        include('db_conn.php');
+    include ('db_conn.php');
 
-        // 데이터베이스 연결 오류 확인
-        if ($conn->connect_error) {
-            die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
-        }
+    // 데이터베이스 연결 오류 확인
+    if ($conn->connect_error) {
+        die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
+    }
 
-        $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
-        $result = $conn->query($sql); // 쿼리 실행
-
-        if (!$result) {
-            die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
-        }
+    $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
+    $result = $conn->query($sql); // 쿼리 실행
+    
+    if (!$result) {
+        die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
+    }
     ?>
 
     <!--상단 nav-->
@@ -54,7 +62,7 @@
         <logo>
             <a href="./index.html">
                 <img src="./assets/logo2.png">
-            </a>   
+            </a>
         </logo>
         <menu>
             <ul>
@@ -71,72 +79,76 @@
             </a>
         </button>
     </nav>
-   <!--메인-->
+    <!--메인-->
     <main>
         <div class="title">
             <h1>지도</h1>
             <p style="margin: 10px;">핀으로 설정한 매장을 간편하게 모아 보세요.</p>
-        </div> 
-        <div class="brandshop-box">
-            
         </div>
-        
-            <!-- 지도 이미지 -->
-            <div class="map-img" style="margin-left: -100px;">
-                <img id="hokkaido-img" src="./assets/Hokkaido_off.png" alt="" >
-                <img id="honshu-img" src="./assets/Honshu_off.png" alt="">
-                <img id="shikoku-img" src="./assets/Shikoku_off.png" alt="">
-                <img id="kyushu-img" src="./assets/Kyushu_off.png" alt="">
-            </div>
-        
-            <!-- 해시태그 -->
-            <div class="hashtag-container">
-                <div>
-                    <span class="hashtag" id="hokkaido-hashtag">#훗카이도</span>
-                    <span class="hashtag" id="honshu-hashtag">#혼슈</span>
-                    <span class="hashtag" id="shikoku-hashtag">#시코쿠</span>
-                    <span class="hashtag" id="kyushu-hashtag">#규슈</span>
-                    
-                </div>
-                <div style="text-align: right;">
-                    <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">30개</span></span>
-                </div>
-                
-            </div>
-            
-            <!-- 회색 점선 -->
-            <br>
-            <div class="grey-line"></div> <br>
+        <div class="brandshop-box">
 
-            <!-- 오프라인샵 -->
-            <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
-        
-            <!-- 결과 -->
-            <?php
-                if($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) { ?>
-                        <div class="card">
-                            <div class="heart">
-                                <i class="bi bi-heart-fill" style="color: red;"></i>
-                            </div>                    
-                            <div class="corner-paper-curl"></div>                   
-                            <div class="cardImg"><img src="" alt=""></div>
-                            <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
-                            <div class="cardHashtag_container">
-                                <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
-                                <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
-                                <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
-                            </div>
-                            <div class="price"><img src="<?php echo $row["shop_img_path"]; ?>" alt=""><p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p></div>
-                        </div> 
-                    <?php }
-                } else {
-                    // 결과가 없을 때 처리할 코드를 여기에 추가합니다.
-                    echo "<p>결과가 없습니다.</p>";
-                }
-            ?>
-            
-                <!-- <div class="card">
+        </div>
+
+        <!-- 지도 이미지 -->
+        <div class="map-img" style="margin-left: -100px;">
+            <img id="hokkaido-img" src="./assets/Hokkaido_off.png" alt="">
+            <img id="honshu-img" src="./assets/Honshu_off.png" alt="">
+            <img id="shikoku-img" src="./assets/Shikoku_off.png" alt="">
+            <img id="kyushu-img" src="./assets/Kyushu_off.png" alt="">
+        </div>
+
+        <!-- 해시태그 -->
+        <div class="hashtag-container">
+            <div>
+                <span class="hashtag" id="hokkaido-hashtag">#훗카이도</span>
+                <span class="hashtag" id="honshu-hashtag">#혼슈</span>
+                <span class="hashtag" id="shikoku-hashtag">#시코쿠</span>
+                <span class="hashtag" id="kyushu-hashtag">#규슈</span>
+
+            </div>
+            <div style="text-align: right;">
+                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">30개</span></span>
+            </div>
+
+        </div>
+
+        <!-- 회색 점선 -->
+        <br>
+        <div class="grey-line"></div> <br>
+
+        <!-- 오프라인샵 -->
+        <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
+
+        <!-- 결과 -->
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $image_path = '/upload' . rawurlencode($row['shop_img_path']); // URL 인코딩 사용
+                ?>
+                <div class="card">
+                    <div class="heart">
+                        <i class="bi bi-heart-fill" style="color: red;"></i>
+                    </div>
+                    <div class="corner-paper-curl"></div>
+                    <div class="cardImg"><img src="" alt=""></div>
+                    <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
+                    <div class="cardHashtag_container">
+                        <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
+                        <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
+                        <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
+                    </div>
+                    <div class="price"><img src="<?php echo $row["shop_img_path"]; ?>" alt="">
+                        <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
+                    </div>
+                </div>
+            <?php }
+        } else {
+            echo "<p>결과가 없습니다.</p>";
+        }
+        ?>
+
+
+        <!-- <div class="card">
                     <div class="heart">
                         <i class="bi bi-heart-fill" style="color: red;"></i>
                     </div>
@@ -164,7 +176,7 @@
                     </div>
                     <div class="price"><img src="./akar-icons_coin.png" alt=""><p>500 ~ 10,000¥</p></div>
                 </div> -->
-            </div>
+        </div>
 
         </div>
     </main>
@@ -227,7 +239,7 @@
                 </ul>
             </div>
         </div>
-       
+
         <div class="footer-nav">
             <img src="./assets/logo2.png" style="width: 150px; margin-top: 20px;">
             <h4>TEAM カピバラ</h4>
@@ -236,4 +248,5 @@
 
     <script src="./js/map.js"></script>
 </body>
+
 </html>

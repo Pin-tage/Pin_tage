@@ -2,7 +2,7 @@
 include('db_conn.php');
 session_start();
 
-// echo "<script>alert('User ID: " . $_SESSION['user_id'] . "');</script>" 세션 확인용
+// echo "<script>alert('User ID: " . $_SESSION['user_id'] . "');</script>" //세션 확인용
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +66,11 @@ session_start();
    <!--메인-->
    <main>
     <img src="/assets/circle.png" alt="">
-    <h2><?php echo strtoupper($_SESSION['user_id']); ?>님</h2>
+    <?php if (isset($_SESSION['user_id']) && $_SESSION['loggedin'] === true ) { ?>
+        <h2><?php echo strtoupper($_SESSION['user_id']); ?>님</h2>
+    <?php } else { ?> 
+        <h2>로그인 시 이용 가능한 기능입니다.</h2>
+    <?php } ?>
     <div class="folderContainer">
         <div class="tabConnection"></div>
         <div class="tab"><p>내가 등록한 매장</p></div>
@@ -76,7 +80,7 @@ session_start();
                 <div class="albumContainer" id="albumContainer1">
                     <div class="card">                   
                         <div class="corner-paper-curl"></div>                   
-                        <div class="cardImg"><img src="" alt=""></div>
+                        <div class="cardImg"><img src="./upload/image 9.png" alt=""></div>
                         <p class="cardTitle">2nd STREET</p>
                         <div class="cardHashtag_container">
                             <div class="cardHashtag">#오사카</div>
@@ -87,7 +91,7 @@ session_start();
                     </div>
                     <div class="card">
                         <div class="corner-paper-curl"></div>                   
-                        <div class="cardImg"><img src="" alt=""></div>
+                        <div class="cardImg"><img src="./upload/image 9 (1).png" alt=""></div>
                         <p class="cardTitle">WEGO</p>
                         <div class="cardHashtag_container">
                             <div class="cardHashtag">#신주쿠</div>

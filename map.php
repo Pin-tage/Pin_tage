@@ -130,14 +130,14 @@
                         <i class="bi bi-heart-fill" style="color: red;"></i>
                     </div>
                     <div class="corner-paper-curl"></div>
-                    <div class="cardImg"><img src="" alt=""></div>
+                    <div class="cardImg"><img src="<?php echo $row["shop_img_path"]; ?>" alt=""></div>
                     <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
                     <div class="cardHashtag_container">
                         <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
                         <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
                         <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
                     </div>
-                    <div class="price"><img src="<?php echo $row["shop_img_path"]; ?>" alt="">
+                    <div class="price"><img src="" alt="">
                         <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
                     </div>
                 </div>

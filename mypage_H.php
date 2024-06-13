@@ -2,7 +2,7 @@
 include('db_conn.php');
 session_start();
 
-// echo "<script>alert('User ID: " . $_SESSION['user_id'] . "');</script>" 세션 확인용
+// echo "<script>alert('User ID: " . $_SESSION['user_id'] . "');</script>" //세션 확인용
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +66,11 @@ session_start();
    <!--메인-->
    <main>
     <img src="/assets/circle.png" alt="">
-    <h2><?php echo strtoupper($_SESSION['user_id']); ?>님</h2>
+    <?php if (isset($_SESSION['user_id']) && $_SESSION['loggedin'] === true ) { ?>
+        <h2><?php echo strtoupper($_SESSION['user_id']); ?>님</h2>
+    <?php } else { ?> 
+        <h2>로그인 시 이용 가능한 기능입니다.</h2>
+    <?php } ?>
     <div class="folderContainer">
         <div class="tabConnection"></div>
         <div class="tab"><p>내가 등록한 매장</p></div>
@@ -76,34 +80,34 @@ session_start();
                 <div class="albumContainer" id="albumContainer1">
                     <div class="card">                   
                         <div class="corner-paper-curl"></div>                   
-                        <div class="cardImg"><img src="" alt=""></div>
+                        <div class="cardImg"><img src="./upload/image 9.png" alt=""></div>
                         <p class="cardTitle">2nd STREET</p>
                         <div class="cardHashtag_container">
                             <div class="cardHashtag">#오사카</div>
-                            <div class="cardHashtag">#도쿄</div>
                             <div class="cardHashtag">#스트릿</div>
+                            <div class="cardHashtag">#빈티지샵</div>
                         </div>
                         <div class="price"><img src="./akar-icons_coin.png" alt="" ><p>500 ~ 15,000¥</p></div>
                     </div>
                     <div class="card">
                         <div class="corner-paper-curl"></div>                   
-                        <div class="cardImg"><img src="" alt=""></div>
+                        <div class="cardImg"><img src="./upload/image 9 (1).png" alt=""></div>
                         <p class="cardTitle">WEGO</p>
                         <div class="cardHashtag_container">
-                            <div class="cardHashtag">#신주쿠</div>
-                            <div class="cardHashtag">#도쿄</div>
-                            <div class="cardHashtag">#스트릿</div>
+                            <div class="cardHashtag">#교토</div>
+                            <div class="cardHashtag">#모리걸</div>
+                            <div class="cardHashtag">#요시다 포터</div>
                         </div>
                         <div class="price"><img src="./akar-icons_coin.png" alt="" ><p>1,000 ~ 4,500¥</p></div>
                     </div>
                     <div class="card">
                         <div class="corner-paper-curl"></div>
-                        <div class="cardImg"><img src="" alt=""></div>
+                        <div class="cardImg"><img src="./upload/image 9 (2).png" alt=""></div>
                         <p class="cardTitle">SOU • SOU 타비</p>
                         <div class="cardHashtag_container">
-                            <div class="cardHashtag">#오사카</div>
                             <div class="cardHashtag">#교토</div>
                             <div class="cardHashtag">#스트릿</div>
+                            <div class="cardHashtag">#빔즈</div>
                         </div>
                         <div class="price"><img src="./akar-icons_coin.png" alt=""><p>500 ~ 10,000¥</p></div>
                     </div>
@@ -111,34 +115,34 @@ session_start();
                 <div class="albumContainer" id="albumContainer2">
                     <div class="card">                   
                         <div class="corner-paper-curl"></div>                   
-                        <div class="cardImg"><img src="" alt=""></div>
-                        <p class="cardTitle">2nd STREET</p>
+                        <div class="cardImg"><img src="./upload/Grizzly.jpg" alt=""></div>
+                        <p class="cardTitle">Grizzly</p>
                         <div class="cardHashtag_container">
                             <div class="cardHashtag">#오사카</div>
-                            <div class="cardHashtag">#도쿄</div>
                             <div class="cardHashtag">#스트릿</div>
+                            <div class="cardHashtag">#빈티지샵</div>
                         </div>
                         <div class="price"><img src="./akar-icons_coin.png" alt="" ><p>500 ~ 15,000¥</p></div>
                     </div>
                     <div class="card">
                         <div class="corner-paper-curl"></div>                   
-                        <div class="cardImg"><img src="" alt=""></div>
-                        <p class="cardTitle">WEGO</p>
+                        <div class="cardImg"><img src="./upload/EL RODEO.jpg" alt=""></div>
+                        <p class="cardTitle">EL RODEO</p>
                         <div class="cardHashtag_container">
-                            <div class="cardHashtag">#신주쿠</div>
-                            <div class="cardHashtag">#도쿄</div>
-                            <div class="cardHashtag">#스트릿</div>
+                            <div class="cardHashtag">#오사카</div>
+                            <div class="cardHashtag">#모리걸</div>
+                            <div class="cardHashtag">#빈티지샵</div>
                         </div>
                         <div class="price"><img src="./akar-icons_coin.png" alt="" ><p>1,000 ~ 4,500¥</p></div>
                     </div>
                     <div class="card">
                         <div class="corner-paper-curl"></div>
-                        <div class="cardImg"><img src="" alt=""></div>
-                        <p class="cardTitle">SOU • SOU 타비</p>
+                        <div class="cardImg"><img src="./upload/Jetrag.jpg" alt=""></div>
+                        <p class="cardTitle">Jetrag</p>
                         <div class="cardHashtag_container">
-                            <div class="cardHashtag">#오사카</div>
                             <div class="cardHashtag">#교토</div>
-                            <div class="cardHashtag">#스트릿</div>
+                            <div class="cardHashtag">#캐주얼</div>
+                            <div class="cardHashtag">#빈티지샵</div>
                         </div>
                         <div class="price"><img src="./akar-icons_coin.png" alt=""><p>500 ~ 10,000¥</p></div>
                     </div>
@@ -155,38 +159,38 @@ session_start();
                         <div class="reviewHashtag">#도쿄</div>
                         <div class="reviewHashtag">#스트릿</div>
                     </div>
-                    <div class="reviewDate"><p>2024-01-01</p></div>
+                    <div class="reviewDate"><p>2024-01-12</p></div>
                     <div class="reviewText"><p>다양한 아이템들이 있어서 둘러보는 동안 즐거웠고 직원분들도 너무 친절하시고 추천도 잘 해주셔서 좋았습니다</p></div>
                 </div>
                 <div class="review">
-                    <p class="reviewTitle">2nd STREET</p>
+                    <p class="reviewTitle">BBIRO</p>
                     <div class="reviewHashtag_container">
-                        <div class="reviewHashtag">#오사카</div>
                         <div class="reviewHashtag">#도쿄</div>
                         <div class="reviewHashtag">#스트릿</div>
+                        <div class="reviewHashtag">#빈티지샵</div>
                     </div>
-                    <div class="reviewDate"><p>2024-01-01</p></div>
+                    <div class="reviewDate"><p>2023-12-04</p></div>
                     <div class="reviewText"><p>세련된 스타일이 많아서 좋아요</p></div>
                 </div>
                 <div class="review">
-                    <p class="reviewTitle">2nd STREET</p>
+                    <p class="reviewTitle">Hamzi</p>
                     <div class="reviewHashtag_container">
                         <div class="reviewHashtag">#오사카</div>
-                        <div class="reviewHashtag">#도쿄</div>
-                        <div class="reviewHashtag">#스트릿</div>
+                        <div class="reviewHashtag">#모리걸</div>
+                        <div class="reviewHashtag">#빈티지샵</div>
                     </div>
-                    <div class="reviewDate"><p>2024-01-01</p></div>
+                    <div class="reviewDate"><p>2023-11-24</p></div>
                     <div class="reviewText"><p>유니크하고 개성 있는 디자인의 가방이 많아요!</p></div>
                 </div>
                 <div class="review">
-                    <p class="reviewTitle">2nd STREET</p>
+                    <p class="reviewTitle">XIKEY</p>
                     <div class="reviewHashtag_container">
                         <div class="reviewHashtag">#오사카</div>
                         <div class="reviewHashtag">#도쿄</div>
                         <div class="reviewHashtag">#스트릿</div>
                     </div>
-                    <div class="reviewDate"><p>2024-01-01</p></div>
-                    <div class="reviewText"><p>유니크하고 개성 있는 디자인의 가방이 많아요!</p></div>
+                    <div class="reviewDate"><p>2023-03-30</p></div>
+                    <div class="reviewText"><p>힙한 느낌의 제품들이 많고 직원분 스타일이 너무 멋지셨어요!</p></div>
                 </div>
             </div>
         

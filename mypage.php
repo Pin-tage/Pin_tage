@@ -54,6 +54,7 @@ session_start();
     </nav>
 
     <main>
+        
         <div class="title">
             <h1><?php echo strtoupper($_SESSION['user_id']); ?>님</h1>
         </div>

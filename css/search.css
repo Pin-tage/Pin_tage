@@ -1,0 +1,111 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+nav {
+    /* 스타일 */
+    padding: 25px 120px;
+    color: #fff;
+    font-family: 'Cherry Bomb';
+    font-size: 22px;
+    background-color: white;
+    /* 배치 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* 고정 */
+    position: fixed; 
+    width: 1920px; 
+    top: 0; 
+    z-index: 1000;
+}
+
+nav menu {
+    /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* 메뉴를 가능한 넓게 차지하도록 함 */
+    margin: 0; 
+    padding: 0;
+}
+
+nav menu ul {
+    list-style: none;
+    display: flex;
+    font-size: 25px;
+    margin-bottom: 0;
+    margin-left: -32px;
+}
+
+menu > ul > li > a {
+    margin: 0 40px 0 40px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-Btn {
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background-color: transparent;
+    color: #fff !important;
+    font-family: 'Cherry Bomb';
+    font-size: 18px;
+    text-decoration: none; /* 밑줄없앰 */
+}
+
+nav img {
+    width: 143px;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.owl-carousel .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+
+.left-arrow, .right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 100; 
+    width: 80px;
+}
+
+.left-arrow {
+    margin-left: 20px;
+    left: 10px;
+}
+
+.right-arrow {
+    margin-right: 20px;
+    right: 10px;
+}
+
+.carousel-container .item {
+    height: 720px;
+}
+
+main {
+    padding-top: 50px; /* Adjust this to add space between the carousel and the main content */
+}

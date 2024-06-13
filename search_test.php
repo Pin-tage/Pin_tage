@@ -9,6 +9,23 @@
     <title>SEARCH</title>
 </head>
 <body>  
+    <?php
+
+    include ('db_conn.php');
+
+    // 데이터베이스 연결 오류 확인
+    if ($conn->connect_error) {
+        die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
+    }
+
+    $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
+    $result = $conn->query($sql); // 쿼리 실행
+    
+    if (!$result) {
+        die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
+    }
+    ?>
+
     <!--상단 nav-->
     <nav>
         <logo>
@@ -58,14 +75,21 @@
 
     <!-- 게시글 구현 -->
     <div class="post-container">
+
+        <?php 
+        if($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $image_path = '/upload' . rawurldecode($row['shop_img_path']);
+        ?>
         <div class="post">
-            <img src="./Mask group.png" class="storeImg">
+            <img src="<?php echo $row["shop_img_path"]; ?>" class="storeImg">
                 <span class="like-btn"><img src="./upload/bxs-heart.svg.svg"></span>
             </img>
-            <h3>2nd STREET</h3>
+            <h3><?php echo $row["shop_name"]; ?></h3>
             <div class="hashtags">
-                <span>#오사카</span>
-                <span>#도쿄</span>            
+                <span>#<?php echo $row["tag_location"]; ?></span>
+                <span>#<?php echo $row["tag_style"]; ?></span>            
+                <span>#<?php echo $row["tag_brand"]; ?></span>            
             </div>
             <div class="rating">
                 <span class="star" onclick="rate(1)">&#9733;</span>
@@ -77,13 +101,18 @@
             </div>
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
-                <span>500 ~ 10000¥</span>
+                <span><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</span>
             </div>
+            <?php } 
+            } else {
+                echo"<p>결과가 없습니다.</p>";
+            }
+            ?>
 
             <img src="Vector 6.png" class="bookmark">
         </div>
 
-        <div class="post">
+        <!-- <div class="post">
             <img src="./Mask group.png" class="storeImg">
             <h3>2nd STREET</h3>
             <div class="hashtags">
@@ -164,7 +193,7 @@
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
             </div>
-        </div>
+        </div> -->
         
 
         

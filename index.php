@@ -49,84 +49,64 @@ include('db_conn.php'); ?>
 
     <!--메인 area-->
     <main>
-        <!--main area 1-->
-        <div class="main1">
-            <h1>PIN<br>YOUR<br>VINTAGE!</h1>
-            <img src="./assets/main1-background.png">
-        </div>
+        <!--section-1-->
+    <div class="section-1">
 
-        <!--main area 2-->
-        <div class="main2">
-            <h1>캐치 프레이즈<br>설명 텍스트</h1>
-        </div>
+</div>
 
-        <!--main area 3-->
-        <div class="main3">
-            <p>짧은 소개 문구 작성</p>
-            <h1>핀티지에서 만나보세요!</h1>
-            <!--자동 슬라이드-->
-            <div class="auto-slide">
-                <div class="img-box">
-                    <!--원본-->
-                    <div><img src="./assets/apc-icon.png"></div>
-                    <div><img src="./assets/asics-icon.png"></div>
-                    <div><img src="./assets/bape-icon.png"></div>
-                    <div><img src="./assets/beams-icon.png"></div>
-                    <div><img src="./assets/comde-icon.png"></div>
-                    <div><img src="./assets/gu-icon.png"></div>
-                    <div><img src="./assets/maison-icon.png"></div>
-                    <div><img src="./assets/onitsuka-icon.png"></div>
-                    <div><img src="./assets/porter-icon.png"></div>
-                    <div><img src="./assets/stussy-icon.png"></div>
-                    <div><img src="./assets/supreme-icon.png"></div>
-                    <div><img src="./assets/uniqlo-icon.png"></div>
-                    <div><img src="./assets/vivienne-icon.png"></div>
-                    <!--클론-->
-                    <div><img src="./assets/apc-icon.png"></div>
-                    <div><img src="./assets/asics-icon.png"></div>
-                    <div><img src="./assets/bape-icon.png"></div>
-                    <div><img src="./assets/beams-icon.png"></div>
-                    <div><img src="./assets/comde-icon.png"></div>
-                    <div><img src="./assets/gu-icon.png"></div>
-                    <div><img src="./assets/maison-icon.png"></div>
-                    <div><img src="./assets/onitsuka-icon.png"></div>
-                    <div><img src="./assets/porter-icon.png"></div>
-                    <div><img src="./assets/stussy-icon.png"></div>
-                    <div><img src="./assets/supreme-icon.png"></div>
-                    <div><img src="./assets/uniqlo-icon.png"></div>
-                    <div><img src="./assets/vivienne-icon.png"></div>
-                </div>
+<!--section-2-->
+<div class="section-2">
+    <img src="assets/section2-background.png" style="width: 100%; display: block;">
+    <div class="container-2">
+        <h1 class="title-1">PIN<br>YOUR<br>VINTAGE!</h1>
+        <p class="subtitle-1">일본 빈티지 쇼핑 여행의 필수 가이드, Pintage</p>
+        <p class="paragraph-1">Pintage는 일본에서 더 저렴하게 구매할 수 있는 브랜드 정보와 인기 빈티지
+            샵을 소개합니다. <br>원하는 가게를 검색하고 저장하여 나만의 핀맵을 만들어 보세요.
+           <br>특별한 쇼핑 경험을 지금 바로 Pintage에서 시작해보세요.</p>
+    </div>
+</div>
+
+<!--secion-3-->
+<div class="section-3">
+    <div class="container-3">
+        <div class="title-container">
+            <p class="paragraph-2">일본 빈티지 의류의 모든 것</p>
+            <h2 class="title-2">핀티지에서 만나보세요</h3>
+        </div>
+       <!--auto-slide-->
+        <div class="auto-slide">
+            <div class="slide-track">
+                <img src="assets/apc-icon.png">
+                <img src="assets/asics-icon.png">
+                <img src="assets/bape-icon.png">
+                <img src="assets/beams-icon.png">
+                <img src="assets/comde-icon.png">
+                <img src="assets/gu-icon.png">
+                <img src="assets/maison-icon.png">
+                <img src="assets/onitsuka-icon.png">
+                <img src="assets/porter-icon.png">
+                <img src="assets/stussy-icon.png">
+                <img src="assets/supreme-icon.png">
+                <img src="assets/uniqlo-icon.png">
+                <img src="assets/vivienne-icon.png">
+                <!-- 슬라이드가 끊기지 않도록 이미지들을 한 번 더 반복 -->
+                <img src="assets/apc-icon.png">
+                <img src="assets/asics-icon.png">
+                <img src="assets/bape-icon.png">
+                <img src="assets/beams-icon.png">
+                <img src="assets/comde-icon.png">
+                <img src="assets/gu-icon.png">
+                <img src="assets/maison-icon.png">
+                <img src="assets/onitsuka-icon.png">
+                <img src="assets/porter-icon.png">
+                <img src="assets/stussy-icon.png">
+                <img src="assets/supreme-icon.png">
+                <img src="assets/uniqlo-icon.png">
+                <img src="assets/vivienne-icon.png">
             </div>
         </div>
-
-        <!--main area 4-->
-        <div class="main4">
-            <h1 class="main4-title">서비스 기능 소개</h1>
-            <div class="main4-box">
-
-                <div class="main4-box1">
-                    <div class="box1-1">
-                        <h1>기능</h1>
-                        <p>서비스 기능 설명</p>
-                    </div>
-                    <div class="box1-2">
-                        <h1>기능</h1>
-                        <p>서비스 기능 설명</p>
-                    </div>
-                </div>
-
-                <div class="main4-box2">
-                    <div class="box2-1">
-                        <h1>기능</h1>
-                        <p>서비스 기능 설명</p>
-                    </div>
-                    <div class="box2-2">
-                        <h1>기능</h1>
-                        <p>서비스 기능 설명</p>
-                    </div>
-                </div>
-
-            </div>
+    </div>
+</div>
     </main>
 
     <footer>

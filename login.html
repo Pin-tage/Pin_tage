@@ -48,7 +48,7 @@
     <main>
         <div class="title">
             <h1>로그인</h1>
-            <p style="margin: 10px;">로그인 기능에 대한 설명을 적어주세요.</p>
+            <p style="margin: 10px;">회원 로그인 후 핀티지의 모든 기능을 이용해 보세요.</p>
         </div>
         <div class="brandshop-box">
             
@@ -60,10 +60,19 @@
         <form method="post" action="login.php"> <!-- << 옆 빈칸에 PHP링크 넣으면 됨!-->
             <div class="login-input">
                 <input type="text" name="user_id" id="input" placeholder="아이디"><br>  
-                <input type="text" name="user_pw" id="input" placeholder="비밀번호"><br>  
+                <input type="text" name="user_pw" id="input" placeholder="비밀번호"><br> 
+                <div class="password-links">
+                    <a href="#" class="link">아이디 찾기</a> | 
+                    <a href="#" class="link">비밀번호 찾기</a> | 
+                    <a href="./signup.html" class="link">회원가입하기</a>
+                </div>
+                
             </div>
+            
             <button type="submit" class="login-Btn-center">로그인</button>
+            
         </form>
+        
     </main>
 
     <footer>

@@ -106,10 +106,9 @@ main {
 }
 
 .signup-form {
-    margin: 0 auto; /* Centering the form */
-    width: 50%; /* Adjusting the form width */
-    /* border-top: 2px dashed var(--fh-color); */
-    justify-content: center; /* Center aligning the buttons */
+    margin: 0 auto; 
+    width: 50%;
+    justify-content: center;
 }
 
 .signup-form input {
@@ -128,7 +127,7 @@ main {
     border-bottom: 2px dashed var(--se-color);
     padding: 20px 0;
     display: flex;
-    align-items: center; /* Align items vertically center */
+    align-items: center; 
 }
 .input-name{
     border-top: 2px dashed var(--se-color);
@@ -137,7 +136,7 @@ main {
 .input-password {
     padding: 20px 0;
     display: flex;
-    align-items: flex-start; /* Align items to the start */
+    align-items: flex-start; 
 }
 
 .input-name label,
@@ -145,61 +144,61 @@ main {
 .input-email label,
 .input-password label,
 .input-checkpassword label {
-    flex: 0 0 150px; /* Make label a fixed width */
-    text-align: left; /* Align text to the left */
+    flex: 0 0 150px; 
+    text-align: left; 
 }
 
 .password-inputs {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 10px; /* Add space between password inputs */
+    gap: 10px; 
 }
 
 .password-inputs input {
-    width: 100%; /* Ensure the input fields take full width */
+    width: 100%; 
 }
 
 .input-email,
 .input-id {
     display: flex;
     align-items: center;
-    width: 100%; /* Ensure full width for these containers */
+    width: 100%; 
 }
 
 .input-email input,
 .input-id input,
 .input-email select {
-    flex: 1; /* Each input field takes up equal width */
-    margin-right: 10px; /* Add some spacing between the input and select */
+    flex: 1;
+    margin-right: 10px; 
     height: 50px;
     border-radius: 10px;
 }
 
 .input-id button {
     height: 50px;
-    width: 20%; /* Allow button to adjust based on content */
+    width: 20%; 
     border-radius: 10px;
     border: none;
 }
 
 .button-container {
-    margin: 50px auto; /* Centering the button container */
+    margin: 50px auto; 
     text-align: center;
     display: flex;
-    justify-content: center; /* Center buttons horizontally */
-    gap: 20px; /* Add some space between buttons */
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .button-container button {
-    width: 150px; /* Adjust button width based on content */
+    width: 150px;
     padding: 15px 30px;
     border-radius: 10px;
     border-style: none;
-    font-size: 1.2rem; /* Making buttons larger */
+    font-size: 1.2rem; 
 }
 
 .pink-btn {
-    background-color: var(--fr-color); /* Pink background */
+    background-color: var(--fr-color); 
     color: white;
 }

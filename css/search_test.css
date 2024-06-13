@@ -42,7 +42,7 @@ nav logo img {
     max-width: 60%;
     height: auto;
     margin-left: 75px;
-}
+} 
 
 .top-nav {
     text-decoration: none;
@@ -86,10 +86,14 @@ main{
     text-align: center;
     margin: 80px;
 }
+.filters-buttons{
+    margin-bottom: 10px;
+}
 .filters{
     display: flex;
     justify-content: space-between;
     border-bottom: dashed 3px gray;
+    
 }
 
 .filters button {
@@ -117,6 +121,18 @@ main{
 }
 
 .offline-shop > span {
+    color: var(--chery-color);
+}
+
+.brand-shop {
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-top: dashed 3px gray;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.brand-shop > span {
     color: var(--chery-color);
 }
 

@@ -247,6 +247,18 @@ h1 {
     margin-top: 10px;
 }
   
+.market-button{
+    display: flex;
+    justify-content: right;
+    /* align-items: right; */
+    /* width: 70px; */
+    margin-right: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.market-button img{
+    width: 90px;
+}
 
 
 

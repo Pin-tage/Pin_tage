@@ -107,7 +107,7 @@
 
             </div>
             <div style="text-align: right;">
-                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">30개</span></span>
+                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">6개</span></span>
             </div>
 
         </div>
@@ -120,32 +120,40 @@
         <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
 
         <!-- 결과 -->
-        <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $image_path = '/upload' . rawurlencode($row['shop_img_path']); // URL 인코딩 사용
-                ?>
-                <div class="card">
-                    <div class="heart">
-                        <i class="bi bi-heart-fill" style="color: red;"></i>
+        <!-- Cards container -->
+        <div class="card-container">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    // Output each card here
+                    ?>
+                    <div class="card">
+                        <div class="heart">
+                            <i class="bi bi-heart-fill" style="color: red;"></i>
+                        </div>
+                        <div class="corner-paper-curl"></div>
+                        <div class="cardImg"><img src="<?php echo $row["shop_img_path"]; ?>" alt=""></div>
+                        <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
+                        <div class="cardHashtag_container">
+                            <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
+                            <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
+                            <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
+                        </div>
+                        <div class="price">
+                            <img src="" alt="">
+                            <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
+                        </div>
                     </div>
-                    <div class="corner-paper-curl"></div>
-                    <div class="cardImg"><img src="<?php echo $row["shop_img_path"]; ?>" alt=""></div>
-                    <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
-                    <div class="cardHashtag_container">
-                        <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
-                        <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
-                        <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
-                    </div>
-                    <div class="price"><img src="" alt="">
-                        <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
-                    </div>
-                </div>
-            <?php }
-        } else {
-            echo "<p>결과가 없습니다.</p>";
-        }
-        ?>
+                    <?php
+                }
+            } else {
+                echo "<p>결과가 없습니다.</p>";
+            }
+            ?>
+        </div>
+
+
+
 
 
         <!-- <div class="card">

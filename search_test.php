@@ -46,14 +46,7 @@
                         <button>검색 필터</button>
                         <button>위치</button>
                         <button>스타일</button>
-                        <button>브랜드</button> 
-                        <button>종류</button>
-                        <button>가격대</button>
-                    </div>
-                    <p class="result">검색 결과 <span class="result-count">7개</span></p>
-                </div>
-            </section>
-        </div>
+	                    <h1 class="">검색</h1>
         <p class="offline-shop">오프라인샵 <span>(23)</span></p>
 
     <!-- 게시글 구현 -->
@@ -66,14 +59,11 @@
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
-            </div>
-
-            <img src="Vector 6.png" class="bookmark">
-        </div>
+	            <h3>2nd STREET</h3>
 
         <div class="post">
             <img src="./Mask group.png" class="storeImg">
@@ -83,22 +73,7 @@
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            
-            <div class="price">
-                <img src="./akar-icons_coin.png" class="yenImg">
-                <span>500 ~ 10000¥</span>
-            </div>
-        </div>
 
-        <div class="post">
-            <img src="./Mask group.png" class="storeImg">
-            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
-            <h3>2nd STREET</h3>
-            <div class="hashtags">
-                <span>#오사카</span>
-                <span>#도쿄</span>            
-            </div>
-            
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -113,7 +88,21 @@
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            
+
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+	            <h3>2nd STREET</h3>
+
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -127,7 +116,7 @@
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-           
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -162,7 +151,7 @@
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -177,7 +166,7 @@
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -192,7 +181,7 @@
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -204,9 +193,9 @@
             <h3>2nd STREET</h3>
             <div class="hashtags">
                 <span>#오사카</span>
-                <span>#도쿄</span>            
+                <span>#도쿄</span>           
             </div>
-            
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -214,6 +203,10 @@
         </div>
     </main>
 
+    <div class="market-button">
+        <a href="./vintage_insert.html"><img src="./assets/market-button.svg"></a>
+    </div>
+   
     <!-- 푸터 -->
     <footer>
         <div class="contributor">

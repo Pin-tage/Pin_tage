@@ -67,14 +67,14 @@ session_start();
    <main>
     <img src="/assets/circle.png" alt="">
     <?php if (isset($_SESSION['user_id']) && $_SESSION['loggedin'] === true ) { ?>
-        <h2><?php echo strtoupper($_SESSION['user_id']); ?>님</h2>
+        <h1><?php echo strtoupper($_SESSION['user_id']); ?>님</h1>
     <?php } else { ?> 
         <h2>로그인 시 이용 가능한 기능입니다.</h2>
     <?php } ?>
     <div class="folderContainer">
         <div class="tabConnection"></div>
-        <div class="tab"><p>내가 등록한 매장</p></div>
         <div class="tab"><p>내가 등록한 후기</p></div>
+        <div class="tab"><p>내가 등록한 매장</p></div>
         <div class="folder">
             <div class="albumDiv">
                 <div class="albumContainer" id="albumContainer1">

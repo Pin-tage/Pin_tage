@@ -144,6 +144,7 @@ main{
     height: auto; /* 가로세로 비율 유지 */
 }
 
+/* 가로로 한 줄에 세 개씩 */
 .post-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

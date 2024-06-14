@@ -9,23 +9,6 @@
     <title>SEARCH</title>
 </head>
 <body>  
-    <?php
-
-    include ('db_conn.php');
-
-    // 데이터베이스 연결 오류 확인
-    if ($conn->connect_error) {
-        die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
-    }
-
-    $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
-    $result = $conn->query($sql); // 쿼리 실행
-    
-    if (!$result) {
-        die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
-    }
-    ?>
-
     <!--상단 nav-->
     <nav>
         <logo>
@@ -59,74 +42,116 @@
 
             <section class="search">
                 <div class="filters">
-                    <div>
+                    <div class="filters-buttons">
                         <button>검색 필터</button>
                         <button>위치</button>
                         <button>스타일</button>
-                        <button>브랜드</button> 
-                        <button>종류</button>
-                        <button>가격대</button>
-                    </div>
-                    <p class="result">검색 결과 <span class="result-count">7개</span></p>
-                </div>
-            </section>
-        </div>
+	                    <h1 class="">검색</h1>
         <p class="offline-shop">오프라인샵 <span>(23)</span></p>
 
     <!-- 게시글 구현 -->
-    <div class="post-container">
-
-        <?php 
-        if($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $image_path = '/upload' . rawurldecode($row['shop_img_path']);
-        ?>
+    <div class="post-container"> 
         <div class="post">
-            <img src="<?php echo $row["shop_img_path"]; ?>" class="storeImg">
-                <span class="like-btn"><img src="./upload/bxs-heart.svg.svg"></span>
-            </img>
-            <h3><?php echo $row["shop_name"]; ?></h3>
+            <img src="./Mask group.png" class="storeImg">
+                <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
+            <h3>2nd STREET</h3>
             <div class="hashtags">
-                <span>#<?php echo $row["tag_location"]; ?></span>
-                <span>#<?php echo $row["tag_style"]; ?></span>            
-                <span>#<?php echo $row["tag_brand"]; ?></span>            
+                <span>#오사카</span>
+                <span>#도쿄</span>            
             </div>
-            <div class="rating">
-                <span class="star" onclick="rate(1)">&#9733;</span>
-                <span class="star" onclick="rate(2)">&#9733;</span>
-                <span class="star" onclick="rate(3)">&#9733;</span>
-                <span class="star" onclick="rate(4)">&#9733;</span>
-                <span class="star" onclick="rate(5)">&#9733;</span>
-                <span class="rating-star">3.0</span>
+
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+	            <h3>2nd STREET</h3>
+
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+	            <h3>2nd STREET</h3>
+
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+            </div>
+        </div>
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
+            </div>
+
+            <div class="price">
+                <img src="./akar-icons_coin.png" class="yenImg">
+                <span>500 ~ 10000¥</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="brand-shop">브랜드 / 체인점 <span>(23)</span></p>
+
+    <div class="post-container"> 
+        <div class="post">
+            <img src="./Mask group.png" class="storeImg">
+                <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
+            <h3>2nd STREET</h3>
+            <div class="hashtags">
+                <span>#오사카</span>
+                <span>#도쿄</span>            
             </div>
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
-                <span><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</span>
+                <span>500 ~ 10000¥</span>
             </div>
-            <?php } 
-            } else {
-                echo"<p>결과가 없습니다.</p>";
-            }
-            ?>
 
             <img src="Vector 6.png" class="bookmark">
         </div>
 
-        <!-- <div class="post">
+        <div class="post">
             <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
             <h3>2nd STREET</h3>
             <div class="hashtags">
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            <div class="rating">
-                <span class="star" onclick="rate(1)">&#9733;</span>
-                <span class="star" onclick="rate(2)">&#9733;</span>
-                <span class="star" onclick="rate(3)">&#9733;</span>
-                <span class="star" onclick="rate(4)">&#9733;</span>
-                <span class="star" onclick="rate(5)">&#9733;</span>
-                <span class="rating-star">3.0</span>
-            </div>
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -135,19 +160,13 @@
 
         <div class="post">
             <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
             <h3>2nd STREET</h3>
             <div class="hashtags">
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            <div class="rating">
-                <span class="star" onclick="rate(1)">&#9733;</span>
-                <span class="star" onclick="rate(2)">&#9733;</span>
-                <span class="star" onclick="rate(3)">&#9733;</span>
-                <span class="star" onclick="rate(4)">&#9733;</span>
-                <span class="star" onclick="rate(5)">&#9733;</span>
-                <span class="rating-star">3.0</span>
-            </div>
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -156,19 +175,13 @@
 
         <div class="post">
             <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
             <h3>2nd STREET</h3>
             <div class="hashtags">
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            <div class="rating">
-                <span class="star" onclick="rate(1)">&#9733;</span>
-                <span class="star" onclick="rate(2)">&#9733;</span>
-                <span class="star" onclick="rate(3)">&#9733;</span>
-                <span class="star" onclick="rate(4)">&#9733;</span>
-                <span class="star" onclick="rate(5)">&#9733;</span>
-                <span class="rating-star">3.0</span>
-            </div>
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
@@ -176,28 +189,18 @@
         </div>
         <div class="post">
             <img src="./Mask group.png" class="storeImg">
+            <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
             <h3>2nd STREET</h3>
             <div class="hashtags">
                 <span>#오사카</span>
                 <span>#도쿄</span>            
             </div>
-            <div class="rating">
-                <span class="star" onclick="rate(1)">&#9733;</span>
-                <span class="star" onclick="rate(2)">&#9733;</span>
-                <span class="star" onclick="rate(3)">&#9733;</span>
-                <span class="star" onclick="rate(4)">&#9733;</span>
-                <span class="star" onclick="rate(5)">&#9733;</span>
-                <span class="rating-star">3.0</span>
-            </div>
+
             <div class="price">
                 <img src="./akar-icons_coin.png" class="yenImg">
                 <span>500 ~ 10000¥</span>
             </div>
-        </div> -->
-        
-
-        
-    </div>
+        </div>
     </main>
 
     <!-- 푸터 -->
@@ -249,4 +252,4 @@
 
     <script src="./js/search.js"></script>
 </body>
-</html> 
+</html>

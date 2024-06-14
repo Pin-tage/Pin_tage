@@ -193,7 +193,7 @@
             <h3>2nd STREET</h3>
             <div class="hashtags">
                 <span>#오사카</span>
-                <span>#도쿄</span>            
+                <span>#도쿄</span>           
             </div>
 
             <div class="price">
@@ -203,6 +203,10 @@
         </div>
     </main>
 
+    <div class="market-button">
+        <a href="./vintage_insert.html"><img src="./assets/market-button.svg"></a>
+    </div>
+   
     <!-- 푸터 -->
     <footer>
         <div class="contributor">

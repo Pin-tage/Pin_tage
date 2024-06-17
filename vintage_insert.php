@@ -7,6 +7,7 @@ $shop_guide = $_POST['shop_guide'] ?? '';
 $opening_time = $_POST['opening_time'] ?? '';
 $closing_time = $_POST['closing_time'] ?? '';
 $shop_location = $_POST['shop_location'] ?? ''; // 수정된 부분
+$tag_region = $_POST['tag_region'] ?? '';
 $tag_location = $_POST['tag_location'] ?? '';
 $tag_style = $_POST['tag_style'] ?? '';
 $tag_brand = $_POST['tag_brand'] ?? '';
@@ -22,7 +23,7 @@ $shop_img_path = "upload/" . $shop_img_name; // 저장될 경로 및 파일명
 // 파일 업로드
 if (move_uploaded_file($shop_img_temp, $shop_img_path)) {
     // SQL 쿼리 작성
-    $sql = "INSERT INTO vintageshop (shop_name, shop_guide, opening_time, closing_time, shop_location, shop_img_path, tag_location, tag_style, tag_brand, tag_category, price_min, price_max) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO vintageshop (shop_name, shop_guide, opening_time, closing_time, shop_location, shop_img_path, tag_region, tag_location, tag_style, tag_brand, tag_category, price_min, price_max) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     // 쿼리 실행
     $stmt = $conn->prepare($sql);
@@ -30,7 +31,7 @@ if (move_uploaded_file($shop_img_temp, $shop_img_path)) {
     // 쿼리 실행이 성공했는지 확인
     if ($stmt) {
         // bind_param 사용
-        $stmt->bind_param("ssssssssssii", $shop_name, $shop_guide, $opening_time, $closing_time, $shop_location, $shop_img_path, $tag_location, $tag_style, $tag_brand, $tag_category, $price_min, $price_max);
+        $stmt->bind_param("ssssssssssiii", $shop_name, $shop_guide, $opening_time, $closing_time, $shop_location, $shop_img_path, $tag_region, $tag_location, $tag_style, $tag_brand, $tag_category, $price_min, $price_max);
         
         // bind_param이 제대로 되었는지 확인
         if ($stmt->execute()) {

@@ -135,10 +135,10 @@ h1 {
     gap: 20px; */
 }
 .cardImg{
-    width:488px; height:320px; 
+    width:400px; height:280px; 
     background-color: aliceblue; 
     border-radius: 16px; 
-    margin: 14px auto;
+    margin: 20px auto;
 }
 .cardHashtag{
     display: inline-block; 

@@ -6,7 +6,7 @@ $shop_name = $_POST['shop_name'] ?? '';
 $shop_guide = $_POST['shop_guide'] ?? '';
 $opening_time = $_POST['opening_time'] ?? '';
 $closing_time = $_POST['closing_time'] ?? '';
-$shop_location = $_POST['shop_location'] ?? ''; // 수정된 부분
+$shop_location = $_POST['shop_location'] ?? ''; 
 $tag_region = $_POST['tag_region'] ?? '';
 $tag_location = $_POST['tag_location'] ?? '';
 $tag_style = $_POST['tag_style'] ?? '';
@@ -31,7 +31,7 @@ if (move_uploaded_file($shop_img_temp, $shop_img_path)) {
     // 쿼리 실행이 성공했는지 확인
     if ($stmt) {
         // bind_param 사용
-        $stmt->bind_param("ssssssssssiii", $shop_name, $shop_guide, $opening_time, $closing_time, $shop_location, $shop_img_path, $tag_region, $tag_location, $tag_style, $tag_brand, $tag_category, $price_min, $price_max);
+        $stmt->bind_param("sssssssssssss", $shop_name, $shop_guide, $opening_time, $closing_time, $shop_location, $shop_img_path, $tag_region, $tag_location, $tag_style, $tag_brand, $tag_category, $price_min, $price_max);
         
         // bind_param이 제대로 되었는지 확인
         if ($stmt->execute()) {

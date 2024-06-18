@@ -70,7 +70,7 @@
                         <button>종류</button>
                         <button>가격대</button>
                         <h1 class="">검색</h1>
-                        <p class="offline-shop">오프라인샵 <span>(23)</span></p>
+                        <p class="offline-shop">오프라인샵<span>(23)</span></p>
 
                         <!-- 게시글 구현 -->
                         <div class="post-container">

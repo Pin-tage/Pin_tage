@@ -49,7 +49,7 @@
         die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
     }
 
-    $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
+    $sql = "SELECT shop_name, tag_region, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
     $result = $conn->query($sql); // 쿼리 실행
     
     if (!$result) {
@@ -123,34 +123,77 @@
         <!-- Cards container -->
         <div class="card-container">
             <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    // Output each card here
-                    ?>
-                    <div class="card">
-                        <div class="heart">
-                            <i class="bi bi-heart-fill" style="color: red;"></i>
-                        </div>
-                        <div class="corner-paper-curl"></div>
-                        <div class="cardImg"><img src="<?php echo $row["shop_img_path"]; ?>" alt=""></div>
-                        <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
-                        <div class="cardHashtag_container">
-                            <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
-                            <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
-                            <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
-                        </div>
-                        <div class="price">
-                            <img src="" alt="">
-                            <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
-                        </div>
+            // 카드를 렌더링하는 함수
+            function render_card($row)
+            {
+                ?>
+                <div class="card">
+                    <div class="heart">
+                        <i class="bi bi-heart-fill" style="color: red;"></i>
                     </div>
-                    <?php
+                    <div class="corner-paper-curl"></div>
+                    <div class="cardImg"><img src="<?php echo $row["shop_img_path"]; ?>" alt=""></div>
+                    <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
+                    <div class="cardHashtag_container">
+                        <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
+                        <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
+                        <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
+                    </div>
+                    <div class="price">
+                        <img src="" alt="">
+                        <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
+                    </div>
+                </div>
+                <?php
+            }
+
+            // POST 요청인지 확인
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // POST 요청에서 clicked_region 값을 가져와서 JSON 배열로 변환
+                $clicked_region = json_decode($_POST['clicked_region'], true);
+
+                // 데이터베이스 쿼리 결과를 배열로 저장
+                $rows = [];
+                while ($row = $result->fetch_assoc()) {
+                    $rows[] = $row;
+                }
+
+                // 각 행에 대해 조건을 확인하고 해당 조건에 맞는 카드를 렌더링
+                foreach ($rows as $row) {
+                    $display_card = false;  // 초기화
+            
+                    // 특정 조건을 만족하는지 확인
+                    if ($clicked_region == ['true', 'false', 'false', 'false'] && $row["tag_location"] == "홋카이도") {
+                        $display_card = true;
+                    } elseif ($clicked_region == ['false', 'true', 'false', 'false'] && $row["tag_location"] == "혼슈") {
+                        $display_card = true;
+                    } elseif ($clicked_region == ['false', 'false', 'true', 'false'] && $row["tag_location"] == "시코쿠") {
+                        $display_card = true;
+                    } elseif ($clicked_region == ['false', 'false', 'false', 'true'] && $row["tag_location"] == "규슈") {
+                        $display_card = true;
+                    } elseif ($clicked_region == ['true', 'true', 'false', 'false'] && in_array($row["tag_location"], ["홋카이도", "혼슈"])) {
+                        $display_card = true;
+                    }
+                    //더 많은 조건 추가...
+            
+                    // 조건을 만족하면 카드 렌더링
+                    if ($display_card) {
+                        render_card($row);
+                    }
                 }
             } else {
-                echo "<p>결과가 없습니다.</p>";
+                // POST 요청이 아닐 때 데이터베이스 결과를 렌더링
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        render_card($row);
+                    }
+                } else {
+                    echo "<p>결과가 없습니다.</p>";
+                }
             }
             ?>
         </div>
+
 
 
 

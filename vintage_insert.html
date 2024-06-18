@@ -23,121 +23,122 @@
         </menu>
         <input type="button" value="LOGIN" class="login-Btn">
     </nav>
+php
+코드 복사
+<main>
+    <div class="title">
+        <h1>매장 등록</h1>
+        <p>나만의 매장을 등록해 공유해 보세요</p>
+    </div>
+
+    <div class="signup-form"><br>
+        <form method="post" action="vintage_insert.php" enctype="multipart/form-data">
+
+            <div class="input-name">
+                <label for="name">상호명</label>
+                <input type="text" id="shop_name" name="shop_name" required placeholder="상호명을 입력하세요.">
+                <br>
+            </div>
+            
+            <div class="input-guide">
+                <label for="guide">매장 소개</label>
+                <textarea name="shop_guide" id="shop_guide" cols="30" rows="10" 
+                style="resize: none;"placeholder="설명을 입력해 주세요. (최대 2000자)"></textarea>
+                <br>
+            </div>
+            
+            <div class="input-time">
+                <label for="time">영업 시간</label>
+                <input type="time" name="opening_time" id="opening_time"> ~&nbsp;
+                <input type="time" name="closing_time" id="closing_time">
+                <br>
+            </div>
+
+            <div class="input-location">
+                <label for="searchLocation">매장 위치</label>
+                <input type="text" id="shop_location" placeholder="검색하여 위치 선택">
+                <div id="map"></div>
+            </div>                
+
+            <div class="input-image">
+                <label for="image">매장 사진</label>
+                <div class="img-button">
+                    <img src="./assets/img-btn.png">
+                </div>
+                <input type="file" id="image" name="image" accept="image/*" multiple>
+                <br>
+                <div id="preview-container"></div>
+            </div>
+
+            <div class="input-tag">
+                <label for="tag">태그</label><br>
+                <select id="tag_region" name="tag_region" required>
+                    <!--더 늘릴 예정-->
+                    <option value="" disabled selected>지역</option>
+                    <option value="홋카이도">홋카이도</option>
+                    <option value="혼슈">혼슈</option>
+                    <option value="시코쿠">시코쿠</option>
+                    <option value="규슈">규슈</option>
+                </select>
+                <br>
+                <select id="tag_location" name="tag_location" required>
+                    <!--더 늘릴 예정-->
+                    <option value="" disabled selected>도시</option>
+                    <option value="교토">교토</option>
+                    <option value="나고야">나고야</option>
+                    <option value="오사카">오사카</option>
+                    <option value="삿포로">삿포로</option>
+                    <option value="후쿠오카">후쿠오카</option>
+                </select>
+                <br>
+                <select id="tag_style" name="tag_style" required>
+                    <!--더 늘릴 예정-->
+                    <option value="" disabled selected>스타일</option>
+                    <option value="모리걸">모리걸</option>
+                    <option value="스트릿">스트릿</option>
+                    <option value="캐주얼">캐주얼</option>
+                    <option value="고스">고스</option>
+                    <option value="펑크">펑크</option>
+                    <option value="스포티">스포티</option>
+                </select>
+                <br>
+                <select id="tag_brand" name="tag_brand" required>
+                    <!--더 늘릴 예정-->
+                    <option value="" disabled selected>브랜드</option>
+                    <option value="빈티지샵">빈티지샵</option>
+                    <option value="빔즈">빔즈</option>
+                    <option value="요시다 포터">요시다 포터</option>
+                </select>
+                <br>
+                <select id="tag_category" name="tag_category" required>
+                    <!--더 늘릴 예정-->
+                    <option value="" disabled selected>종류</option>
+                    <option value="상의">상의</option>
+                    <option value="신발">신발</option>
+                    <option value="하의">하의</option>
+                    <option value="액세서리">액세서리</option>
+                </select>
+                <br>
+            </div>
+
+            <div class="input-price">
+                <label for="price">가격대</label>
+                <input type="number" id="price_min" name="price_min" placeholder="0 ￥"> ~&nbsp;
+                <input type="number" id="price_max" name="price_max" placeholder="1,000,000 ￥">
+                <button type="submit" class="price-btn">적용</button>
+                <br>
+            </div>
+            
+            <div class="button-container">
+                <button type="submit" class="submit-btn">작성완료</button>
+                <button type="cancel" class="cancel-btn">취소</button>
+            </div>
+            
+        </form>
+    </div>
     
-    <main>
-        <div class="title">
-            <h1>매장 등록</h1>
-            <p>나만의 매장을 등록해 공유해 보세요</p>
-        </div>
+</main>
 
-        <div class="signup-form"><br>
-            <form method="post" action="vintage_insert.php" enctype="multipart/form-data">
-
-                <div class="input-name">
-                    <label for="name">상호명</label>
-                    <input type="text" id="shop_name" name="shop_name" required placeholder="상호명을 입력하세요.">
-                    <br>
-                </div>
-                
-                <div class="input-guide">
-                    <label for="guide">매장 소개</label>
-                    <textarea name="shop_guide" id="shop_guide" cols="30" rows="10" 
-                    style="resize: none;"placeholder="설명을 입력해 주세요. (최대 2000자)"></textarea>
-                    <br>
-                </div>
-                
-                <div class="input-time">
-                    <label for="time">영업 시간</label>
-                    <input type="time" name="opening_time" id="opening_time"> ~&nbsp;
-                    <input type="time" name="closing_time" id="closing_time">
-                    <br>
-                </div>
-
-                <div class="input-location">
-                    <label for="searchLocation">매장 위치</label>
-                    <input type="text" id="shop_location" placeholder="검색하여 위치 선택">
-                    <div id="map"></div>
-                </div>                
-
-                <div class="input-image">
-                    <label for="image">매장 사진</label>
-                    <div class="img-button">
-                        <img src="./assets/img-btn.png">
-                    </div>
-                    <input type="file" id="image" name="image" accept="image/*" multiple>
-                    <br>
-                    <div id="preview-container"></div>
-                </div>
-
-                <div class="input-tag">
-                    <label for="tag">태그</label><br>
-                    <select id="tag_region" name="tag_region" required>
-                        <!--더 늘릴 예정-->
-                        <option value="" disabled selected>지역</option>
-                        <option value="홋카이도">홋카이도</option>
-                        <option value="혼슈">혼슈</option>
-                        <option value="시코쿠">시코쿠</option>
-                        <option value="규슈">규슈</option>
-                    </select>
-                    <br>
-                    <select id="tag_location" name="tag_location" required>
-                        <!--더 늘릴 예정-->
-                        <option value="" disabled selected>도시</option>
-                        <option value="교토">교토</option>
-                        <option value="나고야">나고야</option>
-                        <option value="오사카">오사카</option>
-                        <option value="삿포로">삿포로</option>
-                        <option value="후쿠오카">후쿠오카</option>
-                    </select>
-                    <br>
-                    <select id="tag_style" name="tag_style" required>
-                        <!--더 늘릴 예정-->
-                        <option value="" disabled selected>스타일</option>
-                        <option value="모리걸">모리걸</option>
-                        <option value="스트릿">스트릿</option>
-                        <option value="캐주얼">캐주얼</option>
-                        <option value="고스">고스</option>
-                        <option value="펑크">펑크</option>
-                        <option value="스포티">스포티</option>
-                    </select>
-                    <br>
-                    <select id="tag_brand" name="tag_brand" required>
-                        <!--더 늘릴 예정-->
-                        <option value="" disabled selected>브랜드</option>
-                        <option value="빈티지샵">빈티지샵</option>
-                        <option value="빔즈">빔즈</option>
-                        <option value="요시다 포터">요시다 포터</option>
-                    </select>
-                    <br>
-                    <select id="tag_category" name="tag_category" required>
-                        <!--더 늘릴 예정-->
-                        <option value="" disabled selected>종류</option>
-                        <option value="상의">상의</option>
-                        <option value="신발">신발</option>
-                        <option value="하의">하의</option>
-                        <option value="액세서리">액세서리</option>
-                    </select>
-                    <br>
-                </div>
-
-                <div class="input-price">
-                    <label for="price">가격대</label>
-                    <input type="number" id="price_min" name="price_min" placeholder="0 ￥"> ~&nbsp;
-                    <input type="number" id="price_max" name="price_max" placeholder="1,000,000 ￥">
-                    <button type="submit" class="price-btn">적용</button>
-                    <br>
-                </div>
-                
-                <div class="button-container">
-                    <button type="submit" class="submit-btn">작성완료</button>
-                    <button type="cancel" class="cancel-btn">취소</button>
-                </div>
-                
-            </form>
-        </div>
-        
-    </main>
-
-    <script src="./js/v_insert.js"></script>
+<script src="./js/v_insert.js"></script>
 </body>
 </html>

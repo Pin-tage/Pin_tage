@@ -21,9 +21,9 @@
         <menu>
             <ul>
                 <li class="nav-element"><a href="./index.html" class="top-nav">MAIN</a></li>
-                <li><a href="./search_test.html" class="top-nav">SEARCH</a></li>
-                <li class="nav-element"><a href="./map.html" class="top-nav">PIN!MAP</a></li>
-                <li class="nav-element">MY</li>
+                <li><a href="./search_test.php" class="top-nav">SEARCH</a></li>
+                <li class="nav-element"><a href="./map.php" class="top-nav">PIN!MAP</a></li>
+                <li class="nav-element"><a href="./mypage_H.php" class="top-nav">MY</a></li>
             </ul>
         </menu>
         <!-- <input type="button" value="LOGIN" class="login-Btn"> -->

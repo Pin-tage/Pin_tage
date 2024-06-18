@@ -151,33 +151,69 @@
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // POST 요청에서 clicked_region 값을 가져와서 JSON 배열로 변환
                 $clicked_region = json_decode($_POST['clicked_region'], true);
-
+            
                 // 데이터베이스 쿼리 결과를 배열로 저장
                 $rows = [];
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
                 }
-
+            
+                $region = "";
+            
                 // 각 행에 대해 조건을 확인하고 해당 조건에 맞는 카드를 렌더링
                 foreach ($rows as $row) {
                     $display_card = false;  // 초기화
             
                     // 특정 조건을 만족하는지 확인
-                    if ($clicked_region == ['true', 'false', 'false', 'false'] && $row["tag_location"] == "홋카이도") {
+                    if ($clicked_region == ['true', 'false', 'false', 'false']) {
                         $display_card = true;
-                    } elseif ($clicked_region == ['false', 'true', 'false', 'false'] && $row["tag_location"] == "혼슈") {
+                        $region = "홋카이도";
+                    } elseif ($clicked_region == ['false', 'true', 'false', 'false']) {
                         $display_card = true;
-                    } elseif ($clicked_region == ['false', 'false', 'true', 'false'] && $row["tag_location"] == "시코쿠") {
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['false', 'false', 'true', 'false']) {
                         $display_card = true;
-                    } elseif ($clicked_region == ['false', 'false', 'false', 'true'] && $row["tag_location"] == "규슈") {
+                        $region = "시코쿠";
+                    } elseif ($clicked_region == ['false', 'false', 'false', 'true']) {
                         $display_card = true;
-                    } elseif ($clicked_region == ['true', 'true', 'false', 'false'] && in_array($row["tag_location"], ["홋카이도", "혼슈"])) {
+                        $region = "규슈";
+                    } elseif ($clicked_region == ['true', 'true', 'false', 'false'] && in_array($row["tag_region"], ["홋카이도", "혼슈"])) {
                         $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['true', 'false', 'true', 'false'] && in_array($row["tag_region"], ["홋카이도", " 시코쿠"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['true', 'false', 'false', 'true'] && in_array($row["tag_region"], ["홋카이도", " 규슈"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['false', 'true', 'true', 'false'] && in_array($row["tag_region"], ["혼슈", " 시코쿠"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['false', 'true', 'false', 'true'] && in_array($row["tag_region"], ["혼슈", " 규슈"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['false', 'false', 'true', 'true'] && in_array($row["tag_region"], ["시코쿠", " 규슈"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['true', 'true', 'true', 'false'] && in_array($row["tag_region"], ["홋카이도", " 혼슈", "시코쿠"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['true', 'true', 'false', 'true'] && in_array($row["tag_region"], ["홋카이도", "혼슈", "규슈"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['false', 'true', 'true', 'true'] && in_array($row["tag_region"], ["혼슈", " 시코쿠", "규슈"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['true', 'false', 'true', 'false'] && in_array($row["tag_region"], ["홋카이도", " 시코쿠"])) {
+                        $display_card = true;
+                        $region = "혼슈";
+                    } elseif ($clicked_region == ['true', 'true', 'true', 'true'] && in_array($row["tag_region"], ["홋카이도", "혼슈", "시코쿠", "규슈"])) {
+                        $display_card = true;
+                        $region = "혼슈";
                     }
-                    //더 많은 조건 추가...
             
                     // 조건을 만족하면 카드 렌더링
-                    if ($display_card) {
+                    if ($display_card && $row['tag_region'] == $region) {
                         render_card($row);
                     }
                 }
@@ -191,12 +227,8 @@
                     echo "<p>결과가 없습니다.</p>";
                 }
             }
-            ?>
+        ?>
         </div>
-
-
-
-
 
 
         <!-- <div class="card">

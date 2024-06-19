@@ -85,7 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 region.img.src = region.imgOff;  // 이미지 변경
                 region.hashtag.style.display = 'none';  // 해시태그 숨기기
             });
+            
         });
-    });
 
+       
+    });   
 });

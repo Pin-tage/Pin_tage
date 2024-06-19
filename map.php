@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAP</title>
-    <link rel="stylesheet" href="./css/map.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/footer.css">
+
 
 
     <!-- 부트스트랩 -->
@@ -26,6 +24,10 @@
     <link href="https://fonts.googleapis.com/css?family=Cherry+Bomb" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Sniglet:wght@800&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/map.css">
 
     <!--favicon-->
     <link rel="icon" href="./favicon.png">
@@ -73,7 +75,7 @@
         </div>
 
         <!-- 지도 이미지 -->
-        <div class="map-img" style="margin-left: -100px;">
+        <div class="map-img" style="margin-left: -50px;">
             <img id="hokkaido-img" src="./assets/Hokkaido_off.png" alt="">
             <img id="honshu-img" src="./assets/Honshu_off.png" alt="">
             <img id="shikoku-img" src="./assets/Shikoku_off.png" alt="">
@@ -90,7 +92,7 @@
 
             </div>
             <div style="text-align: right;">
-                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">6개</span></span>
+                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">3개</span></span>
             </div>
 
         </div>
@@ -100,7 +102,7 @@
         <div class="grey-line"></div> <br>
 
         <!-- 오프라인샵 -->
-        <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
+        <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (3)</span></span>
 
         <?php
         include ('db_conn.php');
@@ -120,48 +122,69 @@
         ?>
 
         <!-- 결과 -->
-        <!-- Cards container -->
-        <div class="card-container" id="card-container">
-            <?php
+        <div class="center-container">
+            <!-- Cards container -->
+            <div class="card-container" id="card-container">
+                <?php
 
-            $shop = ["2nd", "wego", "sousou", "grizzly", "el", "jetrag"];
+                $shop = ["2nd", "wego", "sousou"];
+                $i = 0;
+                $maxPosts = 3;
 
-            $i = 0;
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    ?>
-                    <div class="card">
-                        <div class="heart">
-                            <i class="bi bi-heart-fill" style="color: red;"></i>
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if ($i >= $maxPosts) {
+                            break;
+                        }
+                        ?>
+                        <div class="card">
+                            <div class="heart">
+                                <i class="bi bi-heart-fill" style="color: red;"></i>
+                            </div>
+                            <div class="cardImg">
+                                <a href="<?php echo array_values($shop)[$i]; ?>.php">
+                                    <img src="<?php echo $row["shop_img_path"]; ?>" alt="">
+                                </a>
+                            </div>
+                            <div class="cardTitle"><?php echo $row["shop_name"]; ?></div>
+                            <div class="cardHashtag_container">
+                                <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
+                                <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
+                                <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
+                            </div>
+                            <div class="price">
+                                <img src="" alt="">
+                                <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
+                            </div>
                         </div>
-                        <div class="corner-paper-curl"></div>
-                        <div class="cardImg">
-                            <a href="<?php echo array_values($shop)[$i]; ?>.php">
-                                <img src="<?php echo $row["shop_img_path"]; ?>" alt="">
-                            </a>
-                        </div>
-                        <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
-                        <div class="cardHashtag_container">
-                            <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
-                            <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
-                            <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
-                        </div>
-                        <div class="price">
-                            <img src="" alt="">
-                            <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
-                        </div>
-                    </div>
-                    <?php
-                    $i++;
+                        <?php
+                        $allRows[] = $row;
+                        $i++;
+                    }
+                    // 모든 row 값을 JSON으로 인코딩
+                    $jsonAllRows = json_encode($allRows);
+                } else {
+                    echo "<p>결과가 없습니다.</p>";
+                    $jsonAllRows = json_encode([]);
                 }
-            } else {
-                echo "<p>결과가 없습니다.</p>";
-            }
-            ?>
+
+                ?>
+            </div>
+        </div>
         </div>
 
-        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                try {
+                    var allRows = <?php echo $jsonAllRows; ?>;
+                    console.log("Data from PHP:", allRows);
+                } catch (error) {
+                    console.error("Error parsing data:", error);
+                }
+            });
+        </script>
+
+
     </main>
 
     <!-- 푸터 -->

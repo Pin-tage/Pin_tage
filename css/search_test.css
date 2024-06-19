@@ -17,63 +17,9 @@ body{
     display: none;
 }
 
-/*상단 내비게이션 바 시작*/
-nav {
-    /*스타일*/
-    padding: 25px;
-    color: var(--chery-color);
-    font-family: 'Cherry Bomb';
-    font-size: 22px;
-    background-color: white;
-    /*배치*/
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    /*고정*/
-    position: fixed; 
-    width: 100%;
-    top: 0; 
-    left: 0;
-    z-index: 1000;
-}
 
-nav logo img {
-    max-width: 60%;
-    height: auto;
-    margin-left: 75px;
-} 
 
-.top-nav {
-    text-decoration: none;
-    color: var(--chery-color);
-}
 
-nav menu ul {
-    list-style: none;
-    display: flex;
-    font-size: 25px;
-}
-
-nav menu ul li {
-    margin: 0 40px 0 40px;
-}
-
-.nav-element{
-    opacity: 0.5;
-}
-
-.login-Btn {
-    padding: 10px 20px 10px 20px;
-    margin-right: 75px;
-    border-radius: 10px;
-    border: 3px solid white;
-    background-color: #F8EFF5;
-    color: var(--chery-color);
-    font-family: 'Cherry Bomb';
-    font-size: 18px;
-    text-decoration: none; /*밑줄없앰*/
-}
 
 /*main 시작*/
 main{
@@ -91,8 +37,8 @@ main{
 }
 .filters{
     display: flex;
-    justify-content: space-between;
-    border-bottom: dashed 3px gray;
+    /* justify-content: space-between; */
+    justify-content: center;
     
 }
 
@@ -101,6 +47,7 @@ main{
     padding: 10px;
     cursor: pointer;
     border-radius: 30px;
+    margin-bottom: 14px;
 }
 .filters button:hover {
     color: white;
@@ -118,6 +65,7 @@ main{
 .offline-shop {
     margin-bottom: 10px;
     font-weight: bold;
+    border-top: dashed 3px gray;
 }
 
 .offline-shop > span {
@@ -148,7 +96,7 @@ main{
 .post-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 20px;margin-top: 14px;
 }
 
 .post {
@@ -208,7 +156,7 @@ main{
 }
   
 h1 {
-    font-size: 24px;
+    font-size: 36px;
     margin-bottom: 10px;
 }
   

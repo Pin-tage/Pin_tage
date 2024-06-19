@@ -12,7 +12,7 @@ nav {
     align-items: center;
     /* 고정 */
     position: fixed; 
-    width: 1920px; 
+    width: 100% !important; 
     top: 0; 
     z-index: 1000;
 }

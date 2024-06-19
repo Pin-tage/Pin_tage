@@ -7,6 +7,7 @@
     <link rel="icon" href="./favicon.png"> <!--favicon-->
     <link href="https://fonts.googleapis.com/css?family=Cherry+Bomb" rel="stylesheet"> <!--상단 내비 폰트-->
     <link rel="stylesheet" href="./css/search_test.css">
+    <link rel="stylesheet" href="./css/nav.css">
     <title>SEARCH</title>
 </head>
 
@@ -18,12 +19,12 @@
                 <img src="./assets/logo2.png">
             </a>
         </logo>
-        <menu>
+        <menu style="margin-left:32px">
             <ul>
-                <li class="nav-element"><a href="./index.php" class="top-nav">MAIN</a></li>
+            <li><a href="./index.php" class="top-nav">MAIN</a></li>
                 <li><a href="./search_test.php" class="top-nav">SEARCH</a></li>
-                <li class="nav-element"><a href="./map.php" class="top-nav">PIN!MAP</a></li>
-                <li class="nav-element"><a href="./mypage_H.php" class="top-nav">MY</a></li>
+                <li><a href="./map.php" class="top-nav">PIN!MAP</a></li>
+                <li><a href="./mypage_H.php" class="top-nav">MYPAGE</a></li>
             </ul>
         </menu>
         <!-- <input type="button" value="LOGIN" class="login-Btn"> -->
@@ -63,14 +64,15 @@
             <section class="search">
                 <div class="filters">
                     <div class="filters-buttons">
-                        <button>검색 필터</button>
-                        <button>위치</button>
-                        <button>스타일</button>
-                        <button>브랜드</button>
-                        <button>종류</button>
-                        <button>가격대</button>
-                        <h1 class="">검색</h1>
-                        <p class="offline-shop">오프라인샵<span>(23)</span></p>
+                        <p style="position:absolute; margin-top:8px; margin-left: 3px;">검색 필터</p>
+                        <div class="hs_buttons" style="margin-left :95px;">
+                            <button>위치</button>
+                            <button>스타일</button>
+                            <button>브랜드</button>
+                            <button>종류</button>
+                            <button>가격대</button>
+                        </div>
+                        <p class="offline-shop"><p style="margin: top 10px;">오프라인샵</p><span style="margin-top:-24px; margin-left: 90px; position:absolute;">(23)</span></p>
 
                         <!-- 게시글 구현 -->
                         <div class="post-container">

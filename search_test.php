@@ -36,7 +36,7 @@
     </nav>
 
     <?php
-    include ('db_conn.php');
+    include('db_conn.php');
 
     // 데이터베이스 연결 오류 확인
     if ($conn->connect_error) {
@@ -65,31 +65,80 @@
                 <div class="filters">
                     <div class="filters-buttons">
                         <p style="position:absolute; margin-top: -42px; margin-left: 3px;">검색 필터</p>
-                        <div class="hs_dropbox" style="position:absolute; margin-top: -50px; margin-left: 95px; ">
-                            <span>
-                                <select id="tag_region" name="tag_region" required>
-                                    <!--더 늘릴 예정-->
-                                    <option value="" disabled selected>지역</option>
-                                    <option value="홋카이도">홋카이도</option>
-                                    <option value="혼슈">혼슈</option>
-                                    <option value="시코쿠">시코쿠</option>
-                                    <option value="규슈">규슈</option>
-                                </select>
-                            </span>
-                            <span>
-                                <select id="tag_style" name="tag_style" required>
-                                    <!--더 늘릴 예정-->
-                                    <option value="" disabled selected>스타일</option>
-                                    <option value="모리걸">모리걸</option>
-                                    <option value="스트릿">스트릿</option>
-                                    <option value="캐주얼">캐주얼</option>
-                                    <option value="고스">고스</option>
-                                    <option value="펑크">펑크</option>
-                                    <option value="스포티">스포티</option>
-                                </select>
-                            </span>
-                            <button type="submit" class="submit-btn">검색</button>
-                        </div>
+                        <form id="dropdownForm">
+                            <div class="hs_dropbox" style="position:absolute; margin-top: -50px; margin-left: 95px; ">
+                                <span>
+                                    <select id="tag_region" name="tag_region" required>
+                                        <!--더 늘릴 예정-->
+                                        <option value="" disabled selected>지역</option>
+                                        <option value="홋카이도">홋카이도</option>
+                                        <option value="혼슈">혼슈</option>
+                                        <option value="시코쿠">시코쿠</option>
+                                        <option value="규슈">규슈</option>
+                                    </select>
+                                </span>
+                                <span>
+                                    <select id="tag_style" name="tag_style" required>
+                                        <!--더 늘릴 예정-->
+                                        <option value="" disabled selected>스타일</option>
+                                        <option value="모리걸">모리걸</option>
+                                        <option value="스트릿">스트릿</option>
+                                        <option value="펑크">펑크</option>
+                                        <option value="스포티">스포티</option>
+                                    </select>
+                                </span>
+                                <button type="submit" class="submit-btn">검색</button>
+                            </div>
+                        </form>
+
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                // 선택된 값을 저장할 배열
+                                let selectedValues = [];
+
+                                // select 요소 가져오기
+                                const regionSelect = document.getElementById('tag_region');
+                                const styleSelect = document.getElementById('tag_style');
+
+                                // 폼 제출 이벤트 리스너 추가
+                                const form = document.getElementById('dropdownForm');
+                                form.addEventListener('submit', function (event) {
+                                    event.preventDefault(); // 기본 제출 동작 방지
+
+                                    // 선택된 값을 배열에 저장
+                                    selectedValues.push({
+                                        region: regionSelect.value,
+                                        style: styleSelect.value
+                                    });
+
+                                    console.log("Selected values array:", selectedValues);
+
+                                    // 필터링 함수 호출
+                                    filterCards(regionSelect.value, styleSelect.value);
+                                });
+
+                                // 필터링 함수 정의
+                                function filterCards(selectedRegion, selectedStyle) {
+                                    // 모든 카드 가져오기
+                                    const cards = document.querySelectorAll('.post');
+
+                                    cards.forEach(function (card) {
+                                        // 카드의 데이터 속성 값 가져오기
+                                        const cardRegion = card.getAttribute('data-region');
+                                        const cardStyle = card.getAttribute('data-style');
+
+                                        // 조건에 맞는지 확인
+                                        if ((selectedRegion === "" || cardRegion === selectedRegion) &&
+                                            (selectedStyle === "" || cardStyle === selectedStyle)) {
+                                            card.style.display = "block"; // 조건에 맞으면 보이기
+                                        } else {
+                                            card.style.display = "none"; // 조건에 맞지 않으면 숨기기
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
 
                         <p class="offline-shop">
                         <p style="margin: top 9px; font-weight: bold;">오프라인샵</p><span
@@ -105,7 +154,7 @@
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     ?>
-                                    <div class="post">
+                                    <div class="post" data-region="<?php echo $row["tag_region"]; ?>" data-style="<?php echo $row["tag_style"]; ?>">
                                         <a href="<?php echo array_values($shop)[$i]; ?>.php">
                                             <img src="<?php echo $row["shop_img_path"]; ?>" class="storeImg">
                                         </a>
@@ -130,9 +179,6 @@
 
                             ?>
                         </div>
-
-                        <p class="brand-shop">브랜드 / 체인점 <span>(23)</span></p>
-
 
     </main>
 

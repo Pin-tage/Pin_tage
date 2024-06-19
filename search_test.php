@@ -21,7 +21,7 @@
         </logo>
         <menu style="margin-left:32px">
             <ul>
-            <li><a href="./index.php" class="top-nav">MAIN</a></li>
+                <li><a href="./index.php" class="top-nav">MAIN</a></li>
                 <li><a href="./search_test.php" class="top-nav">SEARCH</a></li>
                 <li><a href="./map.php" class="top-nav">PIN!MAP</a></li>
                 <li><a href="./mypage_H.php" class="top-nav">MYPAGE</a></li>
@@ -36,19 +36,19 @@
     </nav>
 
     <?php
-
     include ('db_conn.php');
 
     // 데이터베이스 연결 오류 확인
     if ($conn->connect_error) {
-        echo "<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>";
+        die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
     }
 
-    $sql = "SELECT shop_name, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
+    $sql = "SELECT shop_name, tag_region, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
+
     $result = $conn->query($sql); // 쿼리 실행
     
     if (!$result) {
-        echo "<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>";
+        die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
     }
     ?>
 
@@ -64,42 +64,68 @@
             <section class="search">
                 <div class="filters">
                     <div class="filters-buttons">
-                        <p style="position:absolute; margin-top:8px; margin-left: 3px;">검색 필터</p>
-                        <div class="hs_buttons" style="margin-left :95px;">
-                            <button>위치</button>
-                            <button>스타일</button>
-                            <button>브랜드</button>
-                            <button>종류</button>
-                            <button>가격대</button>
+                        <p style="position:absolute; margin-top: -42px; margin-left: 3px;">검색 필터</p>
+                        <div class="hs_dropbox" style="position:absolute; margin-top: -50px; margin-left: 95px; ">
+                            <span>
+                                <select id="tag_region" name="tag_region" required>
+                                    <!--더 늘릴 예정-->
+                                    <option value="" disabled selected>지역</option>
+                                    <option value="홋카이도">홋카이도</option>
+                                    <option value="혼슈">혼슈</option>
+                                    <option value="시코쿠">시코쿠</option>
+                                    <option value="규슈">규슈</option>
+                                </select>
+                            </span>
+                            <span>
+                                <select id="tag_style" name="tag_style" required>
+                                    <!--더 늘릴 예정-->
+                                    <option value="" disabled selected>스타일</option>
+                                    <option value="모리걸">모리걸</option>
+                                    <option value="스트릿">스트릿</option>
+                                    <option value="캐주얼">캐주얼</option>
+                                    <option value="고스">고스</option>
+                                    <option value="펑크">펑크</option>
+                                    <option value="스포티">스포티</option>
+                                </select>
+                            </span>
+                            <button type="submit" class="submit-btn">검색</button>
                         </div>
-                        <p class="offline-shop"><p style="margin: top 10px;">오프라인샵</p><span style="margin-top:-24px; margin-left: 90px; position:absolute;">(23)</span></p>
+
+                        <p class="offline-shop">
+                        <p style="margin: top 9px; font-weight: bold;">오프라인샵</p><span
+                            style="margin-top:-24px; margin-left: 90px; position:absolute; color : #ff47cb; font-weight: bold;">(23)</span>
+                        </p>
 
                         <!-- 게시글 구현 -->
                         <div class="post-container">
                             <?php
-                            function render_card($row)
-                            { ?>
-                                <div class="post">
-                                    <img src="<?php echo $row["shop_img_path"]; ?>" class="storeImg">
-                                    <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
-                                    <h3><?php echo $row["shop_name"]; ?></h3>
-                                    <div class="hashtags">
-                                        <span>#<?php echo $row["tag_location"]; ?></span>
-                                        <span>#<?php echo $row["tag_style"]; ?></span>
-                                        <span>#<?php echo $row["tag_brand"]; ?></span>
-                                    </div>
 
-                                    <div class="price">
-                                        <img src="./akar-icons_coin.png" class="yenImg">
-                                        <span><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</span>
-                                    </div>
-                                </div>
-                            <?php }
-
+                            $shop = ["2nd", "wego", "sousou", "grizzly", "el", "jetrag"];
+                            $i = 0;
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    render_card($row);
+                                    ?>
+                                    <div class="post">
+                                        <a href="<?php echo array_values($shop)[$i]; ?>.php">
+                                            <img src="<?php echo $row["shop_img_path"]; ?>" class="storeImg">
+                                        </a>
+                                        <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
+                                        <h3><?php echo $row["shop_name"]; ?></h3>
+                                        <div class="hashtags">
+                                            <span>#<?php echo $row["tag_location"]; ?></span>
+                                            <span>#<?php echo $row["tag_style"]; ?></span>
+                                            <span>#<?php echo $row["tag_brand"]; ?></span>
+                                        </div>
+
+                                        <div class="price">
+                                            <img src="./akar-icons_coin.png" class="yenImg">
+                                            <span><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</span>
+                                        </div>
+                                    </div>
+                                    <?php $i++;
                                 }
+                            } else {
+                                echo "<p>결과가 없습니다.</p>";
                             }
 
                             ?>
@@ -107,37 +133,7 @@
 
                         <p class="brand-shop">브랜드 / 체인점 <span>(23)</span></p>
 
-                        <div class="post-container">
-                            <?php
-                            function render_card2($row)
-                            { ?>
-                                <div class="post">
-                                    <img src="<?php echo $row["shop_img_path"]; ?>" class="storeImg">
-                                    <span class="like-btn"><img src="./upload/bxs-heart.svg.svg" class="heart-icon"></span>
-                                    <h3><?php echo $row["shop_name"]; ?></h3>
-                                    <div class="hashtags">
-                                        <span>#<?php echo $row["tag_location"]; ?></span>
-                                        <span>#<?php echo $row["tag_style"]; ?></span>
-                                        <span>#<?php echo $row["tag_brand"]; ?></span>
-                                    </div>
-                                    <div class="price">
-                                        <img src="./akar-icons_coin.png" class="yenImg">
-                                        <span><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</span>
-                                    </div>
 
-                                    <img src="Vector 6.png" class="bookmark">
-                                </div>
-                            <?php }
-
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    render_card2($row);
-                                }
-                            }
-
-                            ?>
-
-                        </div>
     </main>
 
     <div class="market-button">

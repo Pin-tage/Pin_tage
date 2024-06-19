@@ -43,17 +43,21 @@ main{
 }
 
 .filters button {
+    background-color: #FF47CB;
+    color: #3d3d3d;
+    padding: 8px 15px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-size: 0.9em;
+    display: inline-block; /* 추가 */
     border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 30px;
-    margin-bottom: 14px;
+    outline: #333;
 }
-.filters button:hover {
+/* .filters button:hover {
     color: white;
     background-color: black;
     transition: background-color 1s;
-}
+} */
 .result-count {
     color: var(--chery-color);
     font-weight: bold;
@@ -84,6 +88,31 @@ main{
     color: var(--chery-color);
 }
 
+.hs_dropbox span {
+    background-color: #f0f0f0;
+    color: #888;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+    font-size: 0.9em;
+    display: inline-block; /* 추가 */
+}
+
+.hs_dropbox select {
+    border: none;
+    background: transparent;
+    font-size: 1.1em;
+    outline: none;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 4px;
+    margin: 0;
+    text-align: center;
+}
+
+.
 
 
 /* 게시글 구현 css */

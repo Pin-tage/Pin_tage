@@ -92,7 +92,7 @@
 
             </div>
             <div style="text-align: right;">
-                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">6개</span></span>
+                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">3개</span></span>
             </div>
 
         </div>
@@ -102,7 +102,7 @@
         <div class="grey-line"></div> <br>
 
         <!-- 오프라인샵 -->
-        <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
+        <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (3)</span></span>
 
         <?php
         include ('db_conn.php');
@@ -122,51 +122,69 @@
         ?>
 
         <!-- 결과 -->
-         <div class="center-container">
-        <!-- Cards container -->
-        <div class="card-container" id="card-container">
-            <?php
+        <div class="center-container">
+            <!-- Cards container -->
+            <div class="card-container" id="card-container">
+                <?php
 
-            $shop = ["2nd", "wego", "sousou"];
-            $i = 0;
-            $maxPosts = 3;
+                $shop = ["2nd", "wego", "sousou"];
+                $i = 0;
+                $maxPosts = 3;
 
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    if ($i >= $maxPosts) {
-                        break; // Exit the loop if the maximum number of posts is reached
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if ($i >= $maxPosts) {
+                            break;
+                        }
+                        ?>
+                        <div class="card">
+                            <div class="heart">
+                                <i class="bi bi-heart-fill" style="color: red;"></i>
+                            </div>
+                            <div class="cardImg">
+                                <a href="<?php echo array_values($shop)[$i]; ?>.php">
+                                    <img src="<?php echo $row["shop_img_path"]; ?>" alt="">
+                                </a>
+                            </div>
+                            <div class="cardTitle"><?php echo $row["shop_name"]; ?></div>
+                            <div class="cardHashtag_container">
+                                <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
+                                <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
+                                <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
+                            </div>
+                            <div class="price">
+                                <img src="" alt="">
+                                <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
+                            </div>
+                        </div>
+                        <?php
+                        $allRows[] = $row;
+                        $i++;
                     }
-                    ?>
-                    <div class="card">
-                        <div class="heart">
-                            <i class="bi bi-heart-fill" style="color: red;"></i>
-                        </div>
-                        <div class="cardImg">
-                            <a href="<?php echo array_values($shop)[$i]; ?>.php">
-                                <img src="<?php echo $row["shop_img_path"]; ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="cardTitle"><?php echo $row["shop_name"]; ?></div>
-                        <div class="cardHashtag_container">
-                            <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
-                            <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
-                            <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
-                        </div>
-                        <div class="price">
-                            <img src="" alt="">
-                            <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
-                        </div>
-                    </div>
-                    <?php
-                    $i++;
+                    // 모든 row 값을 JSON으로 인코딩
+                    $jsonAllRows = json_encode($allRows);
+                } else {
+                    echo "<p>결과가 없습니다.</p>";
+                    $jsonAllRows = json_encode([]);
                 }
-            } else {
-                echo "<p>결과가 없습니다.</p>";
-            }
-            ?>
+
+                ?>
+            </div>
         </div>
         </div>
-        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                try {
+                    var allRows = <?php echo $jsonAllRows; ?>;
+                    console.log("Data from PHP:", allRows);
+                } catch (error) {
+                    console.error("Error parsing data:", error);
+                }
+            });
+        </script>
+
+
     </main>
 
     <!-- 푸터 -->

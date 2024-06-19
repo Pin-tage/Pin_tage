@@ -20,7 +20,7 @@
         </logo>
         <menu>
             <ul>
-                <li class="nav-element"><a href="./index.html" class="top-nav">MAIN</a></li>
+                <li class="nav-element"><a href="./index.php" class="top-nav">MAIN</a></li>
                 <li><a href="./search_test.php" class="top-nav">SEARCH</a></li>
                 <li class="nav-element"><a href="./map.php" class="top-nav">PIN!MAP</a></li>
                 <li class="nav-element"><a href="./mypage_H.php" class="top-nav">MY</a></li>

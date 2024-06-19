@@ -85,9 +85,9 @@
 
     <div class="carousel-container">
         <div class="owl-carousel owl-theme">
-            <div class="item"><img src="<?php echo $row["shop_img_path"]; ?>"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 2"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 3"></div>
+            <div class="item"><img src="./assets/2nd_street1.jpg"></div>
+            <div class="item"><img src="./assets/2nd_street2.jpg" alt="Image 2"></div>
+            <div class="item"><img src="./assets/2nd_street3.jpg" alt="Image 3"></div>
         </div>
 
         <!-- 왼쪽 화살표 이미지 -->

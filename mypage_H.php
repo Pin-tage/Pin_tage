@@ -1,4 +1,4 @@
-<?php
+<a?php
 include ('db_conn.php');
 session_start();
 
@@ -91,7 +91,7 @@ session_start();
                     <div class="albumContainer" id="albumContainer1">
                         <div class="card">
                             <div class="corner-paper-curl"></div>
-                            <div class="cardImg"><img src="./upload/image 9.png" alt=""></div>
+                            <div class="cardImg"><a href="2nd.php"><img src="./upload/image 9.png" alt=""></a></div>
                             <p class="cardTitle">2nd STREET</p>
                             <div class="cardHashtag_container">
                                 <div class="cardHashtag">#오사카</div>
@@ -104,7 +104,7 @@ session_start();
                         </div>
                         <div class="card">
                             <div class="corner-paper-curl"></div>
-                            <div class="cardImg"><img src="./upload/image 9 (1).png" alt=""></div>
+                            <div class="cardImg"><a href="wego.php"><img src="./upload/image 9 (1).png" alt=""></a></div>
                             <p class="cardTitle">WEGO</p>
                             <div class="cardHashtag_container">
                                 <div class="cardHashtag">#교토</div>
@@ -117,7 +117,7 @@ session_start();
                         </div>
                         <div class="card">
                             <div class="corner-paper-curl"></div>
-                            <div class="cardImg"><img src="./upload/image 9 (2).png" alt=""></div>
+                            <div class="cardImg"><a href="sousou.php"><img src="./upload/image 9 (2).png" alt=""></a></div>
                             <p class="cardTitle">SOU • SOU 타비</p>
                             <div class="cardHashtag_container">
                                 <div class="cardHashtag">#교토</div>
@@ -132,7 +132,7 @@ session_start();
                     <div class="albumContainer" id="albumContainer2">
                         <div class="card">
                             <div class="corner-paper-curl"></div>
-                            <div class="cardImg"><img src="./upload/Grizzly.jpg" alt=""></div>
+                            <div class="cardImg"><a href="grizzly.php"><img src="./upload/Grizzly.jpg" alt=""></a></div>
                             <p class="cardTitle">Grizzly</p>
                             <div class="cardHashtag_container">
                                 <div class="cardHashtag">#오사카</div>
@@ -145,7 +145,7 @@ session_start();
                         </div>
                         <div class="card">
                             <div class="corner-paper-curl"></div>
-                            <div class="cardImg"><img src="./upload/EL RODEO.jpg" alt=""></div>
+                            <div class="cardImg"><a href="el.php"><img src="./upload/EL RODEO.jpg" alt=""></a></div>
                             <p class="cardTitle">EL RODEO</p>
                             <div class="cardHashtag_container">
                                 <div class="cardHashtag">#오사카</div>
@@ -158,7 +158,7 @@ session_start();
                         </div>
                         <div class="card">
                             <div class="corner-paper-curl"></div>
-                            <div class="cardImg"><img src="./upload/Jetrag.jpg" alt=""></div>
+                            <div class="cardImg"><a href="jetrag.php"><img src="./upload/Jetrag.jpg" alt=""></a></div>
                             <p class="cardTitle">Jetrag</p>
                             <div class="cardHashtag_container">
                                 <div class="cardHashtag">#교토</div>

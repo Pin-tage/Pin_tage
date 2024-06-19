@@ -85,9 +85,9 @@
 
     <div class="carousel-container">
         <div class="owl-carousel owl-theme">
-            <div class="item"><img src="<?php echo $row["shop_img_path"]; ?>"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 2"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 3"></div>
+            <div class="item"><img src="./assets/sousou1.png"></div>
+            <div class="item"><img src="./assets/sousou2.png"></div>
+            <div class="item"><img src="./assets/sousou3.png""></div>
         </div>
 
         <!-- 왼쪽 화살표 이미지 -->
@@ -100,29 +100,26 @@
     <main>
         <div class="top-detail">
             <div class="intro">
-                <h1 class="title">2nd Street<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
-                <p><?php echo $row['shop_guide'] ?></p>
+                <h1 class="title">SOU・SOU 타비<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
+                <p>브랜드 SOU・SOU 타비는 전통적인 일본 문화와 현대적인 감각을 융합한 독특한 스타일을 지향하는 패션 브랜드입니다. 그들의 제품들은 일본 전통 의류와 현대적인 디자인 요소를 조화롭게 결합하여, 독특하고 멋진 시각적 효과를 제공합니다. SOU・SOU는 주로 전통 스타일의 신발과 의류를 만들며, 그들의 제품은 독특한 패턴과 섬세한 장인 정신을 바탕으로 고객들 사이에서 큰 인기를 얻고 있습니다. </p>
                 <div class="hashtags">
-                    <span>#<?php echo $row["tag_location"]; ?></span>
-                    <span>#<?php echo $row["tag_style"]; ?></span>
-                    <span>#<?php echo $row["tag_brand"]; ?></span>
+                    <span>#교토</span>
+                    <span>#스트릿</span>
+                    <span>#빔즈</span>
                 </div>
             </div>
             <div class="web-detail">
                 <div class="location"><span class="iconify" data-icon="mdi:map-marker" data-inline="false"
-                        style="color: #FF47CB;"></span> 5 Chome-67 Tsukizutecho, Ogaki, Gifu 503-0854</div>
+                        style="color: #FF47CB;"></span> 〒604-8042 Kyoto, Nakagyo Ward, Nakanocho, 583-3</div>
                 <div class="time"><span class="iconify" data-icon="fluent:clock-24-filled" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row['opening_time'] ?>AM ~
-                    <?php echo $row['closing_time'] ?>PM
-                </div>
+                        style="color: #FF47CB;"></span>매일 12PM ~ 9:00PM</div>
                 <div class="website"><span class="iconify" data-icon="mdi:web" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo strtolower(str_replace(' ', '', $row['shop_name'])); ?>.jp
+                        style="color: #FF47CB;"></span>sousou.jp
                 </div>
                 <div class="call"><span class="iconify" data-icon="bx:bxs-phone-call" data-inline="false"
-                        style="color: #FF47CB;"></span> 0584-87-0360</div>
+                        style="color: #FF47CB;"></span> 075-212-8005 </div>
                 <div class="sell"><span class="iconify" data-icon="mdi:currency-jpy" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row["price_min"]; ?>¥ ~
-                    <?php echo $row["price_max"]; ?>¥
+                        style="color: #FF47CB;"></span>500¥ ~ 10000¥
                 </div>
             </div>
 

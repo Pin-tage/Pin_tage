@@ -40,21 +40,6 @@
 
 <body>
 
-    <?php
-    include ('db_conn.php');
-    // 데이터베이스 연결 오류 확인
-    if ($conn->connect_error) {
-        die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
-    }
-
-    $sql = "SELECT shop_name, tag_region, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
-    $result = $conn->query($sql); // 쿼리 실행
-    
-    if (!$result) {
-        die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
-    }
-    ?>
-
     <!--상단 nav-->
     <nav>
         <logo>
@@ -64,7 +49,7 @@
         </logo>
         <menu>
             <ul>
-                <li><a href="./index.html" class="top-nav">MAIN</a></li>
+                <li><a href="./index.php" class="top-nav">MAIN</a></li>
                 <li><a href="./search_test.php" class="top-nav">SEARCH</a></li>
                 <li><a href="./map.php" class="top-nav">PIN!MAP</a></li>
                 <li><a href="./mypage_H.php" class="top-nav">MYPAGE</a></li>
@@ -117,21 +102,45 @@
         <!-- 오프라인샵 -->
         <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (23)</span></span>
 
+        <?php
+        include ('db_conn.php');
+
+        // 데이터베이스 연결 오류 확인
+        if ($conn->connect_error) {
+            die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
+        }
+
+        $sql = "SELECT shop_name, tag_region, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
+
+        $result = $conn->query($sql); // 쿼리 실행
+        
+        if (!$result) {
+            die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
+        }
+        ?>
+
         <!-- 결과 -->
         <!-- Cards container -->
-        <!-- Cards container -->
-        <div class="card-container">
+        <div class="card-container" id="card-container">
             <?php
+
+            $shop = ["2nd", "wego", "sousou", "grizzly", "el", "jetrag"];
+
+            $i = 0;
+
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    // Output each card here
                     ?>
                     <div class="card">
                         <div class="heart">
                             <i class="bi bi-heart-fill" style="color: red;"></i>
                         </div>
                         <div class="corner-paper-curl"></div>
-                        <div class="cardImg"><img src="<?php echo $row["shop_img_path"]; ?>" alt=""></div>
+                        <div class="cardImg">
+                            <a href="<?php echo array_values($shop)[$i]; ?>.php">
+                                <img src="<?php echo $row["shop_img_path"]; ?>" alt="">
+                            </a>
+                        </div>
                         <p class="cardTitle"><?php echo $row["shop_name"]; ?></p>
                         <div class="cardHashtag_container">
                             <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
@@ -144,6 +153,7 @@
                         </div>
                     </div>
                     <?php
+                    $i++;
                 }
             } else {
                 echo "<p>결과가 없습니다.</p>";
@@ -151,39 +161,7 @@
             ?>
         </div>
 
-
-        
-
-        <!-- <div class="card">
-                    <div class="heart">
-                        <i class="bi bi-heart-fill" style="color: red;"></i>
-                    </div>
-                    <div class="corner-paper-curl"></div>                   
-                    <div class="cardImg"><img src="" alt=""></div>
-                    <p class="cardTitle">WEGO</p>
-                    <div class="cardHashtag_container">
-                        <div class="cardHashtag">#신주쿠</div>
-                        <div class="cardHashtag">#도쿄</div>
-                        <div class="cardHashtag">#스트릿</div>
-                    </div>
-                    <div class="price"><img src="./akar-icons_coin.png" alt="" ><p>1,000 ~ 4,500¥</p></div>
-                </div>
-                <div class="card">
-                    <div class="heart">
-                        <i class="bi bi-heart-fill" style="color: red;"></i>
-                    </div> 
-                    <div class="corner-paper-curl"></div>
-                    <div class="cardImg"><img src="" alt=""></div>
-                    <p class="cardTitle">SOU • SOU 타비</p>
-                    <div class="cardHashtag_container">
-                        <div class="cardHashtag">#오사카</div>
-                        <div class="cardHashtag">#교토</div>
-                        <div class="cardHashtag">#스트릿</div>
-                    </div>
-                    <div class="price"><img src="./akar-icons_coin.png" alt=""><p>500 ~ 10,000¥</p></div>
-                </div> 
-        </div> -->
-
+        </div>
     </main>
 
     <!-- 푸터 -->

@@ -85,9 +85,9 @@
 
     <div class="carousel-container">
         <div class="owl-carousel owl-theme">
-            <div class="item"><img src="<?php echo $row["shop_img_path"]; ?>"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 2"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 3"></div>
+            <div class="item"><img src="./assets/el.png"></div>
+            <div class="item"><img src="./assets/el2.png"></div>
+            <div class="item"><img src="./assets/el3.png""></div>
         </div>
 
         <!-- 왼쪽 화살표 이미지 -->
@@ -100,29 +100,28 @@
     <main>
         <div class="top-detail">
             <div class="intro">
-                <h1 class="title">2nd Street<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
-                <p><?php echo $row['shop_guide'] ?></p>
+                <h1 class="title">EL RODEO<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
+                <p>색상, 무늬, 디자인 모두에서 우리가 제안하는 오사카 발상의 100% 오리지널 브랜드입니다.
+발리·인도·터키 등의 개성 넘치는 나라에서 만들어낸 “두근두근” “두근두근”이 가득한 옷들이, 모두에게 건강을 옷자락 나누고 싶다고 기다리고 있습니다.
+당신만의 감성과 독특한 멋을 우리와 함께 연출해 보지 않겠습니까. .  </p>
                 <div class="hashtags">
-                    <span>#<?php echo $row["tag_location"]; ?></span>
-                    <span>#<?php echo $row["tag_style"]; ?></span>
-                    <span>#<?php echo $row["tag_brand"]; ?></span>
+                    <span>#오사카</span>
+                    <span>#모리걸</span>
+                    <span>#빈티지샵</span>
                 </div>
             </div>
             <div class="web-detail">
                 <div class="location"><span class="iconify" data-icon="mdi:map-marker" data-inline="false"
-                        style="color: #FF47CB;"></span> 5 Chome-67 Tsukizutecho, Ogaki, Gifu 503-0854</div>
+                        style="color: #FF47CB;"></span> 2 Chome-3-8 Nishishinsaibashi, Chuo Ward, Osaka, 542-0086</div>
                 <div class="time"><span class="iconify" data-icon="fluent:clock-24-filled" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row['opening_time'] ?>AM ~
-                    <?php echo $row['closing_time'] ?>PM
-                </div>
+                        style="color: #FF47CB;"></span>매일 11:00AM ~ 8:00PM</div>
                 <div class="website"><span class="iconify" data-icon="mdi:web" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo strtolower(str_replace(' ', '', $row['shop_name'])); ?>.jp
+                        style="color: #FF47CB;"></span>elrodeo.jp
                 </div>
                 <div class="call"><span class="iconify" data-icon="bx:bxs-phone-call" data-inline="false"
-                        style="color: #FF47CB;"></span> 0584-87-0360</div>
+                        style="color: #FF47CB;"></span> 081-6211-2570 </div>
                 <div class="sell"><span class="iconify" data-icon="mdi:currency-jpy" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row["price_min"]; ?>¥ ~
-                    <?php echo $row["price_max"]; ?>¥
+                        style="color: #FF47CB;"></span>2500¥ ~ 15000¥
                 </div>
             </div>
 

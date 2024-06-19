@@ -64,7 +64,7 @@
     ?>
     <nav>
         <logo>
-            <a href="./index.php">
+            <a href="./index.html">
                 <img src="./assets/logo.png">
             </a>
         </logo>
@@ -85,9 +85,9 @@
 
     <div class="carousel-container">
         <div class="owl-carousel owl-theme">
-            <div class="item"><img src="<?php echo $row["shop_img_path"]; ?>"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 2"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 3"></div>
+            <div class="item"><img src="./assets/wego.png"></div>
+            <div class="item"><img src="./assets/wego2.png"></div>
+            <div class="item"><img src="./assets/wego3.png""></div>
         </div>
 
         <!-- 왼쪽 화살표 이미지 -->
@@ -100,29 +100,26 @@
     <main>
         <div class="top-detail">
             <div class="intro">
-                <h1 class="title">2nd Street<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
-                <p><?php echo $row['shop_guide'] ?></p>
+                <h1 class="title">WEGO<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
+                <p>WEGO는 일본의 인기 빈티지샵으로, 주로 도쿄의 하라주쿠 지역에 위치하고 있습니다. 1994년에 설립된 WEGO는 젊은 층을 대상으로 한 다양한 스타일의 빈티지 및 스트리트 패션 아이템을 판매합니다. 독특한 디자인과 합리적인 가격으로 많은 패션 애호가들에게 사랑받고 있으며, 일본뿐만 아니라 해외에서도 많은 팬을 보유하고 있습니다. WEGO는 트렌디한 의류뿐만 아니라 액세서리, 신발 등 다양한 패션 아이템을 제공합니다.</p>
                 <div class="hashtags">
-                    <span>#<?php echo $row["tag_location"]; ?></span>
-                    <span>#<?php echo $row["tag_style"]; ?></span>
-                    <span>#<?php echo $row["tag_brand"]; ?></span>
+                    <span>#교토</span>
+                    <span>#모리걸</span>
+                    <span>#요시다_포터</span>
                 </div>
             </div>
             <div class="web-detail">
                 <div class="location"><span class="iconify" data-icon="mdi:map-marker" data-inline="false"
-                        style="color: #FF47CB;"></span> 5 Chome-67 Tsukizutecho, Ogaki, Gifu 503-0854</div>
+                        style="color: #FF47CB;"></span> 〒150-0001 Tokyo, Shibuya City, Jingumae, 1 Chome−8−2 原宿 Solado Takeshita-dori, 地下１階</div>
                 <div class="time"><span class="iconify" data-icon="fluent:clock-24-filled" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row['opening_time'] ?>AM ~
-                    <?php echo $row['closing_time'] ?>PM
-                </div>
+                        style="color: #FF47CB;"></span>매일 10:00AM ~ 9:00PM</div>
                 <div class="website"><span class="iconify" data-icon="mdi:web" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo strtolower(str_replace(' ', '', $row['shop_name'])); ?>.jp
+                        style="color: #FF47CB;"></span>wego.jp
                 </div>
                 <div class="call"><span class="iconify" data-icon="bx:bxs-phone-call" data-inline="false"
-                        style="color: #FF47CB;"></span> 0584-87-0360</div>
+                        style="color: #FF47CB;"></span> 0184-87-5760</div>
                 <div class="sell"><span class="iconify" data-icon="mdi:currency-jpy" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row["price_min"]; ?>¥ ~
-                    <?php echo $row["price_max"]; ?>¥
+                        style="color: #FF47CB;"></span>1000¥ ~ 15000¥
                 </div>
             </div>
 

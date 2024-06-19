@@ -85,9 +85,9 @@
 
     <div class="carousel-container">
         <div class="owl-carousel owl-theme">
-            <div class="item"><img src="<?php echo $row["shop_img_path"]; ?>"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 2"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 3"></div>
+            <div class="item"><img src="./assets/jetrag.png"></div>
+            <div class="item"><img src="./assets/jetrag2.png"></div>
+            <div class="item"><img src="./assets/el3.png""></div>
         </div>
 
         <!-- 왼쪽 화살표 이미지 -->
@@ -100,29 +100,26 @@
     <main>
         <div class="top-detail">
             <div class="intro">
-                <h1 class="title">2nd Street<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
-                <p><?php echo $row['shop_guide'] ?></p>
+                <h1 class="title">Jetrag<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
+                <p>Jetrag는 저렴한 가격대에서 다양한 캐주얼 의류를 제공합니다. 이 샵은 특히 일본 현지 학생들 사이에서 많은 인기를 끌며,저렴한 가격에도 높은 품질을 자랑합니다. Jetrag는 캐주얼한 패션을 즐기는 사람들에게 권장할 만한 구 제 의류 샵으로, 많은 이들이 자주 방문하는 곳입니다. </p>
                 <div class="hashtags">
-                    <span>#<?php echo $row["tag_location"]; ?></span>
-                    <span>#<?php echo $row["tag_style"]; ?></span>
-                    <span>#<?php echo $row["tag_brand"]; ?></span>
+                    <span>#교토</span>
+                    <span>#캐주얼</span>
+                    <span>#빈티지샵</span>
                 </div>
             </div>
             <div class="web-detail">
                 <div class="location"><span class="iconify" data-icon="mdi:map-marker" data-inline="false"
-                        style="color: #FF47CB;"></span> 5 Chome-67 Tsukizutecho, Ogaki, Gifu 503-0854</div>
+                        style="color: #FF47CB;"></span> 〒542-0086 Osaka, Chuo Ward, Nishishinsaibashi, 2 Chome−8−17 1F</div>
                 <div class="time"><span class="iconify" data-icon="fluent:clock-24-filled" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row['opening_time'] ?>AM ~
-                    <?php echo $row['closing_time'] ?>PM
-                </div>
+                        style="color: #FF47CB;"></span>매일 12:00AM ~ 7:00PM</div>
                 <div class="website"><span class="iconify" data-icon="mdi:web" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo strtolower(str_replace(' ', '', $row['shop_name'])); ?>.jp
+                        style="color: #FF47CB;"></span>jetrag.jp
                 </div>
                 <div class="call"><span class="iconify" data-icon="bx:bxs-phone-call" data-inline="false"
-                        style="color: #FF47CB;"></span> 0584-87-0360</div>
+                        style="color: #FF47CB;"></span> 081-6781-2570 </div>
                 <div class="sell"><span class="iconify" data-icon="mdi:currency-jpy" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row["price_min"]; ?>¥ ~
-                    <?php echo $row["price_max"]; ?>¥
+                        style="color: #FF47CB;"></span>2000¥ ~ 15000¥
                 </div>
             </div>
 

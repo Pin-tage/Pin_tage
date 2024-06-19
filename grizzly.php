@@ -64,13 +64,13 @@
     ?>
     <nav>
         <logo>
-            <a href="./index.php">
+            <a href="./index.html">
                 <img src="./assets/logo.png">
             </a>
         </logo>
         <menu>
             <ul>
-                <li><a href="./index.php" class="top-nav">MAIN</a></li>
+                <li><a href="./index.html" class="top-nav">MAIN</a></li>
                 <li><a href="./search_test.php" class="top-nav">SEARCH</a></li>
                 <li><a href="./map.php" class="top-nav">PIN!MAP</a></li>
                 <li><a href="./mypage_H.php" class="top-nav">MYPAGE</a></li>
@@ -85,9 +85,9 @@
 
     <div class="carousel-container">
         <div class="owl-carousel owl-theme">
-            <div class="item"><img src="<?php echo $row["shop_img_path"]; ?>"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 2"></div>
-            <div class="item"><img src="./assets/search-background.svg" alt="Image 3"></div>
+            <div class="item"><img src="./assets/grizzly3.png"></div>
+            <div class="item"><img src="./assets/grizzly2.png"></div>
+            <div class="item"><img src="./assets/grizzly.png""></div>
         </div>
 
         <!-- 왼쪽 화살표 이미지 -->
@@ -100,29 +100,26 @@
     <main>
         <div class="top-detail">
             <div class="intro">
-                <h1 class="title">2nd Street<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
-                <p><?php echo $row['shop_guide'] ?></p>
+                <h1 class="title">Grizzly<img src="./upload/bxs-heart.svg.svg" class="heart-icon"></h1>
+                <p>GRIZZLY는 일본의 인기 있는 스트릿 빈티지샵으로, 독특하고 개성 넘치는 패션 아이템을 판매합니다. 도쿄의 하라주쿠 지역에 위치해 있으며, 빈티지 의류부터 액세서리까지 다양한 제품을 선보입니다. GRIZZLY는 특히 90년대 스타일과 스트릿 패션을 선호하는 젊은 층 사이에서 큰 인기를 끌고 있으며, 고유한 분위기와 독창적인 상품 구성으로 많은 패션 애호가들의 사랑을 받고 있습니다. </p>
                 <div class="hashtags">
-                    <span>#<?php echo $row["tag_location"]; ?></span>
-                    <span>#<?php echo $row["tag_style"]; ?></span>
-                    <span>#<?php echo $row["tag_brand"]; ?></span>
+                    <span>#오사카</span>
+                    <span>#스트릿</span>
+                    <span>#비니티지샵</span>
                 </div>
             </div>
             <div class="web-detail">
                 <div class="location"><span class="iconify" data-icon="mdi:map-marker" data-inline="false"
-                        style="color: #FF47CB;"></span> 5 Chome-67 Tsukizutecho, Ogaki, Gifu 503-0854</div>
+                        style="color: #FF47CB;"></span> 〒542-0086 Osaka, Chuo Ward, Nishishinsaibashi, 2 Chome−8−29 澤井マンション</div>
                 <div class="time"><span class="iconify" data-icon="fluent:clock-24-filled" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row['opening_time'] ?>AM ~
-                    <?php echo $row['closing_time'] ?>PM
-                </div>
+                        style="color: #FF47CB;"></span>매일 12PM ~ 8:30PM</div>
                 <div class="website"><span class="iconify" data-icon="mdi:web" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo strtolower(str_replace(' ', '', $row['shop_name'])); ?>.jp
+                        style="color: #FF47CB;"></span>grizzly.jp
                 </div>
                 <div class="call"><span class="iconify" data-icon="bx:bxs-phone-call" data-inline="false"
-                        style="color: #FF47CB;"></span> 0584-87-0360</div>
+                        style="color: #FF47CB;"></span> 075-621-1579 </div>
                 <div class="sell"><span class="iconify" data-icon="mdi:currency-jpy" data-inline="false"
-                        style="color: #FF47CB;"></span><?php echo $row["price_min"]; ?>¥ ~
-                    <?php echo $row["price_max"]; ?>¥
+                        style="color: #FF47CB;"></span>500¥ ~ 15000¥
                 </div>
             </div>
 

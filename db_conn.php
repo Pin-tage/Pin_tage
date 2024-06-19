@@ -5,9 +5,9 @@
     $charset = 'utf8mb4';
 
     $dbhost = 'localhost';
-    $dbid = 'test';
-    $dbpw = '1111';
-    $db = 'testdb';
+    $dbid = 'root';
+    $dbpw = '';
+    $db = 'pintage';
     $dbport = '3307';
 
     $conn = mysqli_connect($dbhost, $dbid, $dbpw, $db, $dbport);

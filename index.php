@@ -22,10 +22,10 @@ include('db_conn.php'); ?>
         </logo>
         <menu>
             <ul>
-                <li><a href="./index.html" class="top-nav">MAIN</a></li>
-                <li><a href="./search.html" class="top-nav">SEARCH</a></li>
-                <li><a href="./map.html" class="top-nav">PIN!MAP</a></li>
-                <li><a href="./mypage.html" class="top-nav">MYPAGE</a></li>
+                <li><a href="./index.php" class="top-nav">MAIN</a></li>
+                <li><a href="./search_test.php" class="top-nav">SEARCH</a></li>
+                <li><a href="./map.php" class="top-nav">PIN!MAP</a></li>
+                <li><a href="./mypage_H.php" class="top-nav">MYPAGE</a></li>
             </ul>
         </menu>
         <!-- <input type="button" value="LOGIN" class="login-Btn"> -->

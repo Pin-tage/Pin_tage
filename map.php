@@ -92,7 +92,7 @@
 
             </div>
             <div style="text-align: right;">
-                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">3개</span></span>
+                <span class="pinCount" style="font-size: 24px;">나의 핀 <span style="color: #FF47CB;">15개</span></span>
             </div>
 
         </div>
@@ -101,89 +101,133 @@
         <br>
         <div class="grey-line"></div> <br>
 
-        <!-- 오프라인샵 -->
-        <span class="offlineShop"> 오프라인 샵 <span class="shopCount"> (3)</span></span>
-
         <?php
-        include ('db_conn.php');
+include ('db_conn.php');
 
-        // 데이터베이스 연결 오류 확인
-        if ($conn->connect_error) {
-            die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
-        }
+// 데이터베이스 연결 오류 확인
+if ($conn->connect_error) {
+    die("<script>console.error('데이터베이스 연결 실패: " . addslashes($conn->connect_error) . "');</script>");
+}
 
-        $sql = "SELECT shop_name, tag_region, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
+$sql = "SELECT shop_name, tag_region, tag_location, tag_style, tag_brand, shop_img_path, price_min, price_max FROM vintageshop";
+$result = $conn->query($sql); // 쿼리 실행
 
-        $result = $conn->query($sql); // 쿼리 실행
-        
-        if (!$result) {
-            die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
+if (!$result) {
+    die("<script>console.error('쿼리 실행 실패: " . addslashes($conn->error) . "');</script>");
+}
+
+$allRows = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $allRows[] = $row;
+    }
+    $jsonAllRows = json_encode($allRows);
+} else {
+    $jsonAllRows = json_encode([]);
+}
+?>
+
+<!-- 결과 -->
+<div class="center-container">
+    <!-- Cards container -->
+    <div class="card-container" id="card-container">
+        <?php
+        foreach ($allRows as $index => $row) {
+            ?>
+            <div class="card" data-index="<?php echo $index + 1; ?>">
+                <div class="heart">
+                    <i class="bi bi-heart-fill" style="color: red;"></i>
+                </div>
+                <div class="cardImg">
+                    <a href="#">
+                        <img src="<?php echo $row["shop_img_path"]; ?>" alt="">
+                    </a>
+                </div>
+                <div class="cardTitle"><?php echo $row["shop_name"]; ?></div>
+                <div class="cardHashtag_container">
+                    <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
+                    <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
+                    <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
+                </div>
+                <div class="price">
+                    <img src="" alt="">
+                    <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
+                </div>
+            </div>
+            <?php
         }
         ?>
+    </div>
+</div>
 
-        <!-- 결과 -->
-        <div class="center-container">
-            <!-- Cards container -->
-            <div class="card-container" id="card-container">
-                <?php
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const regions = [
+        {
+            name: 'hokkaido',
+            img: document.getElementById('hokkaido-img'),
+            hashtag: document.getElementById('hokkaido-hashtag'),
+            imgOn: './assets/Hokkaido_on.png',
+            imgOff: './assets/Hokkaido_off.png',
+            clicked: false,
+            filter: (index) => (index % 2 === 1) // 홀수 인덱스 (1의 배수)
+        },
+        {
+            name: 'honshu',
+            img: document.getElementById('honshu-img'),
+            hashtag: document.getElementById('honshu-hashtag'),
+            imgOn: './assets/Honshu_on.png',
+            imgOff: './assets/Honshu_off.png',
+            clicked: false,
+            filter: (index) => (index % 3 === 0) // 3의 배수
+        },
+        {
+            name: 'shikoku',
+            img: document.getElementById('shikoku-img'),
+            hashtag: document.getElementById('shikoku-hashtag'),
+            imgOn: './assets/Shikoku_on.png',
+            imgOff: './assets/Shikoku_off.png',
+            clicked: false,
+            filter: (index) => (index % 4 === 0) // 4의 배수
+        },
+        {
+            name: 'kyushu',
+            img: document.getElementById('kyushu-img'),
+            hashtag: document.getElementById('kyushu-hashtag'),
+            imgOn: './assets/Kyushu_on.png',
+            imgOff: './assets/Kyushu_off.png',
+            clicked: false,
+            filter: (index) => (index % 5 === 0) // 5의 배수
+        }
+    ];
 
-                $shop = ["2nd", "wego", "sousou"];
-                $i = 0;
-                $maxPosts = 3;
+    function filterCards() {
+        const cards = document.querySelectorAll('.card');
+        const anyRegionClicked = regions.some(region => region.clicked);
+        cards.forEach(card => {
+            const index = parseInt(card.getAttribute('data-index'), 10);
+            const showCard = regions.some(region => region.clicked && region.filter(index));
+            if (anyRegionClicked) {
+                card.style.display = showCard ? 'block' : 'none';
+            } else {
+                card.style.display = 'block'; // 모든 이미지가 Off일 때는 모든 카드 보이기
+            }
+        });
+    }
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if ($i >= $maxPosts) {
-                            break;
-                        }
-                        ?>
-                        <div class="card">
-                            <div class="heart">
-                                <i class="bi bi-heart-fill" style="color: red;"></i>
-                            </div>
-                            <div class="cardImg">
-                                <a href="<?php echo array_values($shop)[$i]; ?>.php">
-                                    <img src="<?php echo $row["shop_img_path"]; ?>" alt="">
-                                </a>
-                            </div>
-                            <div class="cardTitle"><?php echo $row["shop_name"]; ?></div>
-                            <div class="cardHashtag_container">
-                                <div class="cardHashtag">#<?php echo $row["tag_location"]; ?></div>
-                                <div class="cardHashtag">#<?php echo $row["tag_style"]; ?></div>
-                                <div class="cardHashtag">#<?php echo $row["tag_brand"]; ?></div>
-                            </div>
-                            <div class="price">
-                                <img src="" alt="">
-                                <p><?php echo $row["price_min"]; ?>¥ ~ <?php echo $row["price_max"]; ?>¥</p>
-                            </div>
-                        </div>
-                        <?php
-                        $allRows[] = $row;
-                        $i++;
-                    }
-                    // 모든 row 값을 JSON으로 인코딩
-                    $jsonAllRows = json_encode($allRows);
-                } else {
-                    echo "<p>결과가 없습니다.</p>";
-                    $jsonAllRows = json_encode([]);
-                }
+    function handleClick(region) {
+        region.clicked = !region.clicked;
+        region.img.src = region.clicked ? region.imgOn : region.imgOff;
+        region.hashtag.style.display = region.clicked ? 'inline' : 'none';
+        filterCards();
+    }
 
-                ?>
-            </div>
-        </div>
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                try {
-                    var allRows = <?php echo $jsonAllRows; ?>;
-                    console.log("Data from PHP:", allRows);
-                } catch (error) {
-                    console.error("Error parsing data:", error);
-                }
-            });
-        </script>
-
+    regions.forEach(region => {
+        region.img.addEventListener('click', () => handleClick(region));
+        region.hashtag.addEventListener('click', () => handleClick(region));
+    });
+});
+</script>
 
     </main>
 

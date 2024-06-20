@@ -166,7 +166,7 @@ session_start();
                                 <div class="cardHashtag">#빈티지샵</div>
                             </div>
                             <div class="price"><img src="./akar-icons_coin.png" alt="">
-                                <p>500 ~ 10,000¥</p>
+                                <p>500 ~ 10,000¥</p> 
                             </div>
                         </div>
                     </div>
